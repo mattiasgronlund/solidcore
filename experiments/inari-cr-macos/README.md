@@ -41,7 +41,10 @@ Each calls `inari::cr::*_rn` and counts its calls.
 - The workspace lints are dropped from `crates/goldens/Cargo.toml` for the shim's `unsafe`.
 
 A later commit on this branch adds sampling of `acos` stack traces to the shim (every 100,000th
-call). The timed runs and the goldens outputs come from the commit before it.
+call). The timed runs and the goldens outputs come from the commit before it. The first version
+sampled calls 0, 100,000, 200,000, ... of each process, so each of the 757 processes that call
+`acos` added a sample of its first call; the samples now are calls 99,999, 199,999, ...
+(2026-11-13), 4,096 in all, one per 100,000 calls of each process.
 
 ## `results/`
 
@@ -60,6 +63,7 @@ call). The timed runs and the goldens outputs come from the commit before it.
 | `bench-mpfr-check.txt` | What `bench --bin check` printed |
 | `bench-interp.txt` | What `bench --bin interp` printed (`2000.5 (2000.5, 3000.0)`: both calls reached the shim's `__sincos_stret`) |
 | `acos-stacks.txt` | Sampled `acos` stack traces with their counts (sampling commit) |
+| `goldens-cr-acos-sampling.log` | The goldens run that wrote `acos-stacks.txt` |
 
 **How the `changed-cases-*.jsonl` files were made.** Each configuration ran
 `--goldens --bless --goldens-dir <copy of crates/goldens/expected>`, which rewrites every case's output

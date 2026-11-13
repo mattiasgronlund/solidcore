@@ -16,7 +16,7 @@ f1! { 0 sin cr::sin_rn; 1 cos cr::cos_rn; 2 tan cr::tan_rn; 3 asin cr::asin_rn; 
 static SAMPLES: std::sync::Mutex<std::collections::BTreeMap<String, u64>> = std::sync::Mutex::new(std::collections::BTreeMap::new());
 #[no_mangle] pub extern "C" fn acos(x: f64) -> f64 {
     let n = N[4].fetch_add(1, Relaxed);
-    if n % 100_000 == 0 {
+    if n % 100_000 == 99_999 {
         let bt = std::backtrace::Backtrace::force_capture().to_string();
         let frames: Vec<&str> = bt.lines().map(str::trim).filter(|l| !l.starts_with("at ") && (l.contains("solidcore") || l.contains("goldens::units"))).filter(|l| !l.contains("cr_interpose")).take(8).collect();
         if let Ok(mut m) = SAMPLES.lock() { *m.entry(frames.join(" <- ")).or_insert(0) += 1; }
