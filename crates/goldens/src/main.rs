@@ -123,7 +123,9 @@ fn usage_error(e: &str) -> ExitCode {
     ExitCode::from(2)
 }
 
+mod cr_interpose;
 fn main() -> ExitCode {
+    cr_interpose::install();
     let raw: Vec<String> = std::env::args().skip(1).collect();
     // Child of `--ssi-corpus`: one engine on one case (see `goldens::ssi::run_child`).
     if raw.first().map(String::as_str) == Some("--ssi-case") {
