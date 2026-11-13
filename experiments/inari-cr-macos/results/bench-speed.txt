@@ -1,0 +1,12 @@
+sin      [-7,7] differ 3.6856%  libm 8.7 ns  cr 33.1 ns  ratio 3.8x
+cos      [-7,7] differ 4.2806%  libm 8.6 ns  cr 33.2 ns  ratio 3.9x
+sin      [-10000,10000] differ 4.0788%  libm 8.3 ns  cr 33.8 ns  ratio 4.1x
+tan      [-1.5,1.5] differ 38.4766%  libm 7.6 ns  cr 19.2 ns  ratio 2.5x
+acos     [-1,1] differ 14.6305%  libm 10.4 ns  cr 47.2 ns  ratio 4.5x
+asin     [-1,1] differ 5.1034%  libm 8.4 ns  cr 45.2 ns  ratio 5.4x
+atan     [-10,10] differ 7.7253%  libm 10.4 ns  cr 34.8 ns  ratio 3.3x
+exp      [-10,10] differ 0.1628%  libm 6.7 ns  cr 7.3 ns  ratio 1.1x
+ln       [0.001,1000] differ 0.0135%  libm 3.0 ns  cr 12.8 ns  ratio 4.2x
+atan2    [-1,1]^2 differ 1.1175%  libm 26.1 ns  cr 45.0 ns  ratio 1.7x
+dot3     f64 1.1 ns  widen-2u ivl 3.6 ns  inari 160.9 ns
+inari sin([0.1,0.1000001]) = Interval(0.09983341664682815, 0.09983351614724419)

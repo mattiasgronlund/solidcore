@@ -1,0 +1,20 @@
+[package]
+name = "crbench"
+version = "0.1.0"
+edition = "2021"
+publish = false
+default-run = "crbench"
+
+# Not a member of the solidcore workspace.
+[workspace]
+
+[dependencies]
+inari = { git = "https://github.com/mattiasgronlund/inari", rev = "ca6faf9c109ad62a7e53afc598d59f74af92adeb" }
+rug = { version = "1.19", default-features = false, features = ["float"] }
+
+[features]
+generic = ["inari/force-generic"]
+
+[profile.release]
+lto = "fat"
+codegen-units = 1

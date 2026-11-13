@@ -1,0 +1,5 @@
+sin   vs MPFR: platform libm misrounded 3.653%  inari cr misrounded 0.0000%
+cos   vs MPFR: platform libm misrounded 4.350%  inari cr misrounded 0.0000%
+tan   vs MPFR: platform libm misrounded 38.431%  inari cr misrounded 0.0000%
+acos  vs MPFR: platform libm misrounded 14.746%  inari cr misrounded 0.0000%
+atan  vs MPFR: platform libm misrounded 7.724%  inari cr misrounded 0.0000%
