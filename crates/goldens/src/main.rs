@@ -123,8 +123,35 @@ fn usage_error(e: &str) -> ExitCode {
     ExitCode::from(2)
 }
 
+#[cfg(feature = "cr")]
 mod cr_interpose;
+#[cfg(feature = "ivl-count")]
+#[allow(unsafe_code)]
+mod ivl_count {
+    extern "C" fn dump() {
+        if let Ok(dir) = std::env::var("IVL_COUNTS") {
+            let c = solidcore::blend::fillet_section::interval::experiment::counts();
+            let line: Vec<String> = c.iter().map(|(n, v)| format!("{n}={v}")).collect();
+            let args: Vec<String> = std::env::args().collect();
+            let _ = std::fs::write(
+                format!("{dir}/{}.txt", std::process::id()),
+                format!("{}\nARGS {}\n", line.join(" "), args.join(" ")),
+            );
+        }
+    }
+    extern "C" {
+        fn atexit(cb: extern "C" fn()) -> i32;
+    }
+    pub fn install() {
+        unsafe {
+            atexit(dump);
+        }
+    }
+}
 fn main() -> ExitCode {
+    #[cfg(feature = "ivl-count")]
+    ivl_count::install();
+    #[cfg(feature = "cr")]
     cr_interpose::install();
     let raw: Vec<String> = std::env::args().skip(1).collect();
     // Child of `--ssi-corpus`: one engine on one case (see `goldens::ssi::run_child`).

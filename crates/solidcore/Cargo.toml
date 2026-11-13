@@ -18,10 +18,15 @@ curve-memo-off = []
 # The profiler (`solidcore::profile`): scopes and counters recorded in `Kernel::profiler`,
 # written as JSON Lines. Off, every scope compiles to nothing. Results never depend on it.
 profile = []
+# Experiment: Ivl arithmetic through inari::Interval, and per-operation counts.
+ivl-inari = ["dep:inari"]
+ivl-inari-generic = ["ivl-inari", "inari/force-generic"]
+ivl-count = []
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
 thiserror.workspace = true
+inari = { git = "https://github.com/mattiasgronlund/inari", rev = "6a9fa7aad2a3ed0551e01239dac94ae149773d1c", optional = true }
 
 [dev-dependencies]
 serde_json = { version = "1", features = ["float_roundtrip"] }

@@ -141,7 +141,7 @@ checksum = "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a"
 [[package]]
 name = "inari"
 version = "2.0.0"
-source = "git+https://github.com/mattiasgronlund/inari?rev=ca6faf9c109ad62a7e53afc598d59f74af92adeb#ca6faf9c109ad62a7e53afc598d59f74af92adeb"
+source = "git+https://github.com/mattiasgronlund/inari?rev=6a9fa7aad2a3ed0551e01239dac94ae149773d1c#6a9fa7aad2a3ed0551e01239dac94ae149773d1c"
 dependencies = [
  "cfg-if",
  "forward_ref",
@@ -321,6 +321,7 @@ checksum = "d0d5d4b1981b8bbbb7aed204cae5726d683d5d6ac7e74ec54122ea28f315e7c8"
 name = "solidcore"
 version = "1.0.1"
 dependencies = [
+ "inari",
  "serde",
  "serde_json",
  "thiserror",

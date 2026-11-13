@@ -8,7 +8,8 @@ description = "Checks every unit's cases against its committed expected output (
 build = "build.rs"
 
 [dependencies]
-inari = { git = "https://github.com/mattiasgronlund/inari", rev = "ca6faf9c109ad62a7e53afc598d59f74af92adeb" }
+# EXPERIMENT: inari main; the ca6faf9 build edits this rev (see experiments/inari-cr-macos-ed65e20/README.md).
+inari = { git = "https://github.com/mattiasgronlund/inari", rev = "6a9fa7aad2a3ed0551e01239dac94ae149773d1c", optional = true }
 solidcore = { path = "../solidcore" }
 # The `ssi` engine of --ssi-corpus (a surface/surface intersection of its own, not a port).
 ssi = { path = "../ssi" }
@@ -23,3 +24,12 @@ serde = { version = "1", features = ["derive"] }
 serde_json = { version = "1", features = ["float_roundtrip"] }
 toml = "0.8"
 
+[features]
+# EXPERIMENT: route the binary's libm calls to inari::cr (src/cr_interpose.rs).
+cr = ["dep:inari"]
+# ... and record the arguments of every 10,000th acos call.
+acos-args = ["cr"]
+# EXPERIMENT: Ivl through inari::Interval, and Ivl operation counts.
+ivl-count = ["solidcore/ivl-count"]
+ivl-inari = ["solidcore/ivl-inari"]
+ivl-inari-generic = ["solidcore/ivl-inari-generic"]

@@ -203,6 +203,9 @@ impl Ivl {
     /// `sm_Checked`: `[a, b]` rounded outward, or the whole line if either is NaN.
     #[must_use]
     pub fn checked(a: f64, b: f64) -> Self {
+        #[cfg(feature = "ivl-count")]
+        experiment::bump(9);
+
         if a.is_nan() || b.is_nan() {
             Self::whole()
         } else {
@@ -220,6 +223,10 @@ impl Ivl {
     /// if it has none).
     #[must_use]
     pub fn sqrt(self) -> Self {
+        #[cfg(feature = "ivl-count")]
+        experiment::bump(0);
+        #[cfg(feature = "ivl-inari")]
+        return experiment::sqrt(self);
         // !(x.hi >= 0.0): a NaN end fails it too
         let has_non_negative = self.hi >= 0.0;
         if !has_non_negative {
@@ -291,6 +298,10 @@ impl Ivl {
     /// exact in IEEE arithmetic and is returned unwidened. Not finite: the whole line.
     #[must_use]
     pub fn add_ulp(self, b: Self) -> Self {
+        #[cfg(feature = "ivl-count")]
+        experiment::bump(1);
+        #[cfg(feature = "ivl-inari")]
+        return experiment::bin(self, b, experiment::Op::Add, true);
         if !self.is_finite() || !b.is_finite() {
             Self::whole()
         } else if self == Self::from(0.0) {
@@ -307,6 +318,10 @@ impl Ivl {
     /// (IEEE `x - x == 0` for finite `x`). Not finite: the whole line.
     #[must_use]
     pub fn sub_ulp(self, b: Self) -> Self {
+        #[cfg(feature = "ivl-count")]
+        experiment::bump(2);
+        #[cfg(feature = "ivl-inari")]
+        return experiment::bin(self, b, experiment::Op::Sub, true);
         if !self.is_finite() || !b.is_finite() {
             Self::whole()
         } else if self.lo == self.hi && self == b {
@@ -322,6 +337,10 @@ impl Ivl {
     /// is returned unwidened. Not finite: the whole line.
     #[must_use]
     pub fn mul_ulp(self, b: Self) -> Self {
+        #[cfg(feature = "ivl-count")]
+        experiment::bump(3);
+        #[cfg(feature = "ivl-inari")]
+        return experiment::bin(self, b, experiment::Op::Mul, true);
         if !self.is_finite() || !b.is_finite() {
             return Self::whole();
         }
@@ -352,6 +371,10 @@ impl Ivl {
     /// are exact and are returned unwidened. Not finite: the whole line.
     #[must_use]
     pub fn div_ulp(self, b: Self) -> Self {
+        #[cfg(feature = "ivl-count")]
+        experiment::bump(4);
+        #[cfg(feature = "ivl-inari")]
+        return experiment::bin(self, b, experiment::Op::Div, true);
         let excludes_zero = b.lo > 0.0 || b.hi < 0.0;
         if !self.is_finite() || !b.is_finite() || !excludes_zero {
             return Self::whole();
@@ -378,6 +401,10 @@ impl Ivl {
 impl Add for Ivl {
     type Output = Self;
     fn add(self, b: Self) -> Self {
+        #[cfg(feature = "ivl-count")]
+        experiment::bump(5);
+        #[cfg(feature = "ivl-inari")]
+        return experiment::bin(self, b, experiment::Op::Add, false);
         Self::checked(self.lo + b.lo, self.hi + b.hi)
     }
 }
@@ -385,6 +412,10 @@ impl Add for Ivl {
 impl Sub for Ivl {
     type Output = Self;
     fn sub(self, b: Self) -> Self {
+        #[cfg(feature = "ivl-count")]
+        experiment::bump(6);
+        #[cfg(feature = "ivl-inari")]
+        return experiment::bin(self, b, experiment::Op::Sub, false);
         Self::checked(self.lo - b.hi, self.hi - b.lo)
     }
 }
@@ -392,6 +423,10 @@ impl Sub for Ivl {
 impl Mul for Ivl {
     type Output = Self;
     fn mul(self, b: Self) -> Self {
+        #[cfg(feature = "ivl-count")]
+        experiment::bump(7);
+        #[cfg(feature = "ivl-inari")]
+        return experiment::bin(self, b, experiment::Op::Mul, false);
         let p0 = product(self.lo, b.lo);
         let rest = [
             product(self.lo, b.hi),
@@ -414,11 +449,107 @@ impl Mul for Ivl {
 impl Div for Ivl {
     type Output = Self;
     fn div(self, b: Self) -> Self {
+        #[cfg(feature = "ivl-count")]
+        experiment::bump(8);
+        #[cfg(feature = "ivl-inari")]
+        return experiment::bin(self, b, experiment::Op::Div, false);
         let excludes_zero = b.lo > 0.0 || b.hi < 0.0;
         if !excludes_zero {
             return Self::whole();
         }
         self * Self::checked(1.0 / b.hi, 1.0 / b.lo)
+    }
+}
+
+
+/// Experiment (not for main): `Ivl`'s arithmetic through `inari::Interval`, and per-operation
+/// counts.
+#[cfg(any(feature = "ivl-inari", feature = "ivl-count"))]
+#[allow(missing_docs, clippy::missing_docs_in_private_items)]
+pub mod experiment {
+    #[cfg(feature = "ivl-inari")]
+    use super::Ivl;
+    use core::sync::atomic::{AtomicU64, Ordering::Relaxed};
+
+    pub const NAMES: [&str; 10] = [
+        "sqrt", "add_ulp", "sub_ulp", "mul_ulp", "div_ulp", "add", "sub", "mul", "div", "checked",
+    ];
+    static COUNTS: [AtomicU64; 10] = [const { AtomicU64::new(0) }; 10];
+
+    pub fn bump(k: usize) {
+        if let Some(c) = COUNTS.get(k) {
+            c.fetch_add(1, Relaxed);
+        }
+    }
+
+    #[must_use]
+    pub fn counts() -> Vec<(&'static str, u64)> {
+        NAMES
+            .iter()
+            .zip(COUNTS.iter())
+            .map(|(n, c)| (*n, c.load(Relaxed)))
+            .collect()
+    }
+
+    #[cfg(feature = "ivl-inari")]
+    pub enum Op {
+        Add,
+        Sub,
+        Mul,
+        Div,
+    }
+
+    #[cfg(feature = "ivl-inari")]
+    fn to_i(x: Ivl) -> Option<inari::Interval> {
+        inari::Interval::try_from((x.lo, x.hi)).ok()
+    }
+
+    #[cfg(feature = "ivl-inari")]
+    fn from_i(x: inari::Interval) -> Ivl {
+        if x.is_empty() {
+            Ivl::whole()
+        } else {
+            Ivl::new(x.inf(), x.sup())
+        }
+    }
+
+    /// `a op b` enclosed by inari. The `*_ulp` forms (`finite_only`) keep their rule that a
+    /// non-finite operand gives the whole line; both keep the rule that a divisor holding 0
+    /// does.
+    #[cfg(feature = "ivl-inari")]
+    pub fn bin(a: Ivl, b: Ivl, op: Op, finite_only: bool) -> Ivl {
+        if finite_only && (!a.is_finite() || !b.is_finite()) {
+            return Ivl::whole();
+        }
+        let (Some(x), Some(y)) = (to_i(a), to_i(b)) else {
+            return Ivl::whole();
+        };
+        let r = match op {
+            Op::Add => x + y,
+            Op::Sub => x - y,
+            Op::Mul => x * y,
+            Op::Div => {
+                if !(b.lo > 0.0 || b.hi < 0.0) {
+                    return Ivl::whole();
+                }
+                x / y
+            }
+        };
+        let r = from_i(r);
+        if finite_only && !r.is_finite() {
+            Ivl::whole()
+        } else {
+            r
+        }
+    }
+
+    /// `sqrt` of the non-negative part, the whole line if there is none.
+    #[cfg(feature = "ivl-inari")]
+    pub fn sqrt(a: Ivl) -> Ivl {
+        if !(a.hi >= 0.0) {
+            return Ivl::whole();
+        }
+        to_i(a).map_or_else(Ivl::whole, |x| from_i(x.sqrt()))
     }
 }
 
