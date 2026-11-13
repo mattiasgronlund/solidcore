@@ -1,0 +1,14 @@
+[package]
+name = "cr-libm-shim"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+# inari main 174092e. The run built from local clones of these commits: the cr-main and
+# cr-count variants used 174092e, and cr-ca6 used ca6faf9c109ad62a7e53afc598d59f74af92adeb.
+inari = { git = "https://github.com/mattiasgronlund/inari", rev = "174092e341648217627cf3fa8c025dfe0941a1c3", default-features = false }
+
+[features]
+force-generic = ["inari/force-generic"]
+count = []

@@ -21,6 +21,13 @@ serde = { version = "1", features = ["derive"] }
 # float_roundtrip: parse decimals exactly (correctly rounded, as C strtod), not to within 1 ULP
 serde_json = { version = "1", features = ["float_roundtrip"] }
 toml = "0.8"
+# Experiment (inari issue #2 on Linux): every libm call through inari::cr.
+cr-libm-shim = { path = "../../experiments/inari-cr-linux/cr-libm-shim", optional = true }
+
+[features]
+cr-libm = ["dep:cr-libm-shim"]
+cr-libm-generic = ["cr-libm", "cr-libm-shim/force-generic"]
+cr-libm-count = ["cr-libm-generic", "cr-libm-shim/count"]
 
 [lints]
 workspace = true

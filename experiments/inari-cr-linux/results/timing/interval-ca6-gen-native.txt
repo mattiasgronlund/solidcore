@@ -1,0 +1,3 @@
+plain f64	0.7 ns
+widened RN (solidcore Ivl)	20.2 ns
+inari::Interval	76.2 ns
