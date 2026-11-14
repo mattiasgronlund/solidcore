@@ -124,6 +124,8 @@ fn usage_error(e: &str) -> ExitCode {
 }
 
 fn main() -> ExitCode {
+    #[cfg(feature = "cr-libm")]
+    cr_libm_shim::link();
     let raw: Vec<String> = std::env::args().skip(1).collect();
     // Child of `--ssi-corpus`: one engine on one case (see `goldens::ssi::run_child`).
     if raw.first().map(String::as_str) == Some("--ssi-case") {
@@ -401,23 +403,30 @@ fn goldens_main(
     ExitCode::from(u8::from(failed > 0))
 }
 
-/// Lines printed per kind of change for one unit.
-const MAX_GOLDEN_LINES: usize = 10;
+/// Lines printed per kind of change for one unit: 10, or `GOLDENS_MAX_LINES` (experiment,
+/// inari issue #2: list every changed case).
+fn max_golden_lines() -> usize {
+    std::env::var("GOLDENS_MAX_LINES")
+        .ok()
+        .and_then(|v| v.parse().ok())
+        .unwrap_or(10)
+}
 
 fn print_golden_changes(res: &goldens::golden::GoldenResult) {
-    for (name, c) in res.changed.iter().take(MAX_GOLDEN_LINES) {
+    let max_lines = max_golden_lines();
+    for (name, c) in res.changed.iter().take(max_lines) {
         println!("  changed {name} ({} differences)", c.count);
         for d in &c.details {
             println!("    {d}");
         }
     }
-    for name in res.added.iter().take(MAX_GOLDEN_LINES) {
+    for name in res.added.iter().take(max_lines) {
         println!("  added {name}");
     }
-    for name in res.removed.iter().take(MAX_GOLDEN_LINES) {
+    for name in res.removed.iter().take(max_lines) {
         println!("  removed {name}");
     }
-    for (name, why) in res.broken.iter().take(MAX_GOLDEN_LINES) {
+    for (name, why) in res.broken.iter().take(max_lines) {
         println!("  broken {name}: {why}");
     }
     for (kind, n) in [
@@ -426,8 +435,8 @@ fn print_golden_changes(res: &goldens::golden::GoldenResult) {
         ("removed", res.removed.len()),
         ("broken", res.broken.len()),
     ] {
-        if n > MAX_GOLDEN_LINES {
-            println!("  ... {} more {kind}", n - MAX_GOLDEN_LINES);
+        if n > max_lines {
+            println!("  ... {} more {kind}", n - max_lines);
         }
     }
 }

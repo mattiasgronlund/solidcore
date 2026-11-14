@@ -1,0 +1,19 @@
+[package]
+name = "cr-eval"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+# inari main 6a9fa7a.
+inari = { git = "https://github.com/mattiasgronlund/inari", rev = "6a9fa7aad2a3ed0551e01239dac94ae149773d1c", default-features = false }
+rug = { version = "1.19", default-features = false, features = ["float"] }
+
+[features]
+force-generic = ["inari/force-generic"]
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
