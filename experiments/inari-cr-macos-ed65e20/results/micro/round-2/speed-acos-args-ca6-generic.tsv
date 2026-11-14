@@ -1,0 +1,7 @@
+bucket	args	glibc_ns	cr_ns	ratio
+angle_between	2701	3.7	29.8	8.10
+curve_cache	9581	4.2	42.6	10.25
+net	18884	4.2	43.1	10.35
+other	422	3.9	35.1	9.07
+polar_box	10432	4.1	42.6	10.30
+all	42020	4.3	42.3	9.72

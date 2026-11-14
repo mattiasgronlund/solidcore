@@ -1,0 +1,15 @@
+15:27:51 load: { 2.50 2.96 3.66 }
+15:27:51 speed main-aarch64
+15:27:57 speed --acos-args main-aarch64
+15:27:59 interval main-aarch64
+15:28:01 speed main-generic
+15:28:07 speed --acos-args main-generic
+15:28:09 interval main-generic
+15:28:09 speed ca6-aarch64
+15:28:16 speed --acos-args ca6-aarch64
+15:28:19 interval ca6-aarch64
+15:28:20 speed ca6-generic
+15:28:27 speed --acos-args ca6-generic
+15:28:29 interval ca6-generic
+15:28:30 load: { 3.58 3.24 3.73 }
+15:28:30 item3 done

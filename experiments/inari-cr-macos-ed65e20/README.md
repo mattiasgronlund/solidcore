@@ -98,3 +98,22 @@ call's stack, below the `vector3d::acos` wrapper:
 | `other` | any other frame |
 
 The arguments are calls 9,999, 19,999, and so on of each process.
+
+## The Linux micro programs on macOS (item 3)
+
+On 2026-11-14, the programs in `experiments/inari-cr-linux/cr-eval/` (inari main) and
+`cr-eval-ca6/` (inari `ca6faf9`) of branch `exp/inari-cr-linux-ed65e20` (`683ba4814`) ran
+on this machine (Apple M1 Pro, macOS 26.6.2), with rustc 1.99.1.
+
+- **Builds:** `cargo build --release --locked --bin speed --bin interval`, in two variants:
+  `aarch64` (inari's default backend) and `generic` (`--features force-generic`).
+- **Not built:** `accuracy`. It fails to link here: the GMP and MPFR that `gmp-mpfr-sys`
+  builds for `rug` are built for macOS 26.0, and the link targets 11.0. Item 3 doesn't use it.
+- **Runs:** `scripts/run-micro.sh`. Each program runs alone, one after another: `speed`,
+  `speed --acos-args results/acos-args.tsv` and `interval`, for each build. macOS has no
+  `taskset`, so nothing is pinned. The whole set ran twice, in `results/micro/round-1/`
+  and `round-2/`. `timing.log` in each records the load average before and after.
+  - A browser tab used about 0.6 of one of the ten cores throughout.
+- **Files:** `speed-<commit>-<build>.tsv`, `speed-acos-args-<commit>-<build>.tsv` and
+  `interval-<commit>-<build>.txt`, with commit `main` or `ca6` and build `aarch64` or
+  `generic`. In `speed`, the `glibc_ns` column is Apple's libm.
