@@ -1,0 +1,85 @@
+23:33  up 71 days, 49 mins, 9 users, load averages: 4.16 5.86 6.47
+== whole base-1 23:33:36
+goldens --jobs 4: wall 350.1 s, sum of unit times 1400.2 s, longest unit surface.surface_approximate 159.6 s
+== whole cr-main 23:39:32
+goldens --jobs 4: wall 358.9 s, sum of unit times 1435.4 s, longest unit surface.surface_approximate 159.7 s
+== whole cr-ca6 23:45:37
+goldens --jobs 4: wall 361.8 s, sum of unit times 1446.9 s, longest unit surface.surface_approximate 159.6 s
+== whole base-2 23:51:44
+goldens --jobs 4: wall 350.4 s, sum of unit times 1401.1 s, longest unit surface.surface_approximate 159.7 s
+1	corpus.parity	base	
+1	corpus.parity	cr-main	
+1	corpus.parity	cr-ca6	
+1	offset.offset_executive_p2	base	
+1	offset.offset_executive_p2	cr-main	
+1	offset.offset_executive_p2	cr-ca6	
+1	blend.fillet_executive_p3	base	
+1	blend.fillet_executive_p3	cr-main	
+1	blend.fillet_executive_p3	cr-ca6	
+1	blend.feature_executive	base	
+1	blend.feature_executive	cr-main	
+1	blend.feature_executive	cr-ca6	
+1	surface.surface_p7	base	
+1	surface.surface_p7	cr-main	
+1	surface.surface_p7	cr-ca6	
+2	corpus.parity	base	
+2	corpus.parity	cr-main	
+2	corpus.parity	cr-ca6	
+2	offset.offset_executive_p2	base	
+2	offset.offset_executive_p2	cr-main	
+2	offset.offset_executive_p2	cr-ca6	
+2	blend.fillet_executive_p3	base	
+2	blend.fillet_executive_p3	cr-main	
+2	blend.fillet_executive_p3	cr-ca6	
+2	blend.feature_executive	base	
+2	blend.feature_executive	cr-main	
+2	blend.feature_executive	cr-ca6	
+2	surface.surface_p7	base	
+2	surface.surface_p7	cr-main	
+2	surface.surface_p7	cr-ca6	
+== done 00:15:36
+ 0:15  up 71 days,  1:31, 9 users, load averages: 2.78 2.27 3.06
+== bless base 00:15:36
+goldens --jobs 4: wall 351.0 s, sum of unit times 1403.6 s, longest unit surface.surface_approximate 159.7 s
+== bless cr-main 00:21:27
+goldens --jobs 4: wall 360.0 s, sum of unit times 1439.7 s, longest unit surface.surface_approximate 159.8 s
+== bless cr-ca6 00:27:28
+goldens --jobs 4: wall 362.9 s, sum of unit times 1451.2 s, longest unit surface.surface_approximate 159.7 s
+== done 00:33:31
+ 0:33  up 71 days,  1:49, 9 users, load averages: 4.64 4.87 4.44
+1	topology.brep_local_operation	base	
+1	topology.brep_local_operation	ivl-inari	
+1	topology.brep_local_operation	ivl-generic	
+1	offset.offset_executive_p2	base	
+1	offset.offset_executive_p2	ivl-inari	
+1	offset.offset_executive_p2	ivl-generic	
+1	blend.feature_executive	base	
+1	blend.feature_executive	ivl-inari	
+1	blend.feature_executive	ivl-generic	
+1	curve.curve_p9	base	
+1	curve.curve_p9	ivl-inari	
+1	curve.curve_p9	ivl-generic	
+1	intersect.topology_solver_p2	base	
+1	intersect.topology_solver_p2	ivl-inari	
+1	intersect.topology_solver_p2	ivl-generic	
+2	topology.brep_local_operation	base	
+2	topology.brep_local_operation	ivl-inari	
+2	topology.brep_local_operation	ivl-generic	
+2	offset.offset_executive_p2	base	
+2	offset.offset_executive_p2	ivl-inari	
+2	offset.offset_executive_p2	ivl-generic	
+2	blend.feature_executive	base	
+2	blend.feature_executive	ivl-inari	
+2	blend.feature_executive	ivl-generic	
+2	curve.curve_p9	base	
+2	curve.curve_p9	ivl-inari	
+2	curve.curve_p9	ivl-generic	
+2	intersect.topology_solver_p2	base	
+2	intersect.topology_solver_p2	ivl-inari	
+2	intersect.topology_solver_p2	ivl-generic	
+== bless ivl-inari 00:45:55
+goldens --jobs 4: wall 361.2 s, sum of unit times 1444.5 s, longest unit surface.surface_approximate 159.7 s
+== bless ivl-generic 00:51:57
+goldens --jobs 4: wall 354.6 s, sum of unit times 1418.0 s, longest unit surface.surface_approximate 159.6 s
+== done 00:57:52
+ 0:57  up 71 days,  2:14, 9 users, load averages: 6.52 6.38 5.73
