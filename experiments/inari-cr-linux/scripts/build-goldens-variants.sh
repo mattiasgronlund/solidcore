@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# usage: build-goldens-variants.sh [variant...]   (default: all four, in this order)
 # Builds the goldens binary in four variants, into $S/bins/goldens-<variant>:
 #   baseline  unmodified: every libm call goes to glibc
 #   cr-count  every libm call through inari::cr at inari main, counting the calls
@@ -28,9 +29,17 @@ b() { # variant, features (empty for none)
     | grep -xE "$libm" | sort > "$S/bins/goldens-$1.libm-imports" || true
   echo "goldens-$1 imports $(wc -l < "$S/bins/goldens-$1.libm-imports") math functions from libm"
 }
-b baseline ""
-b cr-count cr-libm-count
-b cr-main cr-libm-generic
-sed -i "s/rev = \"$INARI_MAIN\"/rev = \"$INARI_CA6\"/" "$shim"
-b cr-ca6 cr-libm-generic
-echo "build-goldens-variants done"
+[ $# -eq 0 ] && set -- baseline cr-count cr-main cr-ca6
+for v in "$@"; do
+  case $v in
+    baseline) b baseline "" ;;
+    cr-count) b cr-count cr-libm-count ;;
+    cr-main) b cr-main cr-libm-generic ;;
+    cr-ca6)
+      sed -i "s/rev = \"$INARI_MAIN\"/rev = \"$INARI_CA6\"/" "$shim"
+      b cr-ca6 cr-libm-generic
+      restore ;;
+    *) echo "unknown variant $v"; exit 1 ;;
+  esac
+done
+echo "build-goldens-variants $* done"

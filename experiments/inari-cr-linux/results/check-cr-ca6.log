@@ -1,0 +1,626 @@
+BLESSED blend.feature_executive cases=149 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=20.503s
+BLESSED blend.fillet_corner_p1 cases=263 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.152s
+BLESSED blend.fillet_corner_p2 cases=547 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=5.336s
+BLESSED blend.fillet_corner_p3 cases=900 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=8.252s
+BLESSED blend.fillet_custom_solver cases=451 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.091s
+BLESSED blend.fillet_executive_p1 cases=155 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.960s
+BLESSED blend.fillet_executive_p2 cases=278 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.068s
+  known failing issue-2349-teardrop-full-r0.5: tangency-labs/solidcore#2349: the closed round's first span is off the true round by 7.9e-4 against a 4e-5 edge tolerance; the curved-spine mitre and both exact pcurves remain unimplemented
+  known failing issue-2349-teardrop-full-r3: tangency-labs/solidcore#2349: the closed-angle mitre is not certified; tangency-labs/solidcore#2404 tracks the refusal size whose fresh build fails validity
+  known failing private-upstream-rollover-404-cyl-on-box1-edge12-r2: tangency-labs/solidcraft#13694: fails in the rollover (1001) once the WR-682 surface-plane trace is taken; main's default built it, and the trace's curves agree with the two-points intersector's to the tolerance, so the cause is not found yet
+  known failing radius-supported-at-limit-accepted: tangency-labs/solidcore#3245: at the minimum radius the result depends on rounding: the round and its end arcs lie r(sqrt(2) - 1) = 3.3e-5 from the corner they replace, inside the 5e-5 of the corner vertex's and the fillet's tolerances, so whether the end arcs are imprinted (and the trim closes) flips with ulp-level changes
+  known failing stubs4-delete-edge-sphere_diff_3cylinders-e2-r0.5: tangency-labs/solidcore#3053: with every fix off the round builds a body that is not closed (29 vertices, 44 edges, 9 faces, mass status 1007), where it was refused with status 1001
+BLESSED blend.fillet_executive_p3 cases=798 changed=4 added=0 removed=0 broken=0 known_failing=5 rust=59.604s
+  changed issue920-cylinder-rim-edge2-variable-constant-law-r9.99 (2 differences)
+    values.mass_properties[4]: -1.3369309002431992e-7 -> -1.3369309019796114e-7
+    values.mass_properties[9]: -0.0035012863851549025 -> -0.003501286397887855
+  changed issue920-cylinder-rim-edge2-constant-r9.99 (2 differences)
+    values.mass_properties[4]: -1.3369309002431992e-7 -> -1.3369309019796114e-7
+    values.mass_properties[9]: -0.0035012863851549025 -> -0.003501286397887855
+  changed stubs4-delete-edge-sphere_diff_3cylinders-e1-r0.1 (2 differences)
+    values.mass_properties[3]: 2.000232385818799e-7 -> 2.0002322346109653e-7
+    values.mass_properties[11]: 3.373261873816299 -> 3.373261862611359
+  changed stubs4-delete-edge-sphere_diff_3cylinders-e1-r0.5 (2 differences)
+    values.mass_properties[3]: 2.0045562656652054e-7 -> 2.0045561145552264e-7
+    values.mass_properties[11]: 3.3731968389625444 -> 3.373196827786696
+BLESSED blend.fillet_geom_p1 cases=2199 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.494s
+BLESSED blend.fillet_geom_p2 cases=1151 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=8.100s
+BLESSED blend.fillet_geom_p3 cases=325 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=5.831s
+BLESSED blend.fillet_geom_p4 cases=400 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.238s
+BLESSED blend.fillet_geom_p5 cases=300 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.567s
+BLESSED blend.fillet_geom_p6 cases=400 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=8.899s
+BLESSED blend.fillet_intersector cases=1292 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.435s
+BLESSED blend.fillet_removal cases=170 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=10.609s
+BLESSED blend.fillet_solver_p1 cases=351 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.245s
+BLESSED blend.fillet_solver_p2 cases=311 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.594s
+BLESSED blend.fillet_solver_p3 cases=400 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.091s
+BLESSED blend.fillet_solver_p4 cases=651 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.200s
+BLESSED blend.fillet_solver_p5 cases=100 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.029s
+BLESSED blend.fillet_standard_solver_p1 cases=3619 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.085s
+BLESSED blend.fillet_standard_solver_p2 cases=525 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.615s
+BLESSED blend.hcr cases=481 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=4.850s
+BLESSED blend.identify_fillet cases=510 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=30.988s
+  known failing gen0150: tangency-labs/solidcraft#14799: a sphere of radius -3.06e-4 united with a 7.5e-4 x 3.9e-4 x 1.4e-3 box returns the sphere alone (volume 1.20e-10, Level 2 check fails) where the union holds the box (4.28e-10); upstream refused it (1001) because its capture distance spanned both parts
+  known failing ub175_after_editing_imprint_failure: tangency-labs/solidcraft#14799: a sphere of radius 6.8e-4 united with a 7.8e-4 x 5.4e-4 x 7.2e-4 box reaching outside it returns the sphere alone (volume 1.33e-9, Level 2 check fails); upstream refused it (1001) because its capture distance spanned both parts
+  known failing wr614_strip_difference_d1.5e-05: tangency-labs/solidcore#1794: box A [-2,2]x[16,20]x[0,4] and a 4 mm cube B turned atan(0.1) whose face lies 1.5e-5 off A's face at its corner edge, past the 1e-5 tolerance, so neither the strip rule (WR-614) nor the speck skip (WR-619) applies; A minus B has no solid region (8 faces, volume 0) where the exact difference is 64 - 20.2 d^2 = 63.999999995455
+  known failing wr614_strip_intersection_d1.5e-05: tangency-labs/solidcore#1794: box A [-2,2]x[16,20]x[0,4] and a 4 mm cube B turned atan(0.1) whose face lies 1.5e-5 off A's face at its corner edge, past the 1e-5 tolerance, so neither the strip rule (WR-614) nor the speck skip (WR-619) applies; the intersection is two sheets of the strip (2 faces, no solid region) where the exact overlap is a wedge of 20.2 d^2 = 4.545e-9
+  known failing wr614_strip_measured_difference_d1.5e-05: tangency-labs/solidcore#1794: box A [-2,2]x[16,20]x[0,4] and a 4 mm cube B turned atan(0.1) whose face lies 1.5e-5 off A's face at its corner edge, past the 1e-5 tolerance, so neither the strip rule (WR-614) nor the speck skip (WR-619) applies; A minus B has no solid region (8 faces, volume 0) where the exact difference is 64 - 20.2 d^2 = 63.999999995455
+  known failing wr614_strip_measured_intersection_d1.5e-05: tangency-labs/solidcore#1794: box A [-2,2]x[16,20]x[0,4] and a 4 mm cube B turned atan(0.1) whose face lies 1.5e-5 off A's face at its corner edge, past the 1e-5 tolerance, so neither the strip rule (WR-614) nor the speck skip (WR-619) applies; the intersection is two sheets of the strip (2 faces, no solid region) where the exact overlap is a wedge of 20.2 d^2 = 4.545e-9
+  known failing wr614_strip_measured_union_d1.5e-05: tangency-labs/solidcore#1794: box A [-2,2]x[16,20]x[0,4] and a 4 mm cube B turned atan(0.1) whose face lies 1.5e-5 off A's face at its corner edge, past the 1e-5 tolerance, so neither the strip rule (WR-614) nor the speck skip (WR-619) applies; the union has no solid region (12 faces, not manifold, volume 0) where the exact union is 128 - 20.2 d^2 = 127.999999995455
+  known failing wr614_strip_union_d1.5e-05: tangency-labs/solidcore#1794: box A [-2,2]x[16,20]x[0,4] and a 4 mm cube B turned atan(0.1) whose face lies 1.5e-5 off A's face at its corner edge, past the 1e-5 tolerance, so neither the strip rule (WR-614) nor the speck skip (WR-619) applies; the union has no solid region (12 faces, not manifold, volume 0) where the exact union is 128 - 20.2 d^2 = 127.999999995455
+BLESSED boolean.api_brep cases=1134 changed=1 added=0 removed=0 broken=0 known_failing=8 rust=20.096s
+  changed issue1519_bench_tubes_union_measured (1 differences)
+    values.measures[3]: 3.051613264191845e-13 -> 3.051612577532675e-13
+BLESSED boolean.merge_p1 cases=251 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.202s
+BLESSED boolean.merge_p2 cases=45 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.143s
+BLESSED boolean.merge_p3 cases=438 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.246s
+BLESSED boolean.merge_p4 cases=311 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.160s
+BLESSED boolean.merge_p5 cases=140 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.083s
+BLESSED boolean.topology_intersector_p1 cases=845 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=20.461s
+BLESSED boolean.topology_intersector_p2 cases=913 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=22.821s
+BLESSED boolean.topology_intersector_p3 cases=271 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=7.567s
+BLESSED corpus.parity cases=268 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=97.102s
+BLESSED curve.composite_curve_p1 cases=3096 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=0.442s
+  changed gen0026 (1 differences)
+    values.out[0]: 6.280369834735101e-16 -> 4.965068306494546e-16
+BLESSED curve.composite_curve_p2 cases=676 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.410s
+BLESSED curve.conic cases=3240 changed=2 added=0 removed=0 broken=0 known_failing=0 rust=0.120s
+  changed gen2235 (1 differences)
+    values.r[4]: 3.776586443654626e-14 -> 3.552713678800501e-14
+  changed gen2842 (1 differences)
+    values.r[4]: 1.897149936107019e-15 -> 1.1102230246251565e-15
+BLESSED curve.crv_in_volume cases=2777 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.217s
+BLESSED curve.crv_on_surf cases=2407 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.375s
+BLESSED curve.curve_cache cases=642 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.140s
+BLESSED curve.curve_p1 cases=3096 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.640s
+BLESSED curve.curve_p2 cases=3029 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.179s
+BLESSED curve.curve_p3 cases=3085 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.291s
+BLESSED curve.curve_p4 cases=3260 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.226s
+BLESSED curve.curve_p5 cases=3140 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.270s
+BLESSED curve.curve_p6 cases=3138 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=0.311s
+  changed gen0701 (2 differences)
+    values.out[1]: 0.6532869827214393 -> 0.2908455181415962
+    values.out[2]: 0.6532869827214393 -> 0.2908455181415962
+BLESSED curve.curve_p7 cases=3067 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.627s
+BLESSED curve.curve_p8 cases=3069 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=1.879s
+  changed gen2473 (1 differences)
+    values.out[6]: 2.2887833992611187e-16 -> 6.304854800243424e-16
+BLESSED curve.curve_p9 cases=3126 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.729s
+BLESSED curve.ellipse_p1 cases=2527 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.283s
+BLESSED curve.ellipse_p2 cases=2107 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.181s
+BLESSED curve.hermite_curve cases=2731 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.128s
+BLESSED curve.hyperbola cases=2062 changed=7 added=0 removed=0 broken=0 known_failing=0 rust=0.114s
+  changed gen0191 (1 differences)
+    values.r.block[0]: [48989.3909303474,62057.570401600125,1286004.2916219477] -> [48989.391200402424,62057.570761988405,1286004.2998366542]
+  changed gen1068 (1 differences)
+    values.r.block[0]: [-2726296.3260484478,2763747.959435306,-78671732.58276375] -> [-2726296.3025146453,2763747.935901449,-78671731.88981324]
+  changed gen1117 (1 differences)
+    values.r.block[0]: [-3358.469941663956,3540.599574672211,-167926.6148395238] -> [-3358.46992558077,3540.599558531738,-167926.6140407817]
+  changed gen1579 (1 differences)
+    values.r.block[0]: [-3126.676349481689,55598.145354541615,-91174.34520194565] -> [-3126.534405940463,55596.66395991499,-91171.04139338284]
+  changed gen1885 (1 differences)
+    values.r.block[0]: [-428792.98438324325,481634.40537691826,-34638516.99411272] -> [-428792.99078291724,481634.41177667666,-34638517.492590085]
+  changed gen1962 (1 differences)
+    values.r.block[0]: [-360687.0501575938,376062.3813733954,-11780752.071087494] -> [-360687.0535155277,376062.38473168324,-11780752.169057896]
+  changed gen1966 (1 differences)
+    values.r.block[0]: [-558.762666367325,693.9091234829882,-16622.98368633359] -> [-558.7700103782067,693.9165416353383,-16623.205995238448]
+BLESSED curve.iso_curve cases=2874 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.365s
+BLESSED curve.line cases=2105 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.141s
+BLESSED curve.offset_curve cases=3123 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.256s
+BLESSED curve.parabola cases=3044 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.165s
+BLESSED curve.projected_curve cases=3047 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.421s
+BLESSED curve.tangent_field cases=1355 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.338s
+BLESSED geom.a_object cases=2040 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.271s
+BLESSED geom.assert_array cases=3735 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.388s
+BLESSED geom.attribute cases=2029 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.464s
+BLESSED geom.axis2_placement cases=4051 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.194s
+BLESSED geom.context cases=2013 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.413s
+BLESSED geom.extent1d cases=3091 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.099s
+BLESSED geom.extent2d cases=3489 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.104s
+BLESSED geom.extent3d cases=3086 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.099s
+BLESSED geom.geom_utility_p1 cases=4185 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.121s
+BLESSED geom.geom_utility_p2 cases=3282 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.096s
+BLESSED geom.global_solver cases=628 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.204s
+BLESSED geom.grid cases=621 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.179s
+BLESSED geom.hash_table cases=621 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.193s
+BLESSED geom.local_solve1d cases=3318 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.225s
+BLESSED geom.local_solve_nd cases=3043 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.422s
+BLESSED geom.matrix cases=4658 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.187s
+BLESSED geom.object cases=624 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.075s
+BLESSED geom.periodic_extent1d cases=4054 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.105s
+BLESSED geom.point_set cases=2032 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=0.169s
+  changed gen0423 (1 differences)
+    values.c04_tight.block[0]: [41.47610206404113,95.02264351910758,655.4321322835644] -> [26.36093298482022,96.32082572842621,469.7944518129709]
+BLESSED geom.polar_box cases=3033 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.696s
+BLESSED geom.polynomial cases=6038 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.147s
+BLESSED geom.pseudo_box cases=3012 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.696s
+BLESSED geom.solution_array cases=810 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.228s
+BLESSED geom.tol cases=3616 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.252s
+BLESSED geom.tools cases=915 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.140s
+BLESSED geom.transform cases=3042 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.157s
+BLESSED geom.tree cases=639 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.355s
+BLESSED geom.vector2d cases=4060 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.088s
+BLESSED geom.vector3d cases=6114 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.164s
+BLESSED heal.face_props cases=1873 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=10.987s
+BLESSED heal.gap cases=749 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.978s
+BLESSED heal.heal_data_p1 cases=495 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=6.412s
+BLESSED heal.heal_data_p2 cases=741 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=5.814s
+BLESSED heal.heal_data_p3 cases=702 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=5.670s
+BLESSED heal.stitch_p1 cases=674 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=3.100s
+BLESSED heal.stitch_p2 cases=841 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=4.454s
+BLESSED intersect.adv_surface_intersector cases=1949 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.522s
+BLESSED intersect.api_intersectors cases=477 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.303s
+BLESSED intersect.curve_class_p1 cases=2131 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.689s
+BLESSED intersect.curve_class_p2 cases=1671 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.944s
+BLESSED intersect.curve_class_p3 cases=3708 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=3.569s
+BLESSED intersect.curve_class_p4 cases=5410 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=32.275s
+BLESSED intersect.curve_class_p5 cases=1411 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.582s
+BLESSED intersect.curve_class_p6 cases=4470 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.422s
+BLESSED intersect.curve_class_p7 cases=1673 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=4.761s
+BLESSED intersect.curve_class_p8 cases=1127 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.243s
+BLESSED intersect.curve_class_p9 cases=457 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.128s
+BLESSED intersect.point_class cases=2520 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.655s
+BLESSED intersect.ray_tracer cases=433 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.293s
+BLESSED intersect.surface_drop_curve cases=547 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.094s
+BLESSED intersect.surface_drop_lib_p1 cases=2926 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.515s
+BLESSED intersect.surface_drop_lib_p2 cases=1531 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.408s
+BLESSED intersect.surface_drop_lib_p3 cases=1532 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.875s
+BLESSED intersect.surface_intersector_p1 cases=1510 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.599s
+BLESSED intersect.surface_intersector_p2 cases=1686 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.740s
+BLESSED intersect.surface_intersector_p3 cases=1527 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.582s
+BLESSED intersect.surface_intersector_p4 cases=1542 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.755s
+BLESSED intersect.surface_intersector_p5 cases=1731 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.204s
+BLESSED intersect.surface_silhouette cases=709 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.106s
+BLESSED intersect.surface_tracer cases=427 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.260s
+BLESSED intersect.topology_solver_p1 cases=3592 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.057s
+BLESSED intersect.topology_solver_p2 cases=2575 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.981s
+BLESSED mass.integrator cases=1628 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=3.257s
+  changed review_edge_constant_1e-09_[0, 1]_0 (1 differences)
+    values.out.block[0]: [1.5534559916868076e-16,1.635812374946403e-16,8.626116494384775e-16] -> [1.6670681559948615e-16,1.7554476818454137e-16,9.2569884146355e-16]
+BLESSED nlib.basis_adv cases=1751 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.116s
+BLESSED nlib.basis_basic cases=2605 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.154s
+BLESSED nlib.bezier cases=2223 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.114s
+BLESSED nlib.crv_adv_p1 cases=2670 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.462s
+BLESSED nlib.crv_adv_p2 cases=2820 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.543s
+BLESSED nlib.crv_approx cases=1646 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.357s
+BLESSED nlib.crv_basic cases=3417 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.387s
+BLESSED nlib.crv_common cases=2140 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.113s
+BLESSED nlib.crv_fit_p1 cases=2089 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.129s
+BLESSED nlib.crv_fit_p2 cases=2109 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.140s
+BLESSED nlib.crv_fit_p3 cases=2304 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.175s
+BLESSED nlib.crv_fit_p4 cases=932 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.037s
+BLESSED nlib.crv_geom cases=1725 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.710s
+BLESSED nlib.crv_nurb cases=2886 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.615s
+BLESSED nlib.crv_offset cases=1555 changed=2 added=0 removed=0 broken=0 known_failing=0 rust=1.568s
+  changed gen0171 (1 differences)
+    values.knots.block[0]: [80.0693609904125,80.0693609904125,8826.157765272006] -> [80.07027592861078,80.07027592861078,8826.185762380874]
+  changed gen1345 (1 differences)
+    values.knots.block[0]: [76.77617919415604,76.77617919415604,7500.580513265776] -> [76.76757018826926,76.76757018826926,7499.577476870226]
+BLESSED nlib.crv_tool_p1 cases=2143 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.301s
+BLESSED nlib.crv_tool_p2 cases=2126 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.351s
+BLESSED nlib.funcs_adv cases=2080 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.240s
+BLESSED nlib.funcs_basic cases=3130 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.331s
+BLESSED nlib.geom cases=3176 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.170s
+BLESSED nlib.iges cases=2029 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.147s
+BLESSED nlib.knots cases=2959 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.110s
+BLESSED nlib.math cases=3086 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.246s
+BLESSED nlib.spiral cases=2032 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.263s
+BLESSED nlib.srf_adv_p1 cases=2758 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.715s
+BLESSED nlib.srf_adv_p2 cases=1520 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.144s
+BLESSED nlib.srf_adv_p3 cases=3275 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.465s
+BLESSED nlib.srf_adv_p4 cases=3164 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.463s
+BLESSED nlib.srf_adv_p5 cases=3086 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.897s
+BLESSED nlib.srf_adv_p6 cases=1020 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.557s
+BLESSED nlib.srf_basic cases=3220 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.315s
+BLESSED nlib.srf_common cases=1550 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.181s
+BLESSED nlib.srf_fit cases=1556 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.228s
+BLESSED nlib.srf_nurb cases=2711 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.288s
+BLESSED nlib.srf_offset cases=438 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.954s
+BLESSED nlib.srf_tool_p1 cases=3133 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.536s
+BLESSED nlib.srf_tool_p2 cases=3102 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.447s
+BLESSED nlib.srf_tool_p3 cases=2524 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.695s
+BLESSED nlib.srf_tool_p4 cases=2681 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.776s
+BLESSED nurbs.b_spline_curve_n_lib cases=2436 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.662s
+BLESSED nurbs.b_spline_curve_p1 cases=2216 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.326s
+BLESSED nurbs.b_spline_curve_p2 cases=2335 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.437s
+BLESSED nurbs.b_spline_curve_p3 cases=2460 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.604s
+BLESSED nurbs.b_spline_surface_n_lib_p1 cases=701 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.371s
+BLESSED nurbs.b_spline_surface_n_lib_p2 cases=774 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.488s
+BLESSED nurbs.b_spline_surface_p1 cases=2126 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.299s
+BLESSED nurbs.b_spline_surface_p2 cases=815 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.098s
+BLESSED nurbs.nurbs_crv cases=4113 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.155s
+BLESSED nurbs.nurbs_srf cases=3092 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.497s
+  known failing extend_bilinear_huge: tangency-labs/solidcore#3000: a 5e8 extension of a bilinear sheet extends 3 of 4 sides; the opposite side's diameter is rounded on the whole net and reads as collapsed
+  known failing gen0004: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused; the second surface is refused naming a size that is itself refused
+  known failing gen0008: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.932 of the margin and is reported built; the second surface's rational extension reaches 0.989 of the margin and is reported built
+  known failing gen0009: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0012: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.812 of the margin and is reported built
+  known failing gen0015: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.686 of the margin and is reported built
+  known failing gen0016: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.662 of the margin and is reported built; the second surface is refused naming a size that is itself refused
+  known failing gen0029: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0033: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0035: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.628 of the margin and is reported built
+  known failing gen0036: tangency-labs/solidcore#3079: the second surface is refused naming a size that builds at 0.495 of it
+  known failing gen0037: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.782 of the margin and is reported built
+  known failing gen0058: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0075: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.804 of the margin and is reported built; the second surface's rational extension reaches 0.940 of the margin and is reported built
+  known failing gen0078: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0079: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.871 of the margin and is reported built
+  known failing gen0081: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.900 of the margin and is reported built
+  known failing gen0083: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0090: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0092: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0093: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.859 of the margin and is reported built
+  known failing gen0098: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.600 of the margin and is reported built
+  known failing gen0102: tangency-labs/solidcore#3057: extended by the margin on every side, the v sides certified on the box the u sides grew; the v sides reach 0.027 and 0.034 of the margin at the face
+  known failing gen0107: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.987 of the margin and is reported built
+  known failing gen0110: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.891 of the margin and is reported built
+  known failing gen0124: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.883 of the margin and is reported built
+  known failing gen0126: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.901 of the margin and is reported built; the second surface's rational extension reaches 0.846 of the margin and is reported built
+  known failing gen0128: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.943 of the margin and is reported built
+  known failing gen0132: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.661 of the margin and is reported built
+  known failing gen0135: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0138: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.917 of the margin and is reported built; the second surface's rational extension reaches 0.818 of the margin and is reported built
+  known failing gen0139: tangency-labs/solidcore#3079: the first surface is refused naming a size that builds at 0.350 of it
+  known failing gen0148: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0149: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.643 of the margin and is reported built; the second surface's rational extension reaches 0.817 of the margin and is reported built
+  known failing gen0153: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0154: tangency-labs/solidcore#3079: the first surface is refused naming a size that builds at 0.661 of it
+  known failing gen0163: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0164: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.722 of the margin and is reported built
+  known failing gen0174: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.809 of the margin and is reported built; the second surface is refused naming a size that is itself refused
+  known failing gen0179: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.964 of the margin and is reported built
+  known failing gen0182: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0197: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.629 of the margin and is reported built
+  known failing gen0214: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0215: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0222: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.814 of the margin and is reported built
+  known failing gen0225: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.796 of the margin and is reported built
+  known failing gen0228: tangency-labs/solidcore#3057: extended by the margin on every side, the v sides certified on the box the u sides grew; the v sides reach 4e-5 and 7e-5 of the margin at the face
+  known failing gen0231: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0237: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0241: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.729 of the margin and is reported built
+  known failing gen0242: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0257: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0275: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused; the second surface is refused naming a size that is itself refused
+  known failing gen0280: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0287: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0289: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.869 of the margin and is reported built
+  known failing gen0291: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0292: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0300: tangency-labs/solidcore#3079: the first surface is refused naming a size that builds at 0.563 of it
+  known failing gen0305: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.766 of the margin and is reported built
+  known failing gen0333: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0337: tangency-labs/solidcore#3079: the first surface is refused naming a size that builds at 0.714 of it
+  known failing gen0351: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused; the second surface is refused naming a size that is itself refused
+  known failing gen0362: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0371: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0373: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0378: tangency-labs/solidcore#3057: extended by the margin on every side, the v sides certified on the box the u sides grew; the v sides reach 1e-6 and 2e-6 of the margin at the face, and UMax reads as collapsed on a 1e-6 side
+  known failing gen0383: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused; the second surface is refused naming a size that is itself refused
+  known failing gen0393: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0397: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.818 of the margin and is reported built; the second surface's rational extension reaches 0.842 of the margin and is reported built
+  known failing gen0398: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0429: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.378 of the margin and is reported built; the second surface's rational extension reaches 0.824 of the margin and is reported built
+  known failing gen0445: tangency-labs/solidcore#3000: extended 5e7 on every side, UMax reads as collapsed (its ends 1.0 apart) and is not extended; the v sides are certified at the grown box's middle and reach 18.6 and 13.4 at the face (tangency-labs/solidcore#3057)
+  known failing gen0451: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0457: tangency-labs/solidcore#3079: the first surface is refused naming a size that builds at 0.592 of it; the second surface's rational extension reaches 0.783 of the margin and is reported built
+  known failing gen0462: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.614 of the margin and is reported built
+  known failing gen0466: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.332 of the margin and is reported built
+  known failing gen0471: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused; the second surface is refused naming a size that is itself refused
+  known failing gen0475: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0481: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.843 of the margin and is reported built; the second surface's rational extension reaches 0.931 of the margin and is reported built
+  known failing gen0486: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.493 of the margin and is reported built
+  known failing gen0496: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0504: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0520: tangency-labs/solidcore#3079: the second surface is refused naming a size that builds at 0.257 of it
+  known failing gen0522: tangency-labs/solidcore#3079: the second surface is refused naming a size that is itself refused
+  known failing gen0526: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0539: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.775 of the margin and is reported built
+  known failing gen0546: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0560: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.991 of the margin and is reported built; the second surface's rational extension reaches 0.889 of the margin and is reported built
+  known failing gen0572: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0580: tangency-labs/solidcore#3079: the first surface is refused naming a size that is itself refused
+  known failing gen0589: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.943 of the margin and is reported built
+  known failing gen0590: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.667 of the margin and is reported built
+  known failing gen0596: tangency-labs/solidcore#3079: the first surface's rational extension reaches 0.785 of the margin and is reported built
+  known failing gen0599: tangency-labs/solidcore#3079: the second surface's rational extension reaches 0.995 of the margin and is reported built
+BLESSED offset.offset_executive_p1 cases=1060 changed=0 added=0 removed=0 broken=0 known_failing=95 rust=0.927s
+  known failing fill_gap_extrudeHoles1_face0_extend_d13: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (28 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing fill_gap_open_shell_face0_extend_outset: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (18 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing fillet2_f0_d0_in_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (5 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing fillet2_f0_d0_out_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (4 lines, the first SmBrep::Test #2 Bad Gap)
+  known failing fillet2_f1_d0_in_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (3 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing fillet2_f1_d0_out_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (3 lines, the first SmBrep::Test #61 Valid)
+  known failing fillet2_f2_d0_in_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (5 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing fillet2_f2_d0_out_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (3 lines, the first SmBrep::Test #61 Valid)
+  known failing fuzz00108: tangency-labs/solidcore#3023: the edge's arc crosses its closed offset curve's seam, no interval gives it; the edge is left bad and status is success
+  known failing fuzz00117: tangency-labs/solidcore#3023: the edge's arc crosses its closed offset curve's seam, no interval gives it; the edge is left bad and status is success
+  known failing issue1528_plate_api_shell_2_volume: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (2 lines, the first SmBrep::Test #82 Tolerance)
+  known failing issue1528_plate_api_shell_2_volume_first: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (2 lines, the first SmBrep::Test #82 Tolerance)
+  known failing mate_two_curves_problemShell15_face8_inset: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (32 lines, the first SmBSplineCurve::Test #15 Bad Repeated CPts)
+  known failing mate_two_curves_problemShell15_face8_outset: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (30 lines, the first SmBSplineCurve::Test #15 Bad Repeated CPts)
+  known failing mate_two_curves_problemShell15_face9_inset: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (3 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing mate_two_curves_problemShell15_face9_outset: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (4 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing pe_Fillet_box_diff_cyl_f0_d0_out_ext: tangency-labs/solidcore#3023: the edge's arc crosses its closed offset curve's seam, no interval gives it; the edge is left bad and status is success
+  known failing pe_Fillet_box_diff_cyl_f1_d0_out_ext: tangency-labs/solidcore#3023: the edge's arc crosses its closed offset curve's seam, no interval gives it; the edge is left bad and status is success
+  known failing pe_Fillet_box_diff_cyl_f2_d0_out_ext: tangency-labs/solidcore#3023: the edge's arc crosses its closed offset curve's seam, no interval gives it; the edge is left bad and status is success
+  known failing pe_Fillet_cyl_on_box_w_fillet1_f1_d0_out_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (7 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing pe_Fillet_cyl_on_box_w_fillet2_f0_d0_in_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (6 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing pe_Fillet_cyl_on_box_w_fillet2_f0_d0_out_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (9 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing pe_Fillet_cyl_on_box_w_fillet2_f2_d0_in_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (9 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing pe_Fillet_cyl_on_box_w_fillet2_f2_d0_out_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (11 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing pe_Fillet_cyl_on_box_w_fillet_f1_d0_out_ext: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (7 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+  known failing shell_file_problemShell15_face0_extend: tangency-labs/solidcore#3094: success with a body that fails check_brep level 2 (12 lines, the first SmTrimmingTools::Test #0 Edge/Edge Gap)
+BLESSED offset.offset_executive_p2 cases=594 changed=0 added=0 removed=0 broken=0 known_failing=26 rust=82.030s
+BLESSED offset.offset_geometry_creation cases=926 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=89.743s
+BLESSED primitive.api_curve_ops cases=638 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.341s
+BLESSED primitive.api_curves cases=2046 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.138s
+BLESSED primitive.api_primitives cases=2245 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=6.655s
+BLESSED primitive.api_surface_ops cases=570 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.417s
+BLESSED primitive.api_trim_ops cases=211 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=3.402s
+BLESSED primitive.primitive_creation_p1 cases=773 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.153s
+BLESSED primitive.primitive_creation_p2 cases=374 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=9.730s
+BLESSED primitive.primitive_creation_p3 cases=330 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.151s
+BLESSED query.api_queries cases=1399 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.141s
+BLESSED query.brep cases=1172 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=6.713s
+BLESSED query.edge cases=1368 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=14.075s
+BLESSED query.face_p1 cases=2266 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=11.343s
+BLESSED query.face_p2 cases=1401 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=21.582s
+BLESSED query.face_p3 cases=1199 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=6.599s
+BLESSED query.face_p4 cases=503 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=11.576s
+BLESSED query.loop cases=3120 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.812s
+BLESSED query.poly cases=966 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.288s
+BLESSED query.poly_copy cases=524 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.099s
+BLESSED query.poly_properties cases=641 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.077s
+BLESSED query.tess cases=676 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.499s
+BLESSED surface.b_spline_volume cases=2333 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.260s
+BLESSED surface.b_spline_volume_n_lib cases=2420 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.685s
+BLESSED surface.bend_volume cases=2347 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.130s
+BLESSED surface.cone_p1 cases=20736 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=4.050s
+BLESSED surface.cone_p2 cases=1713 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.224s
+BLESSED surface.cone_p3 cases=1490 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.113s
+BLESSED surface.curve_bounded_surface cases=537 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.097s
+  known failing dome_pole_d0_2_p2: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing dome_pole_d0_2_p3: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing dome_pole_d2_0_p2: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing dome_pole_d2_0_p3: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing dome_pole_dm0_2_p2: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing dome_pole_dm0_2_p3: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing gen0033: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,1) at out[67]; input-only oracle confirms the named value is wrong
+  known failing gen0086: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[30]
+  known failing gen0111: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[178]
+  known failing gen0112: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen0124: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[18]
+  known failing gen0129: tangency-labs/solidcraft#13610: simple evaluation includes incorrect unchanged partials at a collapsed boundary; changing third-order terms does not correct them
+  known failing gen0166: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[16]
+  known failing gen0201: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen0256: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen0351: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,1) at out[73]; input-only oracle confirms the named value is wrong
+  known failing gen0411: tangency-labs/solidcore#2717: step 3 names D(3,0), overwritten by D(1,2) at out[86]
+  known failing gen0414: tangency-labs/solidcore#2717: step 4 names D(2,0), overwritten by D(1,2) at out[133]
+  known failing gen0460: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[66]
+  known failing gen0495: tangency-labs/solidcore#2717: step 3 names D(3,0), overwritten by D(1,2) at out[127]
+  known failing gen0500: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,2) at out[68]
+  known failing gen0550: tangency-labs/solidcore#2717: step 5 names D(2,0), overwritten by D(1,2) at out[96]
+  known failing gen0551: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen0554: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[24]
+  known failing gen0565: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen0615: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[43]
+  known failing gen0640: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[123]
+  known failing gen0641: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[123]
+  known failing gen0690: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,1) at out[62]; input-only oracle confirms the named value is wrong
+  known failing gen0757: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,1) at out[63..65]; input-only oracle at the explicitly clamped point confirms all three named components are wrong
+  known failing gen0758: tangency-labs/solidcraft#13770: step 2 names D(2,0), overwritten by D(1,2); returned (-1.94718431,-5.38645335,-4.71215815) disagrees with the input-derived requested partial near zero
+  known failing gen0761: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[46]
+  known failing gen0785: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen0837: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[25]
+  known failing gen0863: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen0869: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[25]
+  known failing gen0896: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen0942: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[75]
+  known failing gen0968: tangency-labs/solidcraft#13770: step 3 names D(2,0), overwritten by D(1,2) near zero; the independent requested partial is (0.2093499883,0.1181895290,0.0017291949)
+  known failing gen0978: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen1010: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,2) at out[91]
+  known failing gen1033: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,2) at out[77]
+  known failing gen1058: tangency-labs/solidcore#2717: step 4 names D(3,0), overwritten by D(1,2) at out[88]
+  known failing gen1110: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,1) at out[9]; input-only oracle confirms the named value is wrong
+  known failing gen1114: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[30]
+  known failing gen1119: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[78]
+  known failing gen1121: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[72]
+  known failing gen1167: tangency-labs/solidcore#2717: step 5 names D(3,0), overwritten by D(1,2) at out[110]
+  known failing gen1174: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen1265: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen1274: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen1310: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,1) at out[8]; input-only oracle confirms the named value is wrong
+  known failing gen1333: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[66]
+  known failing gen1360: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[28]
+  known failing gen1363: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,2) at out[84]
+  known failing gen1385: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[178]
+  known failing gen1397: tangency-labs/solidcore#2717: step 4 names D(3,0), overwritten by D(1,2) at out[53]
+  known failing gen1403: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen1410: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[69]
+  known failing gen1444: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen1468: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[15]
+  known failing gen1558: tangency-labs/solidcraft#13610: simple evaluation includes incorrect unchanged partials at a collapsed boundary; changing third-order terms does not correct them
+  known failing gen1562: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen1572: tangency-labs/solidcraft#13770: step 2 names D(2,0), overwritten by D(1,1) at out[69..71]; z is 1.0207003064054485 instead of approximately zero
+  known failing gen1584: tangency-labs/solidcore#2717: step 4 names D(2,0), overwritten by D(1,2) at out[30]
+  known failing gen1603: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[27..28]; input-only revolution oracle confirms both named components are wrong
+  known failing gen1635: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[87]
+  known failing gen1643: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,2) at out[69]; input-only oracle confirms the named value is wrong
+  known failing gen1694: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[72]
+  known failing gen1726: tangency-labs/solidcore#2717: step 4 names D(2,0), overwritten by D(1,2) at out[92]
+  known failing gen1733: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen1792: tangency-labs/solidcraft#13770: step 5 names D(2,0), overwritten by D(1,2); returned norm 0.0005033 disagrees with the independent requested norm 0.03875873
+  known failing gen1817: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[28]
+  known failing gen1818: tangency-labs/solidcore#2717: step 5 names D(3,0), overwritten by D(1,2) at out[161]
+  known failing gen1890: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[22]
+  known failing gen1911: tangency-labs/solidcraft#13770: step 5 names D(2,0), overwritten by D(1,2) near zero; the independent requested partial is (0.0425892503,-0.0189831096,0.0317060344)
+  known failing gen1955: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen2010: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[16]
+  known failing gen2015: tangency-labs/solidcore#2717: step 3 names D(3,0), overwritten by D(1,2) at out[89]
+  known failing gen2072: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen2140: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen2168: tangency-labs/solidcore#2717: step 3 names D(3,0), overwritten by D(1,2) at out[103]
+  known failing gen2170: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen2213: tangency-labs/solidcore#2717: step 4 names D(3,0), overwritten by D(1,2) at out[87]
+  known failing gen2240: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[66]
+  known failing gen2243: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,1) at out[60..62]; input-only pre-swap oracle confirms all three named components are wrong
+  known failing gen2257: tangency-labs/solidcore#2717: step 3 names D(3,0), overwritten by D(1,2) at out[70]
+  known failing gen2381: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,2) at out[68]
+  known failing gen2485: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[32]
+  known failing gen2495: tangency-labs/solidcore#2717: step 5 names D(3,0), overwritten by D(1,2) at out[108]
+  known failing gen2543: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen2598: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[68]
+  known failing gen2607: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,2) at out[26]
+  known failing gen2685: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[22]
+  known failing gen2743: tangency-labs/solidcraft#13770: step 4 names D(2,0) and D(3,0), overwritten by D(1,1) and D(1,2); independent affine-offset derivatives disagree
+  known failing gen2754: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[33]
+  known failing gen2756: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen2824: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen2891: tangency-labs/solidcraft#13770: requested D(3,0).x/y are -156.0921328062421/69.66976279515482, but D(1,2) overwrites the slot with values near zero
+  known failing gen2945: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen2949: tangency-labs/solidcore#2717: step 4 names D(2,0), overwritten by D(1,2) at out[92]
+  known failing gen2966: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing upper_half_slot_overwrite: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,2) at out[26]
+BLESSED surface.offset_surface cases=3182 changed=0 added=0 removed=0 broken=0 known_failing=103 rust=61.618s
+BLESSED surface.plane_p1 cases=2698 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.271s
+BLESSED surface.plane_p2 cases=2228 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.181s
+BLESSED surface.sphere cases=816 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.140s
+BLESSED surface.srf_in_volume cases=4567 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.706s
+BLESSED surface.surf_of_extrusion_p1 cases=2071 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.256s
+BLESSED surface.surf_of_extrusion_p2 cases=1528 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=3.742s
+  changed gen0353 (1 differences)
+    values.out: {"blocks":[["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],[114.38229219194231,114.38229219194231,4851.028973687412]],"n":2639} -> {"blocks":[["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],[126.03212584936361,126.03212584936361,8514.582910933512]],"n":2669}
+BLESSED surface.surf_of_revolution_p1 cases=895 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.141s
+BLESSED surface.surf_of_revolution_p2 cases=1167 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.681s
+BLESSED surface.surf_of_revolution_p3 cases=26731 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=7.176s
+BLESSED surface.surface_approximate cases=437 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=133.941s
+BLESSED surface.surface_assert_valid cases=2902 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.345s
+BLESSED surface.surface_cache_p1 cases=872 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.130s
+BLESSED surface.surface_cache_p2 cases=913 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.142s
+BLESSED surface.surface_cache_p3 cases=600 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.012s
+BLESSED surface.surface_p1 cases=1000 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.056s
+BLESSED surface.surface_p10 cases=867 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.250s
+BLESSED surface.surface_p11 cases=814 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.160s
+BLESSED surface.surface_p2 cases=17593 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=9.962s
+BLESSED surface.surface_p3 cases=2507 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.554s
+BLESSED surface.surface_p4 cases=3377 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.512s
+BLESSED surface.surface_p5 cases=3118 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.466s
+BLESSED surface.surface_p6 cases=2104 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.313s
+BLESSED surface.surface_p7 cases=3741 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=9.966s
+BLESSED surface.surface_p8 cases=2108 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.901s
+BLESSED surface.surface_p9 cases=833 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.108s
+BLESSED surface.surface_point_solve_p1 cases=1035 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.179s
+BLESSED surface.surface_point_solve_p2 cases=1366 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.469s
+BLESSED surface.surface_point_solve_p3 cases=1365 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.621s
+BLESSED surface.torus cases=758 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.129s
+BLESSED surface.trim_srf_cache cases=779 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.523s
+BLESSED surface.twist_volume cases=1572 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.081s
+BLESSED surface.unbend_volume cases=1874 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.448s
+BLESSED surface.volume_p1 cases=2886 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.207s
+BLESSED surface.volume_p2 cases=11220 changed=25 added=0 removed=0 broken=0 known_failing=0 rust=2.052s
+  changed bend_std_single_inv_eval_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_single_inv_eval_g_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_single_inv_map_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_t_inv_eval_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_t_inv_eval_g_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_t_inv_map_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_scale_inv_eval_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_scale_inv_eval_g_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_scale_inv_map_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_twist_inv_eval_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_twist_inv_eval_g_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_twist_inv_map_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_unbend_inv_eval_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_unbend_inv_eval_g_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_unbend_inv_map_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_base_inv_eval_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_base_inv_eval_g_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_base_inv_map_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_bend_inv_eval_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_bend_inv_eval_g_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_std_then_bend_inv_map_2 (1 differences)
+    values.out[6]: 0.0 -> 8.881784197001252e-16
+  changed bend_tilted_then_twist_inv_eval_7 (1 differences)
+    values.out[6]: 3.906326994424336e-16 -> 3.8405976503431147e-16
+  changed bend_huge_single_inv_eval_6 (1 differences)
+    values.out[6]: 1.6607703462850986e-11 -> 1.5192658288452392e-11
+  changed bend_huge_single_inv_eval_g_6 (1 differences)
+    values.out[6]: 1.6607703462850986e-11 -> 1.5192658288452392e-11
+  changed bend_huge_single_inv_map_6 (1 differences)
+    values.out[6]: 1.6607703462850986e-11 -> 1.5192658288452392e-11
+BLESSED sweep.api_brep cases=696 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=4.634s
+BLESSED sweep.api_surfaces cases=885 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=3.084s
+BLESSED sweep.rotational_sweep_geometry cases=823 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.093s
+BLESSED sweep.topology_sweep cases=703 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.943s
+BLESSED sweep.trans_sweep_geometry cases=788 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.076s
+BLESSED topology.api_files cases=339 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=5.103s
+BLESSED topology.api_projection cases=48 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=5.187s
+BLESSED topology.assert_valid cases=965 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=14.303s
+BLESSED topology.brep_cache cases=663 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.196s
+BLESSED topology.brep_constructor cases=185 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.121s
+BLESSED topology.brep_cutting cases=108 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=5.398s
+BLESSED topology.brep_data cases=2379 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.738s
+  known failing gen0014: tangency-labs/solidcore#2981: tilted disk returns three non-collinear straight boundary carriers; an affine image of the semicircle-and-diameter boundary has only one
+  known failing gen0019: tangency-labs/solidcore#2981: tilted disk returns three non-collinear straight boundary carriers; an affine image of the semicircle-and-diameter boundary has only one
+  known failing gen0073: tangency-labs/solidcore#2981: tilted disk returns three non-collinear straight boundary carriers; an affine image of the semicircle-and-diameter boundary has only one
+  known failing gen0078: tangency-labs/solidcore#2981: tilted disk returns three non-collinear straight boundary carriers; an affine image of the semicircle-and-diameter boundary has only one
+BLESSED topology.brep_local_operation cases=165 changed=0 added=0 removed=0 broken=0 known_failing=4 rust=49.907s
+BLESSED topology.brep_mirror cases=341 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=17.949s
+BLESSED topology.brep_p1 cases=2636 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=68.339s
+BLESSED topology.brep_p10 cases=1436 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=12.713s
+BLESSED topology.brep_p2 cases=1720 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=34.746s
+BLESSED topology.brep_p3 cases=1358 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=31.416s
+BLESSED topology.brep_p4 cases=327 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=5.551s
+BLESSED topology.brep_p5 cases=797 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.117s
+BLESSED topology.brep_p6 cases=595 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=8.394s
+BLESSED topology.brep_p7 cases=462 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=14.740s
+BLESSED topology.brep_p8 cases=355 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.121s
+BLESSED topology.brep_p9 cases=710 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.741s
+BLESSED topology.brep_planar_section cases=167 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=9.724s
+BLESSED topology.brep_validation cases=112 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.105s
+BLESSED topology.database_io cases=2066 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.196s
+BLESSED topology.edge cases=2949 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=46.617s
+BLESSED topology.edgeuse_p1 cases=5586 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=78.046s
+BLESSED topology.edgeuse_p2 cases=4795 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=62.361s
+BLESSED topology.edgeuse_p3 cases=5611 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=78.646s
+BLESSED topology.face_p1 cases=2569 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=34.306s
+BLESSED topology.face_p2 cases=2692 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=55.032s
+BLESSED topology.face_p3 cases=2407 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=6.242s
+BLESSED topology.face_p4 cases=5930 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=9.938s
+BLESSED topology.loopuse cases=9013 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=212.114s
+BLESSED topology.part_file cases=76 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=3.015s
+BLESSED topology.proto_topology_p1 cases=1922 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.698s
+BLESSED topology.proto_topology_p2 cases=1767 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.744s
+BLESSED topology.proto_topology_p3 cases=3013 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.592s
+BLESSED topology.shell cases=944 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.064s
+BLESSED topology.topology cases=658 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.061s
+BLESSED topology.topology_traverser cases=909 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.052s
+BLESSED topology.trimming_tools cases=3305 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=61.253s
+BLESSED topology.vertex cases=5954 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=58.543s
+BLESSED topology.vertexuse cases=2686 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=22.267s
+goldens: 283 unit(s), 283 passed, 0 failed
+goldens --jobs 4: wall 540.5 s, sum of unit times 2058.6 s, longest unit topology.loopuse 212.2 s
+exit=0 wall=540.545965692s

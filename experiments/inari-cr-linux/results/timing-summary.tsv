@@ -1,0 +1,22 @@
+whole	variant	wall_s	unit_times_s	wall_change	unit_times_change
+whole	baseline	519.4	1984.7	+0.0%	+0.2%
+whole	baseline	519.2	1978.6	-0.0%	-0.2%
+whole	cr-ca6	532.9	2025.8	+2.6%	+2.2%
+whole	cr-main	532.0	2022.3	+2.4%	+2.1%
+
+heavy	unit	variant	round_1_s	round_2_s	change_of_mean
+heavy	corpus.parity	baseline	92.03	91.88	+0.0%
+heavy	corpus.parity	cr-main	94.24	94.13	+2.4%
+heavy	corpus.parity	cr-ca6	93.70	94.00	+2.1%
+heavy	offset.offset_executive_p2	baseline	75.39	75.32	+0.0%
+heavy	offset.offset_executive_p2	cr-main	78.58	78.34	+4.1%
+heavy	offset.offset_executive_p2	cr-ca6	79.94	79.39	+5.7%
+heavy	blend.fillet_executive_p3	baseline	55.81	55.75	+0.0%
+heavy	blend.fillet_executive_p3	cr-main	58.04	57.86	+3.9%
+heavy	blend.fillet_executive_p3	cr-ca6	57.95	58.28	+4.2%
+heavy	blend.feature_executive	baseline	19.62	19.39	+0.0%
+heavy	blend.feature_executive	cr-main	20.05	20.11	+2.9%
+heavy	blend.feature_executive	cr-ca6	20.19	20.24	+3.6%
+heavy	surface.surface_p7	baseline	6.88	6.91	+0.0%
+heavy	surface.surface_p7	cr-main	9.01	9.04	+30.9%
+heavy	surface.surface_p7	cr-ca6	9.74	9.71	+41.1%

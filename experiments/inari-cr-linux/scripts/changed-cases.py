@@ -43,7 +43,7 @@ def listed_changes(log):
     out, unit = {}, None
     with open(log) as f:
         for line in f:
-            m = re.match(r"(PASS|FAIL) (\S+) cases=", line)
+            m = re.match(r"(PASS|FAIL|BLESSED) (\S+) cases=", line)
             if m:
                 unit = m.group(2)
                 continue

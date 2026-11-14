@@ -1,0 +1,6 @@
+cr: Linux 1200 cases, macOS 1200; in both 1200
+cr: only on Linux 0, only on macOS 0
+cr: golden records differ in 0 shared cases (should be 0)
+cr: cr records differ in 0 shared cases
+libm: glibc differs from the golden in 261 cases, Apple's libm in 9624
+libm: glibc and Apple's libm give different outputs in 9404 cases
