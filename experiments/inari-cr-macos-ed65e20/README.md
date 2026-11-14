@@ -107,8 +107,10 @@ on this machine (Apple M1 Pro, macOS 26.6.2), with rustc 1.99.1.
 
 - **Builds:** `cargo build --release --locked --bin speed --bin interval`, in two variants:
   `aarch64` (inari's default backend) and `generic` (`--features force-generic`).
-- **Not built:** `accuracy`. It fails to link here: the GMP and MPFR that `gmp-mpfr-sys`
-  builds for `rug` are built for macOS 26.0, and the link targets 11.0. Item 3 doesn't use it.
+- **Not built:** `accuracy`. It fails to link on macOS: `src/bin/accuracy.rs` declares
+  glibc's `sincos`, and Apple's libm has none (its equivalent is `__sincos_stret`). The
+  linker's warnings that GMP and MPFR were built for macOS 26.0 are only warnings. Item 3
+  doesn't use `accuracy`.
 - **Runs:** `scripts/run-micro.sh`. Each program runs alone, one after another: `speed`,
   `speed --acos-args results/acos-args.tsv` and `interval`, for each build. macOS has no
   `taskset`, so nothing is pinned. The whole set ran twice, in `results/micro/round-1/`
