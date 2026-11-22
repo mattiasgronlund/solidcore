@@ -1,0 +1,12 @@
+glibc (baseline) all: 261 cases in 23 units differ from the golden bit for bit; 4 beyond 1e-9 relative; 0 listed by the goldens tool
+glibc (baseline) float-only: 261 cases in 23 units differ from the golden bit for bit; 4 beyond 1e-9 relative; 0 listed by the goldens tool
+glibc (baseline) other: 0 cases in 0 units differ from the golden bit for bit; 0 beyond 1e-9 relative; 0 listed by the goldens tool
+cr-new (cr-new) all: 1200 cases in 75 units differ from the golden bit for bit; 53 beyond 1e-9 relative; 47 listed by the goldens tool
+cr-new (cr-new) float-only: 1200 cases in 75 units differ from the golden bit for bit; 53 beyond 1e-9 relative; 47 listed by the goldens tool
+cr-new (cr-new) other: 0 cases in 0 units differ from the golden bit for bit; 0 beyond 1e-9 relative; 0 listed by the goldens tool
+libm (det-libm) all: 0 cases in 0 units differ from the golden bit for bit; 0 beyond 1e-9 relative; 0 listed by the goldens tool
+libm (det-libm) float-only: 0 cases in 0 units differ from the golden bit for bit; 0 beyond 1e-9 relative; 0 listed by the goldens tool
+libm (det-libm) other: 0 cases in 0 units differ from the golden bit for bit; 0 beyond 1e-9 relative; 0 listed by the goldens tool
+det-cr (det-cr) all: 8154 cases in 167 units differ from the golden bit for bit; 879 beyond 1e-9 relative; 876 listed by the goldens tool
+det-cr (det-cr) float-only: 8107 cases in 166 units differ from the golden bit for bit; 832 beyond 1e-9 relative; 829 listed by the goldens tool
+det-cr (det-cr) other: 47 cases in 10 units differ from the golden bit for bit; 47 beyond 1e-9 relative; 47 listed by the goldens tool

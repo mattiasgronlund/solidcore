@@ -1,0 +1,125 @@
+speed	build	function	range	glibc_ns	libm_ns	cr_ns	ratio	cr_vs_libm
+speed	main-gen-default	acos	[-1, 1]	16.1	11.1	69.3	4.31	6.27
+speed	main-gen-default	asin	[-1, 1]	16.1	11.3	63.5	3.94	5.63
+speed	main-gen-default	atan	[-10, 10]	11.5	10.7	33.4	2.91	3.13
+speed	main-gen-default	atan2	[-1, 1]²	23.8	25.7	48.3	2.03	1.88
+speed	main-gen-default	sin	[-7, 7]	18.7	18.3	31.5	1.69	1.72
+speed	main-gen-default	cos	[-7, 7]	17.4	17.5	31.8	1.82	1.82
+speed	main-gen-default	tan	[-1.5, 1.5]	15.2	16.0	41.9	2.75	2.62
+speed	main-gen-default	exp	[-10, 10]	5.1	9.7	14.4	2.83	1.49
+speed	main-gen-default	ln	[1e-3, 1e3]	4.8	7.9	22.9	4.73	2.90
+speed	main-gen-default	pow	[0.01, 100] × [-10, 10]	13.8	44.9	50.3	3.63	1.12
+speed	main-native	acos	[-1, 1]	16.0	11.1	50.9	3.19	4.58
+speed	main-native	asin	[-1, 1]	15.8	11.1	47.8	3.02	4.32
+speed	main-native	atan	[-10, 10]	11.7	10.6	25.2	2.16	2.38
+speed	main-native	atan2	[-1, 1]²	23.5	24.8	39.6	1.69	1.60
+speed	main-native	sin	[-7, 7]	17.5	16.5	23.1	1.32	1.40
+speed	main-native	cos	[-7, 7]	16.2	16.0	22.8	1.41	1.42
+speed	main-native	tan	[-1.5, 1.5]	15.4	16.1	28.3	1.84	1.76
+speed	main-native	exp	[-10, 10]	5.1	9.6	8.9	1.75	0.93
+speed	main-native	ln	[1e-3, 1e3]	4.6	7.6	20.1	4.34	2.65
+speed	main-native	pow	[0.01, 100] × [-10, 10]	14.0	44.6	38.3	2.74	0.86
+speed	main-gen-native	acos	[-1, 1]	16.0	11.1	51.0	3.18	4.58
+speed	main-gen-native	asin	[-1, 1]	15.9	11.0	47.9	3.02	4.37
+speed	main-gen-native	atan	[-10, 10]	11.7	10.4	25.2	2.16	2.42
+speed	main-gen-native	atan2	[-1, 1]²	23.5	25.1	39.9	1.70	1.59
+speed	main-gen-native	sin	[-7, 7]	17.5	16.4	23.1	1.32	1.40
+speed	main-gen-native	cos	[-7, 7]	16.2	16.2	23.0	1.42	1.42
+speed	main-gen-native	tan	[-1.5, 1.5]	15.3	16.0	28.3	1.85	1.77
+speed	main-gen-native	exp	[-10, 10]	5.0	9.6	8.9	1.79	0.92
+speed	main-gen-native	ln	[1e-3, 1e3]	4.6	7.6	20.2	4.41	2.66
+speed	main-gen-native	pow	[0.01, 100] × [-10, 10]	14.0	44.6	38.4	2.75	0.86
+speed	ca6-gen-default	acos	[-1, 1]	15.9	11.0	86.9	5.45	7.87
+speed	ca6-gen-default	asin	[-1, 1]	15.8	11.3	81.2	5.13	7.20
+speed	ca6-gen-default	atan	[-10, 10]	11.5	10.7	62.2	5.43	5.83
+speed	ca6-gen-default	atan2	[-1, 1]²	23.7	25.3	74.5	3.14	2.94
+speed	ca6-gen-default	sin	[-7, 7]	17.5	17.0	29.5	1.69	1.73
+speed	ca6-gen-default	cos	[-7, 7]	16.3	16.5	29.8	1.83	1.81
+speed	ca6-gen-default	tan	[-1.5, 1.5]	15.2	16.0	41.9	2.75	2.63
+speed	ca6-gen-default	exp	[-10, 10]	5.0	9.7	14.4	2.91	1.49
+speed	ca6-gen-default	ln	[1e-3, 1e3]	4.6	7.9	22.9	4.93	2.90
+speed	ca6-gen-default	pow	[0.01, 100] × [-10, 10]	13.9	44.9	50.3	3.62	1.12
+speed	ca6-native	acos	[-1, 1]	16.0	11.1	67.9	4.25	6.10
+speed	ca6-native	asin	[-1, 1]	15.8	11.2	63.8	4.03	5.71
+speed	ca6-native	atan	[-10, 10]	11.7	10.4	52.4	4.48	5.02
+speed	ca6-native	atan2	[-1, 1]²	23.4	24.6	63.7	2.72	2.59
+speed	ca6-native	sin	[-7, 7]	17.6	16.8	23.3	1.33	1.39
+speed	ca6-native	cos	[-7, 7]	16.2	16.1	22.8	1.41	1.41
+speed	ca6-native	tan	[-1.5, 1.5]	15.4	16.1	28.4	1.84	1.77
+speed	ca6-native	exp	[-10, 10]	5.0	9.6	9.0	1.80	0.93
+speed	ca6-native	ln	[1e-3, 1e3]	4.6	7.6	20.1	4.40	2.66
+speed	ca6-native	pow	[0.01, 100] × [-10, 10]	13.9	44.8	38.6	2.77	0.86
+speed	ca6-gen-native	acos	[-1, 1]	16.0	11.1	67.9	4.25	6.11
+speed	ca6-gen-native	asin	[-1, 1]	15.9	11.2	63.9	4.02	5.71
+speed	ca6-gen-native	atan	[-10, 10]	11.7	10.4	52.4	4.48	5.02
+speed	ca6-gen-native	atan2	[-1, 1]²	23.4	24.6	63.7	2.73	2.59
+speed	ca6-gen-native	sin	[-7, 7]	17.6	16.7	23.2	1.32	1.39
+speed	ca6-gen-native	cos	[-7, 7]	16.2	16.2	22.8	1.41	1.41
+speed	ca6-gen-native	tan	[-1.5, 1.5]	15.4	16.1	28.4	1.85	1.77
+speed	ca6-gen-native	exp	[-10, 10]	4.9	9.6	8.9	1.80	0.93
+speed	ca6-gen-native	ln	[1e-3, 1e3]	4.6	7.6	20.1	4.39	2.65
+speed	ca6-gen-native	pow	[0.01, 100] × [-10, 10]	14.0	44.8	38.6	2.76	0.86
+speed	new-default	acos	[-1, 1]	16.2	11.2	23.0	1.42	2.05
+speed	new-default	asin	[-1, 1]	16.2	11.4	19.2	1.18	1.69
+speed	new-default	atan	[-10, 10]	11.5	10.6	23.2	2.02	2.18
+speed	new-default	atan2	[-1, 1]²	23.7	25.4	37.3	1.57	1.47
+speed	new-default	sin	[-7, 7]	17.5	17.0	15.8	0.91	0.93
+speed	new-default	cos	[-7, 7]	16.3	16.1	16.7	1.03	1.04
+speed	new-default	tan	[-1.5, 1.5]	15.3	16.1	17.0	1.11	1.05
+speed	new-default	exp	[-10, 10]	5.0	9.7	8.5	1.72	0.88
+speed	new-default	ln	[1e-3, 1e3]	4.7	7.9	18.1	3.88	2.29
+speed	new-default	pow	[0.01, 100] × [-10, 10]	13.9	45.0	36.9	2.65	0.82
+speed	new-gen-default	acos	[-1, 1]	16.1	11.1	30.1	1.87	2.71
+speed	new-gen-default	asin	[-1, 1]	16.1	11.3	25.9	1.61	2.29
+speed	new-gen-default	atan	[-10, 10]	11.5	10.7	33.1	2.88	3.10
+speed	new-gen-default	atan2	[-1, 1]²	23.6	25.7	48.4	2.05	1.88
+speed	new-gen-default	sin	[-7, 7]	17.5	16.8	18.8	1.08	1.12
+speed	new-gen-default	cos	[-7, 7]	16.2	16.3	18.6	1.14	1.14
+speed	new-gen-default	tan	[-1.5, 1.5]	15.3	16.0	27.7	1.81	1.73
+speed	new-gen-default	exp	[-10, 10]	5.0	9.6	11.1	2.23	1.15
+speed	new-gen-default	ln	[1e-3, 1e3]	4.6	7.9	23.2	4.99	2.93
+speed	new-gen-default	pow	[0.01, 100] × [-10, 10]	13.9	44.8	48.2	3.47	1.07
+speed	new-native	acos	[-1, 1]	16.1	11.2	24.0	1.49	2.14
+speed	new-native	asin	[-1, 1]	15.8	11.1	20.5	1.29	1.85
+speed	new-native	atan	[-10, 10]	11.7	10.4	25.2	2.16	2.43
+speed	new-native	atan2	[-1, 1]²	23.6	25.0	40.4	1.71	1.62
+speed	new-native	sin	[-7, 7]	17.5	16.4	17.2	0.98	1.05
+speed	new-native	cos	[-7, 7]	16.2	16.0	17.8	1.10	1.11
+speed	new-native	tan	[-1.5, 1.5]	15.4	16.1	19.7	1.28	1.23
+speed	new-native	exp	[-10, 10]	5.0	9.6	8.5	1.71	0.89
+speed	new-native	ln	[1e-3, 1e3]	4.6	7.6	20.3	4.44	2.68
+speed	new-native	pow	[0.01, 100] × [-10, 10]	14.0	44.9	36.9	2.64	0.82
+speed	new-gen-native	acos	[-1, 1]	16.0	11.1	24.0	1.50	2.16
+speed	new-gen-native	asin	[-1, 1]	15.8	11.1	20.5	1.30	1.85
+speed	new-gen-native	atan	[-10, 10]	11.7	10.4	25.2	2.16	2.42
+speed	new-gen-native	atan2	[-1, 1]²	23.6	25.0	40.3	1.71	1.61
+speed	new-gen-native	sin	[-7, 7]	17.6	16.5	17.3	0.98	1.04
+speed	new-gen-native	cos	[-7, 7]	16.2	16.1	17.9	1.11	1.11
+speed	new-gen-native	tan	[-1.5, 1.5]	15.4	16.1	19.8	1.28	1.23
+speed	new-gen-native	exp	[-10, 10]	5.0	9.6	8.5	1.71	0.89
+speed	new-gen-native	ln	[1e-3, 1e3]	4.6	7.6	20.3	4.42	2.67
+speed	new-gen-native	pow	[0.01, 100] × [-10, 10]	13.9	44.9	36.8	2.64	0.82
+
+acos-args	build	args	glibc_ns	libm_ns	cr_ns	ratio	cr_vs_libm
+acos-args	main-gen-default	42020	9.3	6.2	59.1	6.32	9.53
+acos-args	main-native	42020	9.4	6.1	44.3	4.73	7.30
+acos-args	main-gen-native	42020	9.4	6.1	44.4	4.74	7.27
+acos-args	ca6-gen-default	42020	9.4	6.2	75.7	8.09	12.17
+acos-args	ca6-native	42020	9.4	6.1	58.2	6.19	9.53
+acos-args	ca6-gen-native	42020	9.4	6.1	58.0	6.20	9.52
+acos-args	new-default	42020	9.4	6.3	15.9	1.68	2.53
+acos-args	new-gen-default	42020	9.4	6.3	23.0	2.45	3.68
+acos-args	new-native	42020	9.5	6.1	16.0	1.69	2.61
+acos-args	new-gen-native	42020	9.4	6.1	16.0	1.70	2.61
+
+interval	build	f64_ns	ivl_ns	inari_interval_ns
+interval	main-gen-default	0.7	23.6	84.8
+interval	main-native	0.7	20.0	52.4
+interval	main-gen-native	0.7	20.6	75.4
+interval	ca6-gen-default	0.7	22.2	85.2
+interval	ca6-native	0.7	20.0	52.3
+interval	ca6-gen-native	0.7	20.3	75.8
+interval	new-default	0.7	22.3	80.8
+interval	new-gen-default	0.7	22.3	93.6
+interval	new-native	0.7	20.1	50.6
+interval	new-gen-native	0.7	20.0	87.6

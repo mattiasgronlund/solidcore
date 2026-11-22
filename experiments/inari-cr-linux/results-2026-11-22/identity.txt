@@ -1,0 +1,15 @@
+# diff -rq of the blessed outputs (283 units and known_failing.json each); the number of files that differ
+# out/<v>: this run's; nov14/<v>: the 2026-11-14 run's; expected/ed65e20 and expected/pr15405: the committed goldens
+out/cr-new vs out/cr-new-gen: 0
+out/cr-new vs out/cr-new-count: 0
+out/cr-new vs nov14/cr-main: 0
+out/cr-new-gen vs nov14/cr-main: 0
+out/cr-new-count vs nov14/cr-main: 0
+nov14/cr-main vs nov14/cr-ca6: 0
+out/baseline vs nov14/baseline: 0
+out/baseline vs expected/ed65e20: 23
+out/cr-new vs expected/ed65e20: 75
+out/det-libm vs expected/pr15405: 0
+out/det-cr vs expected/pr15405: 167
+expected/ed65e20 vs expected/pr15405: 186
+out/det-cr vs out/cr-new: 76

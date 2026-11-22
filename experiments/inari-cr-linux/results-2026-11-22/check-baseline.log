@@ -1,0 +1,3 @@
+experiments/inari-cr-linux/scripts/check-run.sh: line 26: -goldens-dir: command not found
+exit=127 wall=533.302188900s
+note: the goldens run above exited normally (all 283 units in reports/check-baseline/times.tsv; out/baseline byte-identical to the Nov 14 out/baseline). This log was truncated because check-run.sh was rewritten while this run was reading it; the exit=127 is that fragment's, not goldens'.

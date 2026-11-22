@@ -1,0 +1,124 @@
+04:06:05 load: 0.95 2.92 3.63  governor: powersave
+04:06:05 speed main-gen-default
+04:06:18 speed --acos-args main-gen-default
+04:06:22 interval main-gen-default
+04:06:23 speed main-native
+04:06:34 speed --acos-args main-native
+04:06:37 interval main-native
+04:06:38 speed main-gen-native
+04:06:49 speed --acos-args main-gen-native
+04:06:52 interval main-gen-native
+04:06:53 speed ca6-gen-default
+04:07:07 speed --acos-args ca6-gen-default
+04:07:12 interval ca6-gen-default
+04:07:13 speed ca6-native
+04:07:24 speed --acos-args ca6-native
+04:07:29 interval ca6-native
+04:07:29 speed ca6-gen-native
+04:07:41 speed --acos-args ca6-gen-native
+04:07:45 interval ca6-gen-native
+04:07:46 speed new-gen-default
+04:07:57 speed --acos-args new-gen-default
+04:07:59 interval new-gen-default
+04:08:00 speed new-native
+04:08:10 speed --acos-args new-native
+04:08:12 interval new-native
+04:08:13 speed new-gen-native
+04:08:23 speed --acos-args new-gen-native
+04:08:25 interval new-gen-native
+04:08:25 speed new-default
+04:08:35 speed --acos-args new-default
+04:08:37 interval new-default
+04:08:38 load: 1.00 2.15 3.23  governor: powersave
+04:08:38 timing micro done
+04:08:38 load: 1.00 2.15 3.23  governor: powersave
+04:08:38 whole baseline round 1
+04:17:23 whole baseline round 1 exit=0 wall=524.719264830
+04:17:23 load: 2.77 3.44 3.52  governor: powersave
+04:17:23 whole cr-main round 1
+04:26:17 whole cr-main round 1 exit=1 wall=534.837099742
+04:26:17 load: 2.71 3.69 3.70  governor: powersave
+04:26:17 whole cr-ca6 round 1
+04:35:15 whole cr-ca6 round 1 exit=1 wall=537.802586946
+04:35:15 load: 2.79 3.71 3.79  governor: powersave
+04:35:15 whole cr-new round 1
+04:44:04 whole cr-new round 1 exit=1 wall=528.529965448
+04:44:04 load: 2.83 3.79 3.87  governor: powersave
+04:44:04 whole cr-new-gen round 1
+04:52:50 whole cr-new-gen round 1 exit=1 wall=526.460559100
+04:52:50 load: 2.75 3.75 3.89  governor: powersave
+04:52:50 whole baseline round 2
+05:01:35 whole baseline round 2 exit=0 wall=524.889163135
+05:01:35 load: 2.96 3.76 3.88  governor: powersave
+05:01:35 whole det-libm round 1
+05:10:36 whole det-libm round 1 exit=0 wall=540.460324092
+05:10:36 load: 2.58 3.58 3.82  governor: powersave
+05:10:36 whole det-cr round 1
+05:19:31 whole det-cr round 1 exit=1 wall=535.668644294
+05:19:31 load: 2.17 3.45 3.75  governor: powersave
+05:19:31 whole det-libm round 2
+05:28:32 whole det-libm round 2 exit=0 wall=540.427113161
+05:28:32 timing whole done
+05:28:32 load: 2.28 3.50 3.76  governor: powersave
+05:30:05 heavy corpus.parity baseline round 1 exit=0 wall=93.721801845
+05:31:41 heavy corpus.parity cr-main round 1 exit=0 wall=95.111517756
+05:33:15 heavy corpus.parity cr-ca6 round 1 exit=0 wall=94.867963938
+05:34:50 heavy corpus.parity cr-new round 1 exit=0 wall=94.333497093
+05:36:42 heavy corpus.parity det-libm round 1 exit=0 wall=111.809100882
+05:38:34 heavy corpus.parity det-cr round 1 exit=0 wall=112.702013091
+05:39:50 heavy offset.offset_executive_p2 baseline round 1 exit=0 wall=75.795385452
+05:41:10 heavy offset.offset_executive_p2 cr-main round 1 exit=0 wall=80.170917394
+05:42:31 heavy offset.offset_executive_p2 cr-ca6 round 1 exit=0 wall=80.259364626
+05:43:48 heavy offset.offset_executive_p2 cr-new round 1 exit=0 wall=77.183873587
+05:45:04 heavy offset.offset_executive_p2 det-libm round 1 exit=0 wall=75.824765963
+05:46:20 heavy offset.offset_executive_p2 det-cr round 1 exit=0 wall=76.487301848
+05:47:17 heavy blend.fillet_executive_p3 baseline round 1 exit=0 wall=56.475440024
+05:48:15 heavy blend.fillet_executive_p3 cr-main round 1 exit=1 wall=58.608131992
+05:49:14 heavy blend.fillet_executive_p3 cr-ca6 round 1 exit=1 wall=58.960118015
+05:50:11 heavy blend.fillet_executive_p3 cr-new round 1 exit=1 wall=57.391763583
+05:51:10 heavy blend.fillet_executive_p3 det-libm round 1 exit=0 wall=58.776374968
+05:52:09 heavy blend.fillet_executive_p3 det-cr round 1 exit=1 wall=58.963289342
+05:52:29 heavy blend.feature_executive baseline round 1 exit=0 wall=19.686093962
+05:52:49 heavy blend.feature_executive cr-main round 1 exit=0 wall=20.252600198
+05:53:10 heavy blend.feature_executive cr-ca6 round 1 exit=0 wall=20.346249250
+05:53:30 heavy blend.feature_executive cr-new round 1 exit=0 wall=20.188457894
+05:53:50 heavy blend.feature_executive det-libm round 1 exit=0 wall=20.249451495
+05:54:10 heavy blend.feature_executive det-cr round 1 exit=0 wall=19.975185061
+05:54:17 heavy surface.surface_p7 baseline round 1 exit=0 wall=6.937417750
+05:54:26 heavy surface.surface_p7 cr-main round 1 exit=0 wall=9.063680487
+05:54:36 heavy surface.surface_p7 cr-ca6 round 1 exit=0 wall=9.826586399
+05:54:43 heavy surface.surface_p7 cr-new round 1 exit=0 wall=7.269490686
+05:54:50 heavy surface.surface_p7 det-libm round 1 exit=0 wall=7.259714737
+05:54:58 heavy surface.surface_p7 det-cr round 1 exit=0 wall=7.617897525
+05:56:32 heavy corpus.parity baseline round 2 exit=0 wall=93.566172437
+05:58:06 heavy corpus.parity cr-main round 2 exit=0 wall=94.625173035
+05:59:41 heavy corpus.parity cr-ca6 round 2 exit=0 wall=94.742923707
+06:01:16 heavy corpus.parity cr-new round 2 exit=0 wall=94.878087849
+06:03:08 heavy corpus.parity det-libm round 2 exit=0 wall=111.706364211
+06:05:00 heavy corpus.parity det-cr round 2 exit=0 wall=112.759139540
+06:06:16 heavy offset.offset_executive_p2 baseline round 2 exit=0 wall=76.196031896
+06:07:36 heavy offset.offset_executive_p2 cr-main round 2 exit=0 wall=79.367884697
+06:08:56 heavy offset.offset_executive_p2 cr-ca6 round 2 exit=0 wall=79.837349831
+06:10:13 heavy offset.offset_executive_p2 cr-new round 2 exit=0 wall=77.254747491
+06:11:29 heavy offset.offset_executive_p2 det-libm round 2 exit=0 wall=75.987120903
+06:12:46 heavy offset.offset_executive_p2 det-cr round 2 exit=0 wall=76.767960852
+06:13:42 heavy blend.fillet_executive_p3 baseline round 2 exit=0 wall=56.541914776
+06:14:41 heavy blend.fillet_executive_p3 cr-main round 2 exit=1 wall=58.548297715
+06:15:40 heavy blend.fillet_executive_p3 cr-ca6 round 2 exit=1 wall=58.864277495
+06:16:37 heavy blend.fillet_executive_p3 cr-new round 2 exit=1 wall=57.340905678
+06:17:36 heavy blend.fillet_executive_p3 det-libm round 2 exit=0 wall=58.580866408
+06:18:34 heavy blend.fillet_executive_p3 det-cr round 2 exit=1 wall=58.573110533
+06:18:54 heavy blend.feature_executive baseline round 2 exit=0 wall=19.619967829
+06:19:14 heavy blend.feature_executive cr-main round 2 exit=0 wall=20.404056101
+06:19:35 heavy blend.feature_executive cr-ca6 round 2 exit=0 wall=20.366418255
+06:19:55 heavy blend.feature_executive cr-new round 2 exit=0 wall=20.260158244
+06:20:15 heavy blend.feature_executive det-libm round 2 exit=0 wall=20.254532985
+06:20:35 heavy blend.feature_executive det-cr round 2 exit=0 wall=20.097485363
+06:20:42 heavy surface.surface_p7 baseline round 2 exit=0 wall=7.014662104
+06:20:51 heavy surface.surface_p7 cr-main round 2 exit=0 wall=9.188276424
+06:21:01 heavy surface.surface_p7 cr-ca6 round 2 exit=0 wall=9.848575069
+06:21:09 heavy surface.surface_p7 cr-new round 2 exit=0 wall=7.303322779
+06:21:16 heavy surface.surface_p7 det-libm round 2 exit=0 wall=7.195681937
+06:21:23 heavy surface.surface_p7 det-cr round 2 exit=0 wall=7.661413328
+06:21:23 load: 1.32 1.18 1.20  governor: powersave
+06:21:24 timing heavy done

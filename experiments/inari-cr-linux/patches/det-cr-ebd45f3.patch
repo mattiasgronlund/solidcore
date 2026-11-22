@@ -1,0 +1,361 @@
+diff --git a/solidcore/Cargo.lock b/solidcore/Cargo.lock
+index 3e5bb29bb..24ffc1618 100644
+--- a/solidcore/Cargo.lock
++++ b/solidcore/Cargo.lock
+@@ -100,6 +100,22 @@ version = "0.2.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb"
+ 
++[[package]]
++name = "forward_ref"
++version = "1.0.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "c8cbd1169bd7b4a0a20d92b9af7a7e0422888bd38a6f5ec29c1fd8c1558a272e"
++
++[[package]]
++name = "fushimi"
++version = "2.0.0"
++source = "git+https://github.com/mattiasgronlund/fushimi?rev=e9e5ae5#e9e5ae57aff3a6cfe8ca6b8934d63eee2fee0715"
++dependencies = [
++ "cfg-if",
++ "forward_ref",
++ "nom",
++]
++
+ [[package]]
+ name = "goldens"
+ version = "0.1.0"
+@@ -159,6 +175,12 @@ version = "2.8.3"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98"
+ 
++[[package]]
++name = "minimal-lexical"
++version = "0.2.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a"
++
+ [[package]]
+ name = "miniz_oxide"
+ version = "0.9.1"
+@@ -169,6 +191,16 @@ dependencies = [
+  "simd-adler32",
+ ]
+ 
++[[package]]
++name = "nom"
++version = "7.1.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "d273983c5a657a70a3e8f2a01329822f3b8c8172b73826411a55751e404a0a4a"
++dependencies = [
++ "memchr",
++ "minimal-lexical",
++]
++
+ [[package]]
+ name = "num-traits"
+ version = "0.2.19"
+@@ -297,6 +329,7 @@ checksum = "d0d5d4b1981b8bbbb7aed204cae5726d683d5d6ac7e74ec54122ea28f315e7c8"
+ name = "solidcore"
+ version = "1.0.1"
+ dependencies = [
++ "fushimi",
+  "libm",
+  "serde",
+  "serde_json",
+diff --git a/solidcore/crates/goldens/Cargo.toml b/solidcore/crates/goldens/Cargo.toml
+index cea3c2e94..b11556e58 100644
+--- a/solidcore/crates/goldens/Cargo.toml
++++ b/solidcore/crates/goldens/Cargo.toml
+@@ -22,5 +22,9 @@ serde = { version = "1", features = ["derive"] }
+ serde_json = { version = "1", features = ["float_roundtrip"] }
+ toml = "0.8"
+ 
++[features]
++# Experiment only (mattiasgronlund/inari#2): solidcore's `math::det` through inari's `cr`.
++det-cr = ["solidcore/det-cr"]
++
+ [lints]
+ workspace = true
+diff --git a/solidcore/crates/goldens/src/main.rs b/solidcore/crates/goldens/src/main.rs
+index a0f2fac92..17f0e1847 100644
+--- a/solidcore/crates/goldens/src/main.rs
++++ b/solidcore/crates/goldens/src/main.rs
+@@ -401,23 +401,30 @@ fn goldens_main(
+     ExitCode::from(u8::from(failed > 0))
+ }
+ 
+-/// Lines printed per kind of change for one unit.
+-const MAX_GOLDEN_LINES: usize = 10;
++/// Lines printed per kind of change for one unit: 10, or `GOLDENS_MAX_LINES` (experiment,
++/// mattiasgronlund/inari#2: list every changed case).
++fn max_golden_lines() -> usize {
++    std::env::var("GOLDENS_MAX_LINES")
++        .ok()
++        .and_then(|v| v.parse().ok())
++        .unwrap_or(10)
++}
+ 
+ fn print_golden_changes(res: &goldens::golden::GoldenResult) {
+-    for (name, c) in res.changed.iter().take(MAX_GOLDEN_LINES) {
++    let max_lines = max_golden_lines();
++    for (name, c) in res.changed.iter().take(max_lines) {
+         println!("  changed {name} ({} differences)", c.count);
+         for d in &c.details {
+             println!("    {d}");
+         }
+     }
+-    for name in res.added.iter().take(MAX_GOLDEN_LINES) {
++    for name in res.added.iter().take(max_lines) {
+         println!("  added {name}");
+     }
+-    for name in res.removed.iter().take(MAX_GOLDEN_LINES) {
++    for name in res.removed.iter().take(max_lines) {
+         println!("  removed {name}");
+     }
+-    for (name, why) in res.broken.iter().take(MAX_GOLDEN_LINES) {
++    for (name, why) in res.broken.iter().take(max_lines) {
+         println!("  broken {name}: {why}");
+     }
+     for (kind, n) in [
+@@ -426,8 +433,8 @@ fn print_golden_changes(res: &goldens::golden::GoldenResult) {
+         ("removed", res.removed.len()),
+         ("broken", res.broken.len()),
+     ] {
+-        if n > MAX_GOLDEN_LINES {
+-            println!("  ... {} more {kind}", n - MAX_GOLDEN_LINES);
++        if n > max_lines {
++            println!("  ... {} more {kind}", n - max_lines);
+         }
+     }
+ }
+diff --git a/solidcore/crates/solidcore/Cargo.toml b/solidcore/crates/solidcore/Cargo.toml
+index 75dde3e22..5900fc7f4 100644
+--- a/solidcore/crates/solidcore/Cargo.toml
++++ b/solidcore/crates/solidcore/Cargo.toml
+@@ -18,8 +18,14 @@ curve-memo-off = []
+ # The profiler (`solidcore::profile`): scopes and counters recorded in `Kernel::profiler`,
+ # written as JSON Lines. Off, every scope compiles to nothing. Results never depend on it.
+ profile = []
++# Experiment only (mattiasgronlund/inari#2), not for merging: `math::det` through inari's
++# correctly rounded `cr::*_rn` instead of `libm` (all but `exp_m1`, `ln_1p` and `powi`).
++det-cr = ["dep:inari"]
+ 
+ [dependencies]
++# Experiment only (feature `det-cr`): inari's default features, no `force-generic`, so its
++# kernel picks its FMA copy at run time on plain x86-64.
++inari = { package = "fushimi", git = "https://github.com/mattiasgronlund/fushimi", rev = "e9e5ae5", default-features = false, optional = true }
+ # musl's libm (FreeBSD msun; CORE-MATH for cbrt) in Rust, for `math::det`: the same bits on every
+ # platform. Pinned exactly: a new release may change a function's last bit, which moves the
+ # goldens on every platform at once.
+diff --git a/solidcore/crates/solidcore/src/math/det.rs b/solidcore/crates/solidcore/src/math/det.rs
+index 166c6b1f8..4fb0fae2b 100644
+--- a/solidcore/crates/solidcore/src/math/det.rs
++++ b/solidcore/crates/solidcore/src/math/det.rs
+@@ -45,116 +45,132 @@
+ //!
+ //! Not upstream (SMLib calls the platform's C library). Deviations: none. No recursion.
+ 
++// Experiment only (mattiasgronlund/inari#2), not for merging: with feature `det-cr`, every
++// function below but `exp_m1`, `ln_1p` and `powi` calls inari's correctly rounded `cr::*_rn`
++// instead of the `libm` crate. `be!(f, f_rn, args)` names the function in each.
++#[cfg(not(feature = "det-cr"))]
++macro_rules! be {
++    ($libm:ident, $cr:ident, $($a:expr),+) => {
++        libm::$libm($($a),+)
++    };
++}
++#[cfg(feature = "det-cr")]
++macro_rules! be {
++    ($libm:ident, $cr:ident, $($a:expr),+) => {
++        inari::cr::$cr($($a),+)
++    };
++}
++
+ /// `sin x`.
+ #[inline]
+ #[must_use]
+ pub fn sin(x: f64) -> f64 {
+-    libm::sin(x)
++    be!(sin, sin_rn, x)
+ }
+ 
+ /// `cos x`.
+ #[inline]
+ #[must_use]
+ pub fn cos(x: f64) -> f64 {
+-    libm::cos(x)
++    be!(cos, cos_rn, x)
+ }
+ 
+ /// `(sin x, cos x)`: the two functions' own values, as `f64::sin_cos` is.
+ #[inline]
+ #[must_use]
+ pub fn sin_cos(x: f64) -> (f64, f64) {
+-    (libm::sin(x), libm::cos(x))
++    (be!(sin, sin_rn, x), be!(cos, cos_rn, x))
+ }
+ 
+ /// `tan x`.
+ #[inline]
+ #[must_use]
+ pub fn tan(x: f64) -> f64 {
+-    libm::tan(x)
++    be!(tan, tan_rn, x)
+ }
+ 
+ /// `asin x`, in `[-pi/2, pi/2]`; NaN outside `[-1, 1]`.
+ #[inline]
+ #[must_use]
+ pub fn asin(x: f64) -> f64 {
+-    libm::asin(x)
++    be!(asin, asin_rn, x)
+ }
+ 
+ /// `acos x`, in `[0, pi]`; NaN outside `[-1, 1]`.
+ #[inline]
+ #[must_use]
+ pub fn acos(x: f64) -> f64 {
+-    libm::acos(x)
++    be!(acos, acos_rn, x)
+ }
+ 
+ /// `atan x`, in `[-pi/2, pi/2]`.
+ #[inline]
+ #[must_use]
+ pub fn atan(x: f64) -> f64 {
+-    libm::atan(x)
++    be!(atan, atan_rn, x)
+ }
+ 
+ /// The angle of `(x, y)`, in `[-pi, pi]` (`y.atan2(x)` of `std`: `y` first).
+ #[inline]
+ #[must_use]
+ pub fn atan2(y: f64, x: f64) -> f64 {
+-    libm::atan2(y, x)
++    be!(atan2, atan2_rn, y, x)
+ }
+ 
+ /// `sinh x`.
+ #[inline]
+ #[must_use]
+ pub fn sinh(x: f64) -> f64 {
+-    libm::sinh(x)
++    be!(sinh, sinh_rn, x)
+ }
+ 
+ /// `cosh x`.
+ #[inline]
+ #[must_use]
+ pub fn cosh(x: f64) -> f64 {
+-    libm::cosh(x)
++    be!(cosh, cosh_rn, x)
+ }
+ 
+ /// `tanh x`.
+ #[inline]
+ #[must_use]
+ pub fn tanh(x: f64) -> f64 {
+-    libm::tanh(x)
++    be!(tanh, tanh_rn, x)
+ }
+ 
+ /// `asinh x`.
+ #[inline]
+ #[must_use]
+ pub fn asinh(x: f64) -> f64 {
+-    libm::asinh(x)
++    be!(asinh, asinh_rn, x)
+ }
+ 
+ /// `acosh x`; NaN below 1.
+ #[inline]
+ #[must_use]
+ pub fn acosh(x: f64) -> f64 {
+-    libm::acosh(x)
++    be!(acosh, acosh_rn, x)
+ }
+ 
+ /// `atanh x`; NaN outside `[-1, 1]`.
+ #[inline]
+ #[must_use]
+ pub fn atanh(x: f64) -> f64 {
+-    libm::atanh(x)
++    be!(atanh, atanh_rn, x)
+ }
+ 
+ /// `e^x`.
+ #[inline]
+ #[must_use]
+ pub fn exp(x: f64) -> f64 {
+-    libm::exp(x)
++    be!(exp, exp_rn, x)
+ }
+ 
+ /// `2^x`.
+ #[inline]
+ #[must_use]
+ pub fn exp2(x: f64) -> f64 {
+-    libm::exp2(x)
++    be!(exp2, exp2_rn, x)
+ }
+ 
+ /// `e^x - 1`, accurate near 0.
+@@ -168,7 +184,7 @@ pub fn exp_m1(x: f64) -> f64 {
+ #[inline]
+ #[must_use]
+ pub fn ln(x: f64) -> f64 {
+-    libm::log(x)
++    be!(log, ln_rn, x)
+ }
+ 
+ /// `ln(1 + x)`, accurate near 0.
+@@ -182,42 +198,42 @@ pub fn ln_1p(x: f64) -> f64 {
+ #[inline]
+ #[must_use]
+ pub fn log2(x: f64) -> f64 {
+-    libm::log2(x)
++    be!(log2, log2_rn, x)
+ }
+ 
+ /// The base-10 logarithm.
+ #[inline]
+ #[must_use]
+ pub fn log10(x: f64) -> f64 {
+-    libm::log10(x)
++    be!(log10, log10_rn, x)
+ }
+ 
+ /// The logarithm of `x` to `base`: `ln x / ln base`, as `std`'s `f64::log` computes it.
+ #[inline]
+ #[must_use]
+ pub fn log(x: f64, base: f64) -> f64 {
+-    libm::log(x) / libm::log(base)
++    be!(log, ln_rn, x) / be!(log, ln_rn, base)
+ }
+ 
+ /// `x^y`.
+ #[inline]
+ #[must_use]
+ pub fn powf(x: f64, y: f64) -> f64 {
+-    libm::pow(x, y)
++    be!(pow, pow_rn, x, y)
+ }
+ 
+ /// The cube root, correctly rounded.
+ #[inline]
+ #[must_use]
+ pub fn cbrt(x: f64) -> f64 {
+-    libm::cbrt(x)
++    be!(cbrt, cbrt_rn, x)
+ }
+ 
+ /// `sqrt(x^2 + y^2)` without overflow or underflow in the squares.
+ #[inline]
+ #[must_use]
+ pub fn hypot(x: f64, y: f64) -> f64 {
+-    libm::hypot(x, y)
++    be!(hypot, hypot_rn, x, y)
+ }
+ 
+ /// `x^n` by repeated squaring, in compiler-rt's `__powidf2` order: the product starts at 1 and
