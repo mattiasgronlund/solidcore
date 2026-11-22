@@ -1,0 +1,22 @@
+[package]
+name = "cr-eval"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+# fushimi (inari renamed) e9e5ae5, under its old name, so `inari::cr` resolves as at the
+# other two commits.
+inari = { package = "fushimi", git = "https://github.com/mattiasgronlund/fushimi", rev = "e9e5ae5", default-features = false }
+rug = { version = "1.19", default-features = false, features = ["float"] }
+# The libm solidcore's `math::det` calls (tangency-labs/solidcraft#15405), pinned as there.
+libm = "=0.2.16"
+
+[features]
+force-generic = ["inari/force-generic"]
+
+[profile.release]
+lto = "fat"
+codegen-units = 1

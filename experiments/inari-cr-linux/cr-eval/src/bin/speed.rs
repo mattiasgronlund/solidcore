@@ -1,10 +1,11 @@
-//! ns per call of the platform's libm (through std) and inari::cr::*_rn: independent calls
-//! through a function pointer, summed into an accumulator; `reps` timed passes of each,
-//! alternating, the median reported.
+//! ns per call of the platform's libm (through std), inari::cr::*_rn and the `libm` crate:
+//! independent calls through a function pointer, summed into an accumulator; `reps` timed
+//! passes of each, alternating, the median reported. The `libm` columns come last, so the
+//! earlier columns keep their positions.
 //!
 //! `speed [n] [reps]`: every row of `rows()`, on `n` random arguments (default 2,000,000).
 //!
-//! `speed --acos-args <file> [n] [reps]`: `acos` and `acos_rn` on the arguments in `file`,
+//! `speed --acos-args <file> [n] [reps]`: `acos`, `acos_rn` and `libm::acos` on the arguments in `file`,
 //! one line each, tab-separated: the unit, the call-site bucket, and the argument's bits as
 //! 16 hex digits. A first line that does not parse is taken as a header; any other is an error.
 //! One row per bucket, in sorted order, then `all`. Each row's arguments are taken in file
@@ -43,30 +44,38 @@ fn median(mut v: Vec<f64>) -> f64 {
 }
 
 fn functions(n: usize, reps: usize) {
-    println!("function\trange\tglibc_ns\tcr_ns\tratio");
+    println!("function\trange\tglibc_ns\tcr_ns\tratio\tlibm_ns\tcr_vs_libm");
     for (i, row) in rows().iter().enumerate() {
         let (xs, ys) = args(row, i, n, 0x5EED);
-        let (mut tg, mut tc) = (Vec::new(), Vec::new());
+        let (mut tg, mut tc, mut tl) = (Vec::new(), Vec::new(), Vec::new());
         for _ in 0..reps {
             match row.f {
-                F::One(g, c, _) => {
-                    tg.push(time1(g, &xs));
-                    tc.push(time1(c, &xs));
+                F::One {
+                    glibc, libm, cr, ..
+                } => {
+                    tg.push(time1(glibc, &xs));
+                    tc.push(time1(cr, &xs));
+                    tl.push(time1(libm, &xs));
                 }
-                F::Two(g, c, _) => {
-                    tg.push(time2(g, &xs, &ys));
-                    tc.push(time2(c, &xs, &ys));
+                F::Two {
+                    glibc, libm, cr, ..
+                } => {
+                    tg.push(time2(glibc, &xs, &ys));
+                    tc.push(time2(cr, &xs, &ys));
+                    tl.push(time2(libm, &xs, &ys));
                 }
             }
         }
-        let (g, c) = (median(tg), median(tc));
+        let (g, c, l) = (median(tg), median(tc), median(tl));
         println!(
-            "{}\t{}\t{:.1}\t{:.1}\t{:.2}",
+            "{}\t{}\t{:.1}\t{:.1}\t{:.2}\t{:.1}\t{:.2}",
             row.name,
             row.range,
             g,
             c,
-            c / g
+            c / g,
+            l,
+            c / l
         );
     }
 }
@@ -113,20 +122,27 @@ fn acos_args(path: &str, n: usize, reps: usize) {
     let all: Vec<f64> = by_bucket.values().flatten().copied().collect();
     let glibc: fn(f64) -> f64 = |x| x.acos();
     let cr: fn(f64) -> f64 = inari::cr::acos_rn;
-    println!("bucket\targs\tglibc_ns\tcr_ns\tratio");
+    let libm: fn(f64) -> f64 = libm::acos;
+    println!("bucket\targs\tglibc_ns\tcr_ns\tratio\tlibm_ns\tcr_vs_libm");
     for (bucket, xs) in by_bucket
         .iter()
         .map(|(b, xs)| (b.as_str(), xs))
         .chain([("all", &all)])
     {
         let pass: Vec<f64> = xs.iter().copied().cycle().take(n.max(xs.len())).collect();
-        let (mut tg, mut tc) = (Vec::new(), Vec::new());
+        let (mut tg, mut tc, mut tl) = (Vec::new(), Vec::new(), Vec::new());
         for _ in 0..reps {
             tg.push(time1(glibc, &pass));
             tc.push(time1(cr, &pass));
+            tl.push(time1(libm, &pass));
         }
-        let (g, c) = (median(tg), median(tc));
-        println!("{bucket}\t{}\t{g:.1}\t{c:.1}\t{:.2}", xs.len(), c / g);
+        let (g, c, l) = (median(tg), median(tc), median(tl));
+        println!(
+            "{bucket}\t{}\t{g:.1}\t{c:.1}\t{:.2}\t{l:.1}\t{:.2}",
+            xs.len(),
+            c / g,
+            c / l
+        );
     }
 }
 

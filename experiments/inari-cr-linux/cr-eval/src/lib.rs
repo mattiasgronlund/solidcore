@@ -20,14 +20,22 @@ impl Rng {
     }
 }
 
-/// (glibc through std, inari::cr::*_rn, MPFR rounded to nearest at 53 bits)
+/// One function in each implementation: `glibc`, the platform's libm through std; `libm`, the
+/// `libm` crate (=0.2.16, what solidcore's `math::det` calls); `cr`, inari's `cr::*_rn`;
+/// `mpfr`, MPFR rounded to nearest at 53 bits.
 pub enum F {
-    One(fn(f64) -> f64, fn(f64) -> f64, fn(f64) -> f64),
-    Two(
-        fn(f64, f64) -> f64,
-        fn(f64, f64) -> f64,
-        fn(f64, f64) -> f64,
-    ),
+    One {
+        glibc: fn(f64) -> f64,
+        libm: fn(f64) -> f64,
+        cr: fn(f64) -> f64,
+        mpfr: fn(f64) -> f64,
+    },
+    Two {
+        glibc: fn(f64, f64) -> f64,
+        libm: fn(f64, f64) -> f64,
+        cr: fn(f64, f64) -> f64,
+        mpfr: fn(f64, f64) -> f64,
+    },
 }
 
 pub struct Row {
@@ -46,7 +54,7 @@ fn m(x: f64) -> Float {
 }
 
 macro_rules! one {
-    ($name:literal, $range:literal, $a:expr, $b:expr, $std:ident, $cr:ident, $mp:ident) => {
+    ($name:literal, $range:literal, $a:expr, $b:expr, $std:ident, $libm:ident, $cr:ident, $mp:ident) => {
         Row {
             name: $name,
             range: $range,
@@ -54,12 +62,17 @@ macro_rules! one {
             b: $b,
             a2: 0.0,
             b2: 0.0,
-            f: F::One(|x| x.$std(), inari::cr::$cr, |x| m(x).$mp().to_f64()),
+            f: F::One {
+                glibc: |x| x.$std(),
+                libm: libm::$libm,
+                cr: inari::cr::$cr,
+                mpfr: |x| m(x).$mp().to_f64(),
+            },
         }
     };
 }
 macro_rules! two {
-    ($name:literal, $range:literal, $a:expr, $b:expr, $a2:expr, $b2:expr, $std:ident, $cr:ident, $mp:ident) => {
+    ($name:literal, $range:literal, $a:expr, $b:expr, $a2:expr, $b2:expr, $std:ident, $libm:ident, $cr:ident, $mp:ident) => {
         Row {
             name: $name,
             range: $range,
@@ -67,11 +80,12 @@ macro_rules! two {
             b: $b,
             a2: $a2,
             b2: $b2,
-            f: F::Two(
-                |x, y| x.$std(y),
-                inari::cr::$cr,
-                |x, y| m(x).$mp(&m(y)).to_f64(),
-            ),
+            f: F::Two {
+                glibc: |x, y| x.$std(y),
+                libm: libm::$libm,
+                cr: inari::cr::$cr,
+                mpfr: |x, y| m(x).$mp(&m(y)).to_f64(),
+            },
         }
     };
 }
@@ -79,13 +93,13 @@ macro_rules! two {
 /// The issue's ten rows first (same ranges), then the other functions the shim routes.
 pub fn rows() -> Vec<Row> {
     vec![
-        one!("sin", "[-7, 7]", -7.0, 7.0, sin, sin_rn, sin),
-        one!("cos", "[-7, 7]", -7.0, 7.0, cos, cos_rn, cos),
-        one!("sin", "[-1e4, 1e4]", -1e4, 1e4, sin, sin_rn, sin),
-        one!("tan", "[-1.5, 1.5]", -1.5, 1.5, tan, tan_rn, tan),
-        one!("acos", "[-1, 1]", -1.0, 1.0, acos, acos_rn, acos),
-        one!("asin", "[-1, 1]", -1.0, 1.0, asin, asin_rn, asin),
-        one!("atan", "[-10, 10]", -10.0, 10.0, atan, atan_rn, atan),
+        one!("sin", "[-7, 7]", -7.0, 7.0, sin, sin, sin_rn, sin),
+        one!("cos", "[-7, 7]", -7.0, 7.0, cos, cos, cos_rn, cos),
+        one!("sin", "[-1e4, 1e4]", -1e4, 1e4, sin, sin, sin_rn, sin),
+        one!("tan", "[-1.5, 1.5]", -1.5, 1.5, tan, tan, tan_rn, tan),
+        one!("acos", "[-1, 1]", -1.0, 1.0, acos, acos, acos_rn, acos),
+        one!("asin", "[-1, 1]", -1.0, 1.0, asin, asin, asin_rn, asin),
+        one!("atan", "[-10, 10]", -10.0, 10.0, atan, atan, atan_rn, atan),
         // atan2(y, x): y is the receiver in std and the first argument everywhere
         two!(
             "atan2",
@@ -95,13 +109,14 @@ pub fn rows() -> Vec<Row> {
             -1.0,
             1.0,
             atan2,
+            atan2,
             atan2_rn,
             atan2
         ),
-        one!("exp", "[-10, 10]", -10.0, 10.0, exp, exp_rn, exp),
-        one!("ln", "[1e-3, 1e3]", 1e-3, 1e3, ln, ln_rn, ln),
+        one!("exp", "[-10, 10]", -10.0, 10.0, exp, exp, exp_rn, exp),
+        one!("ln", "[1e-3, 1e3]", 1e-3, 1e3, ln, log, ln_rn, ln),
         // the rest of the shim
-        one!("cos", "[-1e4, 1e4]", -1e4, 1e4, cos, cos_rn, cos),
+        one!("cos", "[-1e4, 1e4]", -1e4, 1e4, cos, cos, cos_rn, cos),
         two!(
             "pow",
             "[0.01, 100] × [-10, 10]",
@@ -110,6 +125,7 @@ pub fn rows() -> Vec<Row> {
             -10.0,
             10.0,
             powf,
+            pow,
             pow_rn,
             pow
         ),
@@ -121,16 +137,17 @@ pub fn rows() -> Vec<Row> {
             -1e3,
             1e3,
             hypot,
+            hypot,
             hypot_rn,
             hypot
         ),
-        one!("cbrt", "[-1e3, 1e3]", -1e3, 1e3, cbrt, cbrt_rn, cbrt),
-        one!("exp2", "[-10, 10]", -10.0, 10.0, exp2, exp2_rn, exp2),
-        one!("log2", "[1e-3, 1e3]", 1e-3, 1e3, log2, log2_rn, log2),
-        one!("log10", "[1e-3, 1e3]", 1e-3, 1e3, log10, log10_rn, log10),
-        one!("sinh", "[-5, 5]", -5.0, 5.0, sinh, sinh_rn, sinh),
-        one!("cosh", "[-5, 5]", -5.0, 5.0, cosh, cosh_rn, cosh),
-        one!("tanh", "[-5, 5]", -5.0, 5.0, tanh, tanh_rn, tanh),
+        one!("cbrt", "[-1e3, 1e3]", -1e3, 1e3, cbrt, cbrt, cbrt_rn, cbrt),
+        one!("exp2", "[-10, 10]", -10.0, 10.0, exp2, exp2, exp2_rn, exp2),
+        one!("log2", "[1e-3, 1e3]", 1e-3, 1e3, log2, log2, log2_rn, log2),
+        one!("log10", "[1e-3, 1e3]", 1e-3, 1e3, log10, log10, log10_rn, log10),
+        one!("sinh", "[-5, 5]", -5.0, 5.0, sinh, sinh, sinh_rn, sinh),
+        one!("cosh", "[-5, 5]", -5.0, 5.0, cosh, cosh, cosh_rn, cosh),
+        one!("tanh", "[-5, 5]", -5.0, 5.0, tanh, tanh, tanh_rn, tanh),
     ]
 }
 
@@ -141,7 +158,7 @@ pub fn args(row: &Row, i: usize, n: usize, salt: u64) -> (Vec<f64>, Vec<f64>) {
     let mut ys = Vec::with_capacity(n);
     for _ in 0..n {
         xs.push(rng.uniform(row.a, row.b));
-        if matches!(row.f, F::Two(..)) {
+        if matches!(row.f, F::Two { .. }) {
             ys.push(rng.uniform(row.a2, row.b2));
         }
     }
