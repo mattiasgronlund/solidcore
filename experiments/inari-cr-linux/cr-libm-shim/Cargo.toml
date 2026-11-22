@@ -6,7 +6,8 @@ publish = false
 
 [dependencies]
 # inari main 6a9fa7a. scripts/build-goldens-variants.sh switches the rev to
-# ca6faf9c109ad62a7e53afc598d59f74af92adeb for the cr-ca6 variant, then back.
+# ca6faf9c109ad62a7e53afc598d59f74af92adeb for the cr-ca6 variant, and the whole line to
+# fushimi (inari renamed) at e9e5ae5 for the cr-new variants, then back.
 inari = { git = "https://github.com/mattiasgronlund/inari", rev = "6a9fa7aad2a3ed0551e01239dac94ae149773d1c", default-features = false }
 
 [features]
