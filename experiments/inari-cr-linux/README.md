@@ -214,3 +214,223 @@ inari commits to within 0.6 ns):
 | `gen-default` | 0.7 ns | 23.6 ns | 84.8 ns |
 | `native` | 0.7 ns | 20.0 ns | 52.2 ns |
 | `gen-native` | 0.7 ns | 20.6 ns | 76.1 ns |
+
+## Rerun 2026-11-22
+
+The rerun asked for in [mattiasgronlund/fushimi#2](https://github.com/mattiasgronlund/fushimi/issues/2)
+(formerly inari#2: the crate is now `fushimi`). Raw results in `results-2026-11-22/`.
+
+**Versions.**
+- fushimi `e9e5ae57aff3a6cfe8ca6b8934d63eee2fee0715`, everywhere as
+  `inari = { package = "fushimi", git = "https://github.com/mattiasgronlund/fushimi", rev = "e9e5ae5", default-features = false }`.
+  `default-features = false` changes nothing: fushimi's default feature set is empty.
+- inari main `6a9fa7a` and `ca6faf9`, as on Nov 14.
+- solidcore `ed65e20` for the shim variants. For the det variants,
+  [tangency-labs/solidcraft#15405](https://github.com/tangency-labs/solidcraft/pull/15405) at
+  `ebd45f35d5`: `math::det` on the `libm` crate (`=0.2.16`), with its own goldens.
+- rustc 1.99.1 for the shim variants and the eval programs; 1.98.0, the PR tree's pin, for the
+  det variants.
+- Host as on Nov 14: Ryzen 9 3900X, Linux 7.0.0-38, glibc 2.39.
+
+**Variants.** Goldens binaries, all on the default x86-64 target:
+- `cr-new`: feature `cr-libm` at fushimi `e9e5ae5`, without `force-generic`: fushimi's kernel
+  picks its FMA copy at run time.
+- `cr-new-gen`: the same with `force-generic` (`cr-libm-generic`, as `cr-main`).
+- `cr-new-count`: counting, with `force-generic` (`cr-libm-count`).
+- `det-libm`: the PR tree, unmodified (`scripts/build-det-variants.sh`).
+- `det-cr`: the PR tree with `patches/det-cr-ebd45f3.patch`, feature `det-cr`: every function
+  of `math::det` but `exp_m1`, `ln_1p` and `powi` calls `cr::*_rn` (fushimi `e9e5ae5`, no
+  `force-generic`) in place of the `libm` crate.
+- `baseline`, `cr-main`, `cr-ca6`, `cr-count`: the Nov 14 binaries.
+- Only `baseline` imports math functions from the C libm (17; `goldens-*.libm-imports`).
+
+The eval programs: `cr-eval-new/` (fushimi `e9e5ae5`; `src` is `cr-eval/src`) adds a fourth
+build, `default`: the default target without `force-generic`, which main and `ca6faf9` don't
+build; at `e9e5ae5` the kernel picks its FMA copy at run time. All ten builds were rebuilt:
+`speed` and `accuracy` now also measure the `libm` crate (`=0.2.16`). `scripts/per-call.py`
+writes `per-call.tsv`.
+
+**When.**
+- Builds and the untimed checks 03:11–04:05; the timed runs 04:06–06:21 (micro 04:06–04:08,
+  whole runs 04:08–05:28, heavy units 05:28–06:21).
+- The sampler (`timing/load.log`) saw 0 other builds in each of its 810 samples.
+
+**Deviations.**
+- `check-baseline.log` is truncated, with `exit=127`: `check-run.sh` was edited while the run
+  was reading it. The run itself completed: all 283 units are in `check-times/baseline.tsv`,
+  and its outputs are byte-identical to Nov 14's.
+- The acos-args file was read from a copy (sha256 `fcd15ecf…3359`, 42,020 lines): the Nov 14
+  path on the zram disk is gone.
+- The Nov 14 `baseline`, `cr-main`, `cr-ca6` and `cr-count` binaries were reused, checked by
+  sha256.
+- The det tree's change is the patch file, not a commit: there is no solidcraft fork to push it
+  to.
+
+### The outputs, bit for bit
+
+`identity.txt`: `diff -rq` of the blessed outputs (283 units and `known_failing.json`).
+
+| Compared | Files that differ |
+|---|---|
+| `cr-new`, `cr-new-gen`, `cr-new-count`, Nov 14 `cr-main` and `cr-ca6` | 0 |
+| `baseline` against Nov 14 `baseline` | 0 |
+| `baseline` against `ed65e20`'s goldens | 23 |
+| `cr-new` against `ed65e20`'s goldens | 75 |
+| `det-libm` against #15405's goldens | 0 |
+| `det-cr` against #15405's goldens | 167 |
+| `ed65e20`'s goldens against #15405's | 186 |
+| `det-cr` against `cr-new` | 76 |
+
+So fushimi's FMA copy, its portable backend and inari at both commits give the same output for
+every case.
+
+### Changed cases
+
+`changed-cases-summary.txt`: the cases that differ from their tree's goldens bit for bit.
+Float-only: both records exist and differ only in numbers in `values`; other: the rest.
+
+| Variant | Goldens | Cases | Units | Beyond 1e-9 rel. | Listed by the tool | Float-only | Other |
+|---|---|---|---|---|---|---|---|
+| glibc (`baseline`) | `ed65e20` | 261 | 23 | 4 | 0 | 261 | 0 |
+| `cr-new` | `ed65e20` | 1,200 | 75 | 53 | 47 | 1,200 | 0 |
+| `det-libm` | #15405 | 0 | 0 | 0 | 0 | 0 | 0 |
+| `det-cr` | #15405 | 8,154 | 167 | 879 | 876 | 8,107 in 166 units | 47 in 10 units |
+
+- `det-cr` moves 6.8× as many cases as the shim, in 167 units against 75.
+- The libm crate misrounds more often than glibc (below), and the two trees differ:
+  `det-libm`'s outputs differ from `baseline`'s in 11,695 cases of 185 units (counted from the
+  blessed outputs, which are not committed). This run can't attribute `det-cr`'s count to
+  either.
+
+### Calls to libm
+
+`cr-new-count`'s `call-counts.tsv` equals Nov 14's line for line: 780,736,757 calls,
+422,703,508 of them `acos`.
+
+### Whole runs
+
+`--all --goldens --jobs 4`, in the order shown (`timing-summary.tsv`). Changes are against the
+mean of the tree's two unmodified runs (`baseline` or `det-libm`); units fail against the tree's
+goldens.
+
+| Run | Wall | Unit times added up | Units failing |
+|---|---|---|---|
+| Unmodified (glibc) | 524.7 s | 1,996.8 s | 0 |
+| `cr`, inari main | 534.8 s (+1.9%) | 2,035.0 s (+1.9%) | 12 |
+| `cr`, inari `ca6faf9` | 537.8 s (+2.5%) | 2,046.8 s (+2.5%) | 12 |
+| `cr-new` | 528.5 s (+0.7%) | 2,010.4 s (+0.7%) | 12 |
+| `cr-new-gen` | 526.5 s (+0.3%) | 2,002.6 s (+0.3%) | 12 |
+| Unmodified again | 524.9 s | 1,996.3 s | 0 |
+| `det-libm` | 540.5 s | 2,008.7 s | 0 |
+| `det-cr` | 535.7 s (−0.9%) | 1,988.8 s (−1.0%) | 71 |
+| `det-libm` again | 540.4 s | 2,010.6 s | 0 |
+
+`det-libm` against `baseline`: wall +3.0%, unit times +0.7%.
+
+### The heavy units, each run alone
+
+Pinned to one CPU, two rounds with the variants alternating. Seconds, round 1 / round 2, and
+the change of the mean.
+
+| Unit | Unmodified | `cr` at main | `cr` at `ca6faf9` | `cr-new` |
+|---|---|---|---|---|
+| `corpus.parity` | 93.72 / 93.57 | 95.11 / 94.63 (+1.3%) | 94.87 / 94.74 (+1.2%) | 94.33 / 94.88 (+1.0%) |
+| `offset.offset_executive_p2` | 75.80 / 76.20 | 80.17 / 79.37 (+5.0%) | 80.26 / 79.84 (+5.3%) | 77.18 / 77.25 (+1.6%) |
+| `blend.fillet_executive_p3` | 56.48 / 56.54 | 58.61 / 58.55 (+3.7%) | 58.96 / 58.86 (+4.3%) | 57.39 / 57.34 (+1.5%) |
+| `blend.feature_executive` | 19.69 / 19.62 | 20.25 / 20.40 (+3.4%) | 20.35 / 20.37 (+3.6%) | 20.19 / 20.26 (+2.9%) |
+| `surface.surface_p7` | 6.94 / 7.01 | 9.06 / 9.19 (+30.8%) | 9.83 / 9.85 (+41.0%) | 7.27 / 7.30 (+4.4%) |
+
+| Unit | `det-libm` | `det-cr` | `det-libm` against unmodified |
+|---|---|---|---|
+| `corpus.parity` | 111.81 / 111.71 | 112.70 / 112.76 (+0.9%) | +19.3% |
+| `offset.offset_executive_p2` | 75.82 / 75.99 | 76.49 / 76.77 (+1.0%) | −0.1% |
+| `blend.fillet_executive_p3` | 58.78 / 58.58 | 58.96 / 58.57 (+0.2%) | +3.8% |
+| `blend.feature_executive` | 20.25 / 20.25 | 19.98 / 20.10 (−1.1%) | +3.0% |
+| `surface.surface_p7` | 7.26 / 7.20 | 7.62 / 7.66 (+5.7%) | +3.7% |
+
+- `corpus.parity` is 19.3% slower on the PR tree as a whole (`det-libm` against `baseline`);
+  `det-cr` adds 0.9% to that.
+- `blend.fillet_executive_p3` exits 1 with every `cr` variant, `det-cr` included.
+
+### The micro programs
+
+`per-call.tsv`, from `timing/`. Each build alone, pinned to one CPU.
+
+**ns per call** (`speed`). glibc and the libm crate as measured in the `default` build. At
+`e9e5ae5`, `gen-native` is within 0.1 ns of `native`.
+
+| Function | glibc | libm crate | `cr` `default` | `cr` `gen-default` | `cr` `native` | main `gen-default` | main `native` |
+|---|---|---|---|---|---|---|---|
+| `acos` | 16.2 | 11.2 | 23.0 | 30.1 | 24.0 | 69.3 | 50.9 |
+| `asin` | 16.2 | 11.4 | 19.2 | 25.9 | 20.5 | 63.5 | 47.8 |
+| `atan` | 11.5 | 10.6 | 23.2 | 33.1 | 25.2 | 33.4 | 25.2 |
+| `atan2` | 23.7 | 25.4 | 37.3 | 48.4 | 40.4 | 48.3 | 39.6 |
+| `sin` | 17.5 | 17.0 | 15.8 | 18.8 | 17.2 | 31.5 | 23.1 |
+| `cos` | 16.3 | 16.1 | 16.7 | 18.6 | 17.8 | 31.8 | 22.8 |
+| `tan` | 15.3 | 16.1 | 17.0 | 27.7 | 19.7 | 41.9 | 28.3 |
+| `exp` | 5.0 | 9.7 | 8.5 | 11.1 | 8.5 | 14.4 | 8.9 |
+| `ln` | 4.7 | 7.9 | 18.1 | 23.2 | 20.3 | 22.9 | 20.1 |
+| `pow` | 13.9 | 45.0 | 36.9 | 48.2 | 36.9 | 50.3 | 38.3 |
+
+- `atan` and `atan2` at `e9e5ae5` gain only in the `default` build: in `gen-default`,
+  `native` and `gen-native` they are within 0.8 ns of inari main.
+- `default` beats `native` for 8 of the 10 functions, by 1.0–3.1 ns; `exp` and `pow` are equal.
+- In `default`, `cr` is faster than the libm crate for `sin`, `exp` and `pow`, within 5% for
+  `cos` and `tan`, and 1.5–2.3× slower for the rest.
+
+**`acos` on the macOS run's arguments** (`speed --acos-args`, 42,020 arguments; the `all` row).
+glibc 9.3–9.5 ns and the libm crate 6.1–6.3 ns in every build:
+
+| Build | `cr` at main | `cr` at `ca6faf9` | `cr` at `e9e5ae5` |
+|---|---|---|---|
+| `gen-default` | 59.1 ns (6.32×) | 75.7 ns (8.09×) | 23.0 ns (2.45×) |
+| `native` | 44.3 ns (4.73×) | 58.2 ns (6.19×) | 16.0 ns (1.69×) |
+| `gen-native` | 44.4 ns (4.74×) | 58.0 ns (6.20×) | 16.0 ns (1.70×) |
+| `default` | | | 15.9 ns (1.68×) |
+
+The ratios are to glibc. In `default`, `cr` takes 2.53× the libm crate's time.
+
+**`interval`** (`f64` and `Ivl` from the `e9e5ae5` builds):
+
+| Build | `f64` | solidcore `Ivl` | `Interval` at main | at `ca6faf9` | at `e9e5ae5` |
+|---|---|---|---|---|---|
+| `gen-default` | 0.7 ns | 22.3 ns | 84.8 ns | 85.2 ns | 93.6 ns |
+| `native` | 0.7 ns | 20.1 ns | 52.4 ns | 52.3 ns | 50.6 ns |
+| `gen-native` | 0.7 ns | 20.0 ns | 75.4 ns | 75.8 ns | 87.6 ns |
+| `default` | 0.7 ns | 22.3 ns | | | 80.8 ns |
+
+`inari::Interval` got slower with `force-generic` at `e9e5ae5`: +8.8 ns in `gen-default`, +12.2
+ns in `gen-native`, against main.
+
+### Accuracy
+
+`accuracy-new-default.tsv` and `accuracy-main-gen-default.tsv` are identical: 200,000 random
+arguments per row, against MPFR. `cr` misrounds none in either. The share of arguments
+misrounded, and the largest error in ulps:
+
+| Function | Range | glibc | libm crate | Max ulps glibc / libm |
+|---|---|---|---|---|
+| `sin` | [-7, 7] | 0.152% | 3.066% | 1 / 1 |
+| `cos` | [-7, 7] | 0.122% | 3.029% | 1 / 1 |
+| `sin` | [-1e4, 1e4] | 0.148% | 3.106% | 1 / 1 |
+| `tan` | [-1.5, 1.5] | 0.238% | 3.741% | 1 / 1 |
+| `acos` | [-1, 1] | 0.072% | 7.703% | 1 / 1 |
+| `asin` | [-1, 1] | 0.141% | 5.859% | 1 / 1 |
+| `atan` | [-10, 10] | 0.093% | 6.121% | 1 / 1 |
+| `atan2` | [-1, 1]² | 0.095% | 17.776% | 1 / 1 |
+| `exp` | [-10, 10] | 0.088% | 9.705% | 1 / 1 |
+| `ln` | [1e-3, 1e3] | 0.007% | 1.991% | 1 / 1 |
+| `cos` | [-1e4, 1e4] | 0.128% | 3.079% | 1 / 1 |
+| `pow` | [0.01, 100] × [-10, 10] | 0.077% | 9.807% | 1 / 1 |
+| `hypot` | [-1e3, 1e3]² | 0.611% | 13.882% | 1 / 1 |
+| `cbrt` | [-1e3, 1e3] | 0.000% | 0.000% | 0 / 0 |
+| `exp2` | [-10, 10] | 0.101% | 0.036% | 1 / 1 |
+| `log2` | [1e-3, 1e3] | 0.013% | 0.104% | 1 / 1 |
+| `log10` | [1e-3, 1e3] | 3.876% | 0.118% | 2 / 1 |
+| `sinh` | [-5, 5] | 26.056% | 26.062% | 2 / 2 |
+| `cosh` | [-5, 5] | 21.687% | 22.354% | 1 / 1 |
+| `tanh` | [-5, 5] | 11.065% | 7.901% | 2 / 2 |
+
+- The libm crate misrounds more often than glibc in 16 of the 20 rows, less often for `exp2`,
+  `log10` and `tanh`; neither misrounds `cbrt`.
+- glibc's `sincos` equals its `sin` and `cos` on [-7, 7].
