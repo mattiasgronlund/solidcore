@@ -1,0 +1,19 @@
+FAIL nurbs.nurbs_srf cases=3092 changed=8 added=0 removed=0 broken=0 known_failing=0 rust=0.494s
+  changed gen0555 (1 differences)
+    values.values[2]: 2.061191915977327e-6 -> 2.4148365394514667e-6
+  changed gen0854 (1 differences)
+    values.values[0]: 1.1427890374924787e-13 -> 2.2754056636838504e-13
+  changed gen1207 (1 differences)
+    values.values[2]: 2.5613209387547816e-6 -> 2.9149655622289207e-6
+  changed gen1745 (1 differences)
+    values.values[0]: 2.7847474288855413e-13 -> 2.5421149729252077e-13
+  changed gen1761 (2 differences)
+    values.values[0]: 3.030437198788175e-20 -> 5.473694421644729e-20
+    values.values[4]: 3.030437198788175e-20 -> 5.473694421644729e-20
+  changed gen1885 (1 differences)
+    values.values[0]: 2.535772158592562e-16 -> 2.7681646635814516e-16
+  changed gen2268 (1 differences)
+    values.values[2]: 92.16519990493651 -> 92.16519819738922
+  changed gen2662 (1 differences)
+    values.values[0]: 4.577566798522237e-16 -> 3.3306690738754696e-16
+goldens: 1 unit(s), 0 passed, 1 failed

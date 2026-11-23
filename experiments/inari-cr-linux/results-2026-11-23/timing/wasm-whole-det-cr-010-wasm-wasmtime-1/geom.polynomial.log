@@ -1,0 +1,30 @@
+FAIL geom.polynomial cases=6038 changed=14 added=0 removed=0 broken=0 known_failing=0 rust=0.131s
+  changed gen0186 (1 differences)
+    values.roots[1]: 4610098.3125 -> 4610098.375
+  changed gen0640 (1 differences)
+    values.roots[2]: 2.8584357103511593e-12 -> 2.8583246880486968e-12
+  changed gen0950 (1 differences)
+    values.roots[2]: -2.2293278334473143e-13 -> -2.2315482794965646e-13
+  changed gen1058 (1 differences)
+    values.roots[1]: 4.779549422906371e-9 -> 4.779549533928673e-9
+  changed gen1607 (1 differences)
+    values.roots[0]: -2.104863049592679e-13 -> -2.1070834956419292e-13
+  changed gen2066 (1 differences)
+    values.roots[3]: 3.3306690738754696e-16 -> -2.220446049250313e-16
+  changed gen2286 (1 differences)
+    values.roots[1]: 8352.482543945312 -> 8352.482666015625
+  changed gen3093 (1 differences)
+    values.roots[1]: 3626.2974243164062 -> 3626.2974853515625
+  changed gen3152 (1 differences)
+    values.roots[0]: -2.220446049250313e-16 -> 0.0
+  changed gen3305 (1 differences)
+    values.roots[2]: 1.5567547251293945e-12 -> 1.5565326805244695e-12
+  changed gen3679 (1 differences)
+    values.roots[2]: -1.9249490890160814e-11 -> -1.924838066713619e-11
+  changed gen3689 (1 differences)
+    values.roots[1]: 2.0017245638825898e-9 -> 2.001725563083312e-9
+  changed gen4951 (1 differences)
+    values.roots[1]: -8.881784197001252e-16 -> -6.661338147750939e-16
+  changed gen5165 (1 differences)
+    values.roots[0]: 0.0 -> -4.440892098500626e-16
+goldens: 1 unit(s), 0 passed, 1 failed

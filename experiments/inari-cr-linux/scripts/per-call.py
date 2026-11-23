@@ -18,7 +18,7 @@ import sys
 r = sys.argv[1]
 FUNCTIONS = ["acos", "asin", "atan", "atan2", "sin", "cos", "tan", "exp", "ln", "pow"]
 SKIP_RANGE = {"sin": "[-1e4, 1e4]", "cos": "[-1e4, 1e4]"}
-ORDER = ["main", "ca6", "new"]
+ORDER = ["main", "ca6", "new", "v010"]
 CONFIGS = ["default", "gen-default", "native", "gen-native"]
 builds = [
     f"{c}-{b}" for c in ORDER for b in CONFIGS if os.path.exists(os.path.join(r, f"speed-{c}-{b}.tsv"))

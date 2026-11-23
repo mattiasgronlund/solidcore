@@ -1,0 +1,31 @@
+FAIL curve.curve_p8 cases=3069 changed=14 added=0 removed=0 broken=0 known_failing=0 rust=2.382s
+  changed gen0116 (1 differences)
+    values.out[6]: 5.773159728050814e-15 -> 5.511002163945225e-15
+  changed gen0436 (1 differences)
+    values.out[6]: 6.940448042097717e-15 -> 4.636427468134552e-15
+  changed gen0795 (1 differences)
+    values.out[6]: 9.945640348601413e-16 -> 1.2863743655007717e-15
+  changed gen0972 (1 differences)
+    values.out[9]: 1.831026719408895e-15 -> 8.881784197001252e-16
+  changed gen1151 (1 differences)
+    values.out[6]: 8.881784197001252e-16 -> 1.0877919644084146e-15
+  changed gen1317 (1 differences)
+    values.out[6]: 1.0175362097255202e-15 -> 9.155133597044475e-16
+  changed gen1611 (1 differences)
+    values.out[6]: 3.453697082362917e-8 -> 3.4536970733088e-8
+  changed gen1774 (2 differences)
+    values.out[6]: 2.8435583831733384e-15 -> 2.5510982866352577e-15
+    values.out[9]: 8.881784197001252e-16 -> 2.5219419200973697e-15
+  changed gen1792 (1 differences)
+    values.out[6]: 2.8435583831733384e-15 -> 1.831026719408895e-15
+  changed gen1817 (1 differences)
+    values.out[6]: 1.8528719114836666e-10 -> 1.852871991233362e-10
+  changed gen2473 (1 differences)
+    values.out[6]: 2.2887833992611187e-16 -> 6.304854800243424e-16
+  changed gen2548 (1 differences)
+    values.out[6]: 1.090903877125429e-7 -> 1.0909038786610211e-7
+  changed gen2618 (1 differences)
+    values.out[6]: 1.1430445635548515e-15 -> 1.5895974606912448e-15
+  changed gen2979 (1 differences)
+    values.out[6]: 4.1159253249447996e-8 -> 4.1159253473012383e-8
+goldens: 1 unit(s), 0 passed, 1 failed

@@ -1,0 +1,18 @@
+(node:802073) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL geom.geom_utility_p1 cases=4185 changed=7 added=0 removed=0 broken=0 known_failing=0 rust=0.243s
+  changed gen0131 (1 differences)
+    values.r[1]: -2.020264885602685e-14 -> -2.88609269371812e-14
+  changed gen0808 (1 differences)
+    values.r[0]: 1.0182606147796557e-14 -> 2.6474775984271077e-14
+  changed gen0956 (1 differences)
+    values.r[0]: -5.16786925648391e-7 -> -5.167869241583841e-7
+  changed gen1211 (1 differences)
+    values.r[2]: 9.375789997087653e-16 -> 5.156684498398209e-15
+  changed gen2730 (1 differences)
+    values.r[0]: -2.54319751484911e-14 -> -4.312378394744144e-14
+  changed gen3512 (1 differences)
+    values.r[1]: 2.2695361585643423e-15 -> -6.484389024469549e-16
+  changed gen3622 (1 differences)
+    values.r[0]: 7.19473624776704e-8 -> 7.194736181877507e-8
+goldens: 1 unit(s), 0 passed, 1 failed

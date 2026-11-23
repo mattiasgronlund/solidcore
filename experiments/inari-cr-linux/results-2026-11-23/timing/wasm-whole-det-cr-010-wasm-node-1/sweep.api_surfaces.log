@@ -1,0 +1,8 @@
+(node:812590) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL sweep.api_surfaces cases=885 changed=2 added=0 removed=0 broken=0 known_failing=0 rust=4.037s
+  changed gen0377 (1 differences)
+    values.srf_u.block[0]: [114.92829941524226,114.92829941524226,18162.64032764146] -> [114.92556650652651,114.92556650652651,18162.517346749253]
+  changed gen0513 (1 differences)
+    values.srf_u.block[0]: [125.69182511497681,125.69182511497681,21628.574825944568] -> [125.58003293075816,125.58003293075816,21618.861569087996]
+goldens: 1 unit(s), 0 passed, 1 failed

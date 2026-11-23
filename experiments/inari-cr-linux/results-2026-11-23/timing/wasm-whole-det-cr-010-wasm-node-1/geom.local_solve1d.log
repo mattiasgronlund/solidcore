@@ -1,0 +1,13 @@
+(node:802200) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL geom.local_solve1d cases=3318 changed=3 added=0 removed=0 broken=0 known_failing=0 rust=0.313s
+  changed gen2075 (2 differences)
+    ints: {"status":[0],"trace_flags":{"blocks":[[141,3384]],"n":47}} -> {"status":[0],"trace_flags":{"blocks":[[144,3528]],"n":48}}
+    values.trace_t: {"blocks":[[62.61878198038333,62.61878198038333,1519.6459707741901]],"n":47} -> {"blocks":[[63.96733803684894,63.96733803684894,1584.3766614845395]],"n":48}
+  changed gen2193 (2 differences)
+    ints: {"found":[1],"state_i":[5,0,0,12,0,1],"status":[0],"trace_flags":{"blocks":[[229,9007]],"n":77}} -> {"found":[1],"state_i":[5,0,0,12,0,1],"status":[0],"trace_flags":{"blocks":[[220,8323]],"n":74}}
+    values.trace_t: {"blocks":[[-62.40452224502951,62.40452224502951,-2181.3424594142543]],"n":77} -> {"blocks":[[-60.29087884010502,60.29087884010502,-2020.705560639992]],"n":74}
+  changed gen2560 (2 differences)
+    ints: {"status":[0],"trace_flags":{"blocks":[[135,3105]],"n":45}} -> {"status":[0],"trace_flags":{"blocks":[[132,2970]],"n":44}}
+    values.trace_t: {"blocks":[[-33.955081228016816,33.955081228016816,-765.5676943002042]],"n":45} -> {"blocks":[[-33.21681928900554,33.21681928900554,-732.3459070446968]],"n":44}
+goldens: 1 unit(s), 0 passed, 1 failed

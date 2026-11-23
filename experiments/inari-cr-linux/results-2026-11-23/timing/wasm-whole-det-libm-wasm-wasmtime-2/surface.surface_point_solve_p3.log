@@ -1,0 +1,2 @@
+PASS surface.surface_point_solve_p3 cases=1365 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.682s
+goldens: 1 unit(s), 1 passed, 0 failed

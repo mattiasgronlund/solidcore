@@ -1,0 +1,6 @@
+(node:801798) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL geom.axis2_placement cases=4051 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=0.245s
+  changed gen1251 (1 differences)
+    values.r[10]: -1.3877787807814457e-17 -> 0.0
+goldens: 1 unit(s), 0 passed, 1 failed

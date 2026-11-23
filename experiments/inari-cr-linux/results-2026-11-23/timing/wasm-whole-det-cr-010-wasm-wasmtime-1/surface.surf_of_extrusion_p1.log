@@ -1,0 +1,8 @@
+FAIL surface.surf_of_extrusion_p1 cases=2071 changed=3 added=0 removed=0 broken=0 known_failing=0 rust=0.240s
+  changed review2_hyp_inv_a1.0_b0.5_d-1.0_t0_oob0 (1 differences)
+    values.out[0]: 0.0 -> -1.1102230246251565e-16
+  changed review2_hyp_inv_a0.01_b2.0_d-1.0_t0_oob0 (1 differences)
+    values.out[0]: -2.2204460492503136e-16 -> 6.661338147750937e-16
+  changed review2_hyp_inv_a3.0_b3.0_d-1.0_t0_oob0 (1 differences)
+    values.out[0]: 0.0 -> 2.2204460492503128e-16
+goldens: 1 unit(s), 0 passed, 1 failed

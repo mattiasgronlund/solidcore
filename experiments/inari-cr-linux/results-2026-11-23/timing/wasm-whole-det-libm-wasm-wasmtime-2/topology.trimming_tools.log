@@ -1,0 +1,2 @@
+PASS topology.trimming_tools cases=3305 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=98.967s
+goldens: 1 unit(s), 1 passed, 0 failed

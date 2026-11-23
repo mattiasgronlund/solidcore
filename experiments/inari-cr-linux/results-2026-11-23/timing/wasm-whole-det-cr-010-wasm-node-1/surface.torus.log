@@ -1,0 +1,8 @@
+(node:812148) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL surface.torus cases=758 changed=2 added=0 removed=0 broken=0 known_failing=0 rust=0.259s
+  changed issue1433_torus_scaled_0.01_swap (1 differences)
+    values.out.block[0]: [30064.96773818623,30162.0306864591,580209.5947362876] -> [31144.96773818623,31145.694204879754,613689.5947362876]
+  changed issue1433_torus_scaled_100000_swap (1 differences)
+    values.out.block[0]: [7660582.404880769,8084943.494114577,321448046.5088718] -> [7661662.40488079,8085927.157633005,321481526.50887257]
+goldens: 1 unit(s), 0 passed, 1 failed

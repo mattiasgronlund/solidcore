@@ -1,0 +1,6 @@
+FAIL intersect.topology_solver_p1 cases=3592 changed=2 added=0 removed=0 broken=0 known_failing=0 rust=0.962s
+  changed gen0325 (1 differences)
+    values.out[8]: 1.5700924586837752e-16 -> 0.0
+  changed gen2244 (1 differences)
+    values.out: [1.0,0.0,1.0,1.0,2.0,2.0,0.0,3.0,0.0,31.331141394943877,1.0] -> [1.0,0.0,0.0]
+goldens: 1 unit(s), 0 passed, 1 failed

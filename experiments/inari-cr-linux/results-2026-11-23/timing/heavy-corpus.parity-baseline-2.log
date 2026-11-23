@@ -1,0 +1,2 @@
+PASS corpus.parity cases=268 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=94.781s
+goldens: 1 unit(s), 1 passed, 0 failed

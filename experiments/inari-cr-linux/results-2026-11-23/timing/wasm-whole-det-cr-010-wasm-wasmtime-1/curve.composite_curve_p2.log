@@ -1,0 +1,4 @@
+FAIL curve.composite_curve_p2 cases=676 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=2.320s
+  changed gen0288 (1 differences)
+    values.out: {"blocks":[["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],[18.04648084534898,18.04648084534898,84.33723216294891]],"n":1044} -> {"blocks":[["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],["-inf","inf","-inf"],[14136.723824178474,14187.881377164651,750295.5996490137]],"n":1135}
+goldens: 1 unit(s), 0 passed, 1 failed

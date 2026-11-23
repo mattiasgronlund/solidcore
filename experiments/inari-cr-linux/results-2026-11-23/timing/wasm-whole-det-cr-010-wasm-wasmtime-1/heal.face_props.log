@@ -1,0 +1,2 @@
+PASS heal.face_props cases=1873 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=15.113s
+goldens: 1 unit(s), 1 passed, 0 failed

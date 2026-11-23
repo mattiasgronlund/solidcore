@@ -1,0 +1,16 @@
+(node:800618) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL curve.composite_curve_p1 cases=3096 changed=6 added=0 removed=0 broken=0 known_failing=0 rust=0.489s
+  changed gen0026 (1 differences)
+    values.out[0]: 6.280369834735101e-16 -> 4.965068306494546e-16
+  changed gen0063 (1 differences)
+    values.out[0]: 4.577566798522237e-16 -> 4.440892098500626e-16
+  changed gen0321 (1 differences)
+    values.out[0]: 8.95090418262362e-16 -> 9.155133597044475e-16
+  changed gen1737 (1 differences)
+    values.out[0]: 0.0 -> 1.7763568394002505e-15
+  changed gen2185 (1 differences)
+    values.out[0]: 1.9860273225978185e-15 -> 1.7763568394002505e-15
+  changed gen2295 (1 differences)
+    values.out[0]: 1.1102230246251565e-16 -> 2.220446049250313e-16
+goldens: 1 unit(s), 0 passed, 1 failed

@@ -1,0 +1,2 @@
+PASS nurbs.nurbs_crv cases=4113 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.478s
+goldens: 1 unit(s), 1 passed, 0 failed

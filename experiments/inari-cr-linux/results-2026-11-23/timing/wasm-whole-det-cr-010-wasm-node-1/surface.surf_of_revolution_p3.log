@@ -1,0 +1,9 @@
+(node:810697) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL surface.surf_of_revolution_p3 cases=26731 changed=2 added=0 removed=0 broken=0 known_failing=0 rust=5.983s
+  changed r2_drop_sphere_part_axis0_100000_None_5 (2 differences)
+    values.out.block[0]: [7200268.96875,7200268.96875,925228599.5] -> [7200270.5625,7200270.5625,925228492.34375]
+    values.out.block[1]: [3600106.7187500005,3600106.7187500005,221406771.43750003] -> [3600105.125,3600105.125,221406595.78125]
+  changed gen0721 (1 differences)
+    values.out[5]: 1.0408340855860843e-15 -> 1.0444360777476668e-15
+goldens: 1 unit(s), 0 passed, 1 failed

@@ -1,0 +1,6 @@
+(node:805898) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL nlib.srf_adv_p6 cases=1020 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=0.813s
+  changed gen0182 (1 differences)
+    values.normal[1]: 2.0808544854544174e-17 -> 4.161708970908835e-17
+goldens: 1 unit(s), 0 passed, 1 failed

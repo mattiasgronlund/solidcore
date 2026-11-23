@@ -1,0 +1,34 @@
+(node:811478) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL surface.surface_p5 cases=3118 changed=15 added=0 removed=0 broken=0 known_failing=0 rust=0.762s
+  changed cover_analytic_cyl_full_vs_cyl_part (1 differences)
+    values.out[2]: 2.482534153247273e-16 -> 1.5700924586837752e-16
+  changed cover_analytic_cyl_full_vs_cyl_part_tol1e-3 (1 differences)
+    values.out[2]: 2.482534153247273e-16 -> 1.5700924586837752e-16
+  changed cover_analytic_cyl_full_vs_cyl_part_merged (1 differences)
+    values.out[2]: 2.482534153247273e-16 -> 1.5700924586837752e-16
+  changed cover_analytic_cyl_part_vs_cyl_full (1 differences)
+    values.out[2]: 2.482534153247273e-16 -> 1.5700924586837752e-16
+  changed cover_analytic_cyl_part_vs_cyl_full_tol1e-3 (1 differences)
+    values.out[2]: 2.482534153247273e-16 -> 1.5700924586837752e-16
+  changed cover_analytic_cyl_part_vs_cyl_full_merged (1 differences)
+    values.out[2]: 2.482534153247273e-16 -> 1.5700924586837752e-16
+  changed cover_analytic_cone_vs_cone_sub (1 differences)
+    values.out[2]: 7.850462293418876e-16 -> 3.510833468576701e-16
+  changed cover_analytic_cone_vs_cone_sub_tol1e-3 (1 differences)
+    values.out[2]: 7.850462293418876e-16 -> 3.510833468576701e-16
+  changed cover_analytic_cone_vs_cone_sub_merged (1 differences)
+    values.out[2]: 7.850462293418876e-16 -> 3.510833468576701e-16
+  changed cover_analytic_sphere_band_vs_sphere_quarter (1 differences)
+    values.out[2]: 3.885780586188048e-16 -> 3.7238012298709097e-16
+  changed cover_analytic_sphere_band_vs_sphere_quarter_tol1e-3 (1 differences)
+    values.out[2]: 3.885780586188048e-16 -> 3.7238012298709097e-16
+  changed cover_analytic_sphere_band_vs_sphere_quarter_merged (1 differences)
+    values.out[2]: 3.885780586188048e-16 -> 3.7238012298709097e-16
+  changed cover_analytic_sphere_quarter_vs_sphere_band (1 differences)
+    values.out[2]: 3.885780586188048e-16 -> 3.7238012298709097e-16
+  changed cover_analytic_sphere_quarter_vs_sphere_band_tol1e-3 (1 differences)
+    values.out[2]: 3.885780586188048e-16 -> 3.7238012298709097e-16
+  changed cover_analytic_sphere_quarter_vs_sphere_band_merged (1 differences)
+    values.out[2]: 3.885780586188048e-16 -> 3.7238012298709097e-16
+goldens: 1 unit(s), 0 passed, 1 failed

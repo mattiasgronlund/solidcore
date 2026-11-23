@@ -1,0 +1,2 @@
+PASS heal.heal_data_p1 cases=495 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=10.284s
+goldens: 1 unit(s), 1 passed, 0 failed

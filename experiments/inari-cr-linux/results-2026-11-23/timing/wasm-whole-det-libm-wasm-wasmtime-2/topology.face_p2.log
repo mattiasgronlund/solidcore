@@ -1,0 +1,2 @@
+PASS topology.face_p2 cases=2692 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=82.671s
+goldens: 1 unit(s), 1 passed, 0 failed

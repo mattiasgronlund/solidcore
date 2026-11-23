@@ -1,0 +1,6 @@
+  known failing gen0014: tangency-labs/solidcore#2981: tilted disk returns three non-collinear straight boundary carriers; an affine image of the semicircle-and-diameter boundary has only one
+  known failing gen0019: tangency-labs/solidcore#2981: tilted disk returns three non-collinear straight boundary carriers; an affine image of the semicircle-and-diameter boundary has only one
+  known failing gen0073: tangency-labs/solidcore#2981: tilted disk returns three non-collinear straight boundary carriers; an affine image of the semicircle-and-diameter boundary has only one
+  known failing gen0078: tangency-labs/solidcore#2981: tilted disk returns three non-collinear straight boundary carriers; an affine image of the semicircle-and-diameter boundary has only one
+PASS topology.brep_local_operation cases=165 changed=0 added=0 removed=0 broken=0 known_failing=4 rust=94.578s
+goldens: 1 unit(s), 1 passed, 0 failed

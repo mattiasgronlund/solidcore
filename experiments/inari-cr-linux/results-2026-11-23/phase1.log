@@ -1,0 +1,26 @@
+14:12:10 accuracy v010-default
+14:12:16 accuracy v010-default exit=0
+14:12:16 accuracy v010-gen-default
+14:12:21 accuracy v010-gen-default exit=0
+14:12:21 check-run cr-010
+goldens --jobs 4: wall 529.1 s, sum of unit times 2008.8 s, longest unit topology.loopuse 203.9 s
+exit=0 wall=529.071507021s
+14:21:10 check-run cr-010-gen
+goldens --jobs 4: wall 531.3 s, sum of unit times 2019.2 s, longest unit topology.loopuse 205.1 s
+exit=0 wall=531.311921278s
+14:30:02 check-run cr-010-count
+goldens --jobs 4: wall 530.4 s, sum of unit times 2014.3 s, longest unit topology.loopuse 204.5 s
+exit=0 wall=530.419116454s
+14:38:52 check-run det-cr-010
+goldens --jobs 4: wall 553.4 s, sum of unit times 2054.0 s, longest unit topology.loopuse 206.8 s
+exit=0 wall=553.454912297s
+14:48:06 wasm check det-libm-wasm:wasmtime
+check det-libm-wasm wasmtime wall=1017.177283825s, units not exiting 0:
+curve.crv_on_surf	1	1.885363891
+15:05:03 wasm check det-cr-010-wasm:wasmtime
+check det-cr-010-wasm wasmtime wall=1019.647470690s, units not exiting 0:
+curve.crv_on_surf	1	1.863028547
+15:22:03 wasm check det-cr-010-wasm:node
+check det-cr-010-wasm node wall=878.179923307s, units not exiting 0:
+curve.crv_on_surf	1	2.555982947
+15:36:41 phase1 done

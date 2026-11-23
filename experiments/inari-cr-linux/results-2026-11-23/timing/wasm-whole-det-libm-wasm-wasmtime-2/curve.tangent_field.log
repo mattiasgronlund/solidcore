@@ -1,0 +1,2 @@
+PASS curve.tangent_field cases=1355 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.419s
+goldens: 1 unit(s), 1 passed, 0 failed

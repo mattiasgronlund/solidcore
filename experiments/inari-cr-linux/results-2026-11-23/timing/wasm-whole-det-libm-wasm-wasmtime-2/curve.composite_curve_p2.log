@@ -1,0 +1,2 @@
+PASS curve.composite_curve_p2 cases=676 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.332s
+goldens: 1 unit(s), 1 passed, 0 failed

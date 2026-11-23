@@ -1,0 +1,2 @@
+PASS nurbs.b_spline_curve_p1 cases=2216 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.331s
+goldens: 1 unit(s), 1 passed, 0 failed

@@ -1,0 +1,2 @@
+BLESSED curve.crv_on_surf cases=2407 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=1.810s
+goldens: 1 unit(s), 1 passed, 0 failed

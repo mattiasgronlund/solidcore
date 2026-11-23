@@ -1,0 +1,2 @@
+PASS surface.surface_p7 cases=3741 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=7.319s
+goldens: 1 unit(s), 1 passed, 0 failed

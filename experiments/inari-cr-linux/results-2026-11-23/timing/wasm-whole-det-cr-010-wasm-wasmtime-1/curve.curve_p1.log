@@ -1,0 +1,12 @@
+FAIL curve.curve_p1 cases=3096 changed=5 added=0 removed=0 broken=0 known_failing=0 rust=0.719s
+  changed circle_drop_point_225 (1 differences)
+    values.out[5]: 2.220446049250313e-16 -> 5.551115123125783e-16
+  changed gen0541 (1 differences)
+    values.out[5]: 8.89287949701369e-15 -> 9.493542985708791e-15
+  changed gen0755 (1 differences)
+    values.out[1]: 1.0175362097255202e-15 -> 1.3322676295501878e-15
+  changed gen0969 (1 differences)
+    values.out[5]: 5.8667599077452974e-15 -> 2.4682183047870186e-15
+  changed gen1007 (1 differences)
+    values.out[5]: -2.763019726496131e-16 -> -5.871451992240447e-16
+goldens: 1 unit(s), 0 passed, 1 failed

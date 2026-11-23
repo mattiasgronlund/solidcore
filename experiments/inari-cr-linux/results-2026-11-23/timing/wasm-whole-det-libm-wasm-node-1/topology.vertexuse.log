@@ -1,0 +1,4 @@
+(node:778627) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS topology.vertexuse cases=2686 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=28.823s
+goldens: 1 unit(s), 1 passed, 0 failed

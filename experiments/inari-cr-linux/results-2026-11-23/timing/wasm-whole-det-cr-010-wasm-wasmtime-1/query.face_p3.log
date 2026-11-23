@@ -1,0 +1,5 @@
+FAIL query.face_p3 cases=1199 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=10.860s
+  changed gen0356 (2 differences)
+    values.uv_line[1]: 0.20545594912254808 -> 0.205455949428753
+    values.uv_line[3]: 0.20545595402182754 -> 0.20545595371562253
+goldens: 1 unit(s), 0 passed, 1 failed

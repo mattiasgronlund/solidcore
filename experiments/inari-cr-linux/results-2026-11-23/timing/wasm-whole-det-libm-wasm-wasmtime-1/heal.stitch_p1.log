@@ -1,0 +1,2 @@
+PASS heal.stitch_p1 cases=674 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=4.774s
+goldens: 1 unit(s), 1 passed, 0 failed

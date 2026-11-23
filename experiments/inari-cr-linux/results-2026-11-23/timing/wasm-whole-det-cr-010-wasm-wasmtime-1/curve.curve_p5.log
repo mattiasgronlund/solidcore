@@ -1,0 +1,15 @@
+FAIL curve.curve_p5 cases=3140 changed=6 added=0 removed=0 broken=0 known_failing=0 rust=0.241s
+  changed gen0086 (1 differences)
+    values.out[3]: 2.4868995751603507e-14 -> 1.353172776064867e-14
+  changed gen0345 (1 differences)
+    values.out[2]: 0.5094968415754955 -> 0.5466566465374325
+  changed gen2108 (1 differences)
+    values.out[0]: 2.220446049250313e-16 -> 0.0
+  changed gen2454 (2 differences)
+    values.out[6]: -3.603728321593774e-14 -> -3.5874218585999884e-14
+    values.out[9]: -3.4324961187327576e-15 -> -3.42486351924686e-15
+  changed gen2779 (1 differences)
+    values.out[3]: -8.544777856940604e-17 -> 1.7981590312063536e-16
+  changed gen2848 (1 differences)
+    values.out[3]: 2.0816681711721685e-16 -> 1.5265566588595902e-16
+goldens: 1 unit(s), 0 passed, 1 failed

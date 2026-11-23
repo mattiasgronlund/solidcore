@@ -1,0 +1,2 @@
+PASS topology.vertexuse cases=2686 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=36.296s
+goldens: 1 unit(s), 1 passed, 0 failed

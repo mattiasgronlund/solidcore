@@ -1,0 +1,112 @@
+  known failing dome_pole_d0_2_p2: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing dome_pole_d0_2_p3: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing dome_pole_d2_0_p2: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing dome_pole_d2_0_p3: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing dome_pole_dm0_2_p2: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing dome_pole_dm0_2_p3: tangency-labs/solidcraft#13610: simple evaluation succeeds with incorrect finite first and second partials at the collapsed boundary
+  known failing gen0033: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,1) at out[67]; input-only oracle confirms the named value is wrong
+  known failing gen0086: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[30]
+  known failing gen0111: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[178]
+  known failing gen0112: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen0124: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[18]
+  known failing gen0129: tangency-labs/solidcraft#13610: simple evaluation includes incorrect unchanged partials at a collapsed boundary; changing third-order terms does not correct them
+  known failing gen0166: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[16]
+  known failing gen0201: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen0256: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen0351: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,1) at out[73]; input-only oracle confirms the named value is wrong
+  known failing gen0411: tangency-labs/solidcore#2717: step 3 names D(3,0), overwritten by D(1,2) at out[86]
+  known failing gen0414: tangency-labs/solidcore#2717: step 4 names D(2,0), overwritten by D(1,2) at out[133]
+  known failing gen0460: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[66]
+  known failing gen0495: tangency-labs/solidcore#2717: step 3 names D(3,0), overwritten by D(1,2) at out[127]
+  known failing gen0500: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,2) at out[68]
+  known failing gen0550: tangency-labs/solidcore#2717: step 5 names D(2,0), overwritten by D(1,2) at out[96]
+  known failing gen0551: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen0554: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[24]
+  known failing gen0565: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen0615: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[43]
+  known failing gen0640: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[123]
+  known failing gen0641: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[123]
+  known failing gen0690: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,1) at out[62]; input-only oracle confirms the named value is wrong
+  known failing gen0757: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,1) at out[63..65]; input-only oracle at the explicitly clamped point confirms all three named components are wrong
+  known failing gen0758: tangency-labs/solidcraft#13770: step 2 names D(2,0), overwritten by D(1,2); returned (-1.94718431,-5.38645335,-4.71215815) disagrees with the input-derived requested partial near zero
+  known failing gen0761: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[46]
+  known failing gen0785: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen0837: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[25]
+  known failing gen0863: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen0869: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[25]
+  known failing gen0896: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen0942: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[75]
+  known failing gen0968: tangency-labs/solidcraft#13770: step 3 names D(2,0), overwritten by D(1,2) near zero; the independent requested partial is (0.2093499883,0.1181895290,0.0017291949)
+  known failing gen0978: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen1010: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,2) at out[91]
+  known failing gen1033: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,2) at out[77]
+  known failing gen1058: tangency-labs/solidcore#2717: step 4 names D(3,0), overwritten by D(1,2) at out[88]
+  known failing gen1110: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,1) at out[9]; input-only oracle confirms the named value is wrong
+  known failing gen1114: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[30]
+  known failing gen1119: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[78]
+  known failing gen1121: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[72]
+  known failing gen1167: tangency-labs/solidcore#2717: step 5 names D(3,0), overwritten by D(1,2) at out[110]
+  known failing gen1174: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen1265: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen1274: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen1310: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,1) at out[8]; input-only oracle confirms the named value is wrong
+  known failing gen1333: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[66]
+  known failing gen1360: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[28]
+  known failing gen1363: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,2) at out[84]
+  known failing gen1385: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[178]
+  known failing gen1397: tangency-labs/solidcore#2717: step 4 names D(3,0), overwritten by D(1,2) at out[53]
+  known failing gen1403: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen1410: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[69]
+  known failing gen1444: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen1468: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[15]
+  known failing gen1558: tangency-labs/solidcraft#13610: simple evaluation includes incorrect unchanged partials at a collapsed boundary; changing third-order terms does not correct them
+  known failing gen1562: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen1572: tangency-labs/solidcraft#13770: step 2 names D(2,0), overwritten by D(1,1) at out[69..71]; z is 1.0207003064054485 instead of approximately zero
+  known failing gen1584: tangency-labs/solidcore#2717: step 4 names D(2,0), overwritten by D(1,2) at out[30]
+  known failing gen1603: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[27..28]; input-only revolution oracle confirms both named components are wrong
+  known failing gen1635: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[87]
+  known failing gen1643: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,2) at out[69]; input-only oracle confirms the named value is wrong
+  known failing gen1694: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[72]
+  known failing gen1726: tangency-labs/solidcore#2717: step 4 names D(2,0), overwritten by D(1,2) at out[92]
+  known failing gen1733: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen1792: tangency-labs/solidcraft#13770: step 5 names D(2,0), overwritten by D(1,2); returned norm 0.0005033 disagrees with the independent requested norm 0.03875873
+  known failing gen1817: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[28]
+  known failing gen1818: tangency-labs/solidcore#2717: step 5 names D(3,0), overwritten by D(1,2) at out[161]
+  known failing gen1890: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[22]
+  known failing gen1911: tangency-labs/solidcraft#13770: step 5 names D(2,0), overwritten by D(1,2) near zero; the independent requested partial is (0.0425892503,-0.0189831096,0.0317060344)
+  known failing gen1955: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen2010: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[16]
+  known failing gen2015: tangency-labs/solidcore#2717: step 3 names D(3,0), overwritten by D(1,2) at out[89]
+  known failing gen2072: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen2140: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen2168: tangency-labs/solidcore#2717: step 3 names D(3,0), overwritten by D(1,2) at out[103]
+  known failing gen2170: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen2213: tangency-labs/solidcore#2717: step 4 names D(3,0), overwritten by D(1,2) at out[87]
+  known failing gen2240: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[66]
+  known failing gen2243: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,1) at out[60..62]; input-only pre-swap oracle confirms all three named components are wrong
+  known failing gen2257: tangency-labs/solidcore#2717: step 3 names D(3,0), overwritten by D(1,2) at out[70]
+  known failing gen2381: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,2) at out[68]
+  known failing gen2485: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[32]
+  known failing gen2495: tangency-labs/solidcore#2717: step 5 names D(3,0), overwritten by D(1,2) at out[108]
+  known failing gen2543: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen2598: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[68]
+  known failing gen2607: tangency-labs/solidcore#2717: step 3 names D(2,0), overwritten by D(1,2) at out[26]
+  known failing gen2685: tangency-labs/solidcore#2717: step 2 names D(3,0), overwritten by D(1,2) at out[22]
+  known failing gen2743: tangency-labs/solidcraft#13770: step 4 names D(2,0) and D(3,0), overwritten by D(1,1) and D(1,2); independent affine-offset derivatives disagree
+  known failing gen2754: tangency-labs/solidcore#2717: step 2 names D(2,0), overwritten by D(1,2) at out[33]
+  known failing gen2756: tangency-labs/solidcore#2717: step 1 names D(3,0), overwritten by D(1,2) at out[65]
+  known failing gen2824: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing gen2891: tangency-labs/solidcraft#13770: requested D(3,0).x/y are -156.0921328062421/69.66976279515482, but D(1,2) overwrites the slot with values near zero
+  known failing gen2945: tangency-labs/solidcore#2717: step 0 names D(2,0), overwritten by D(1,2) at out[14]
+  known failing gen2949: tangency-labs/solidcore#2717: step 4 names D(2,0), overwritten by D(1,2) at out[92]
+  known failing gen2966: tangency-labs/solidcore#2717: step 0 names D(3,0), overwritten by D(1,2) at out[11]
+  known failing upper_half_slot_overwrite: tangency-labs/solidcore#2717: step 1 names D(2,0), overwritten by D(1,2) at out[26]
+FAIL surface.offset_surface cases=3182 changed=1 added=0 removed=0 broken=0 known_failing=103 rust=103.966s
+  changed gen2209 (6 differences)
+    values.out[8]: "NaN" -> 0.0
+    values.out[9]: "NaN" -> 0.0
+    values.out[10]: "NaN" -> 0.0
+    values.out[11]: "NaN" -> 0.0
+    values.out[12]: "NaN" -> 0.0
+    values.out[13]: "NaN" -> 0.0
+goldens: 1 unit(s), 0 passed, 1 failed

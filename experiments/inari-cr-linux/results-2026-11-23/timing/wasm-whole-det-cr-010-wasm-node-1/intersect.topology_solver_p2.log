@@ -1,0 +1,8 @@
+(node:804495) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL intersect.topology_solver_p2 cases=2575 changed=2 added=0 removed=0 broken=0 known_failing=0 rust=3.791s
+  changed analytic_face_cone_x_6_3 (1 differences)
+    values.static.block[0]: [1009.0703625,1013.0703625,10096.984525] -> [1009.4297375,1013.4297375,10102.015775]
+  changed analytic_face_cone_x_7_3 (1 differences)
+    values.static.block[0]: [8.0703625,16.0703625,86.984525] -> [8.4297375,16.4297375,92.01577499999999]
+goldens: 1 unit(s), 0 passed, 1 failed

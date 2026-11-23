@@ -1,0 +1,2 @@
+PASS nlib.crv_geom cases=1725 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.677s
+goldens: 1 unit(s), 1 passed, 0 failed

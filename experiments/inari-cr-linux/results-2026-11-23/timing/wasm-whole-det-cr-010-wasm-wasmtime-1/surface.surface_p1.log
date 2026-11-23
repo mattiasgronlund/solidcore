@@ -1,0 +1,13 @@
+FAIL surface.surface_p1 cases=1000 changed=3 added=0 removed=0 broken=0 known_failing=0 rust=1.464s
+  changed gen0085 (2 differences)
+    values.out[0]: -1.153133739513448e-16 -> -8.124999692827491e-17
+    values.out[1]: 1.8230905943636386e-16 -> 1.2175194472868401e-16
+  changed gen0678 (3 differences)
+    values.out[4]: -1.7155240180563673e-16 -> 3.779178276147659e-18
+    values.out[6]: -1.3850199976051474e-16 -> -1.9654126130955587e-16
+    values.out[8]: 1.1933628613401428e-16 -> -6.535188039306231e-17
+  changed gen0708 (3 differences)
+    values.out[3]: -1.6610938849524927e-17 -> 0.0
+    values.out[5]: -4.9991777815920174e-17 -> 0.0
+    values.out[7]: 5.2679228721185595e-17 -> -0.0
+goldens: 1 unit(s), 0 passed, 1 failed

@@ -1,0 +1,11 @@
+cr-010 vs Nov22 cr-new: 0 differ
+cr-010-gen vs Nov22 cr-new-gen: 0 differ
+cr-010-count vs Nov22 cr-new-count: 0 differ
+cr-010 vs cr-010-gen: 0 differ
+det-cr-010 vs Nov22 det-cr: 0 differ
+det-libm-wasm (wasmtime) vs Nov22 det-libm (native): 0 differ
+det-cr-010-wasm (wasmtime) vs det-cr-010 (native): 1 differ
+Files /tmp/claude-1000/-home-mattias-git-tangency-labs-solidcore/d6e623d7-4700-4d3e-9d95-9d5b2daa7069/scratchpad/work/out/det-cr-010-wasm-wasmtime/corpus.parity.jsonl and /tmp/claude-1000/-home-mattias-git-tangency-labs-solidcore/d6e623d7-4700-4d3e-9d95-9d5b2daa7069/scratchpad/work/out/det-cr-010/corpus.parity.jsonl differ
+det-cr-010-wasm node vs wasmtime: 0 differ
+det-cr-010 vs #15405 goldens: 167 differ
+cr-010 vs ed65e20 goldens: 75 differ

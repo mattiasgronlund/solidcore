@@ -1,0 +1,678 @@
+wasm-whole	variant	engine	wall_s	unit_times_s	wall_change	unit_times_change	units_not_0	native_unit_times_s	ratio_to_native
+wasm-whole	det-libm-wasm	wasmtime	1010.8	2966.6	-0.1%	-0.0%	0	1872.8	1.58
+wasm-whole	det-cr-010-wasm	wasmtime	1020.5	2983.7	+0.8%	+0.6%	71	1930.7	1.55
+wasm-whole	det-libm-wasm	wasmtime	1013.6	2966.9	+0.1%	+0.0%	0	1872.8	1.58
+wasm-whole	det-libm-wasm	node	865.9	2551.9	+0.0%	+0.0%	0	1872.8	1.36
+wasm-whole	det-cr-010-wasm	node	874.6	2580.8	+1.0%	+1.1%	71	1930.7	1.34
+
+wasm-unit	unit	variant	native_s	node_s	node_ratio	wasmtime_s	wasmtime_ratio
+wasm-unit	blend.feature_executive	det-cr-010-wasm	20.96	28.89	1.38	34.49	1.65
+wasm-unit	blend.fillet_corner_p1	det-cr-010-wasm	2.17	4.03	1.86	3.45	1.59
+wasm-unit	blend.fillet_corner_p2	det-cr-010-wasm	5.34	7.76	1.46	7.62	1.43
+wasm-unit	blend.fillet_corner_p3	det-cr-010-wasm	8.25	11.96	1.45	13.30	1.61
+wasm-unit	blend.fillet_custom_solver	det-cr-010-wasm	0.12	0.91	7.58	0.14	1.18
+wasm-unit	blend.fillet_executive_p1	det-cr-010-wasm	1.99	3.75	1.89	3.28	1.65
+wasm-unit	blend.fillet_executive_p2	det-cr-010-wasm	0.08	1.01	12.59	0.13	1.65
+wasm-unit	blend.fillet_executive_p3	det-cr-010-wasm	60.66	78.30	1.29	97.33	1.60
+wasm-unit	blend.fillet_geom_p1	det-cr-010-wasm	2.23	3.14	1.41	2.47	1.11
+wasm-unit	blend.fillet_geom_p2	det-cr-010-wasm	8.15	11.61	1.42	13.44	1.65
+wasm-unit	blend.fillet_geom_p3	det-cr-010-wasm	5.90	8.54	1.45	9.81	1.66
+wasm-unit	blend.fillet_geom_p4	det-cr-010-wasm	0.28	1.18	4.22	0.34	1.21
+wasm-unit	blend.fillet_geom_p5	det-cr-010-wasm	0.60	1.68	2.80	0.85	1.42
+wasm-unit	blend.fillet_geom_p6	det-cr-010-wasm	8.97	12.69	1.42	14.84	1.66
+wasm-unit	blend.fillet_intersector	det-cr-010-wasm	0.40	1.31	3.28	0.41	1.01
+wasm-unit	blend.fillet_removal	det-cr-010-wasm	10.62	14.99	1.41	17.40	1.64
+wasm-unit	blend.fillet_solver_p1	det-cr-010-wasm	1.26	2.57	2.03	2.02	1.59
+wasm-unit	blend.fillet_solver_p2	det-cr-010-wasm	0.62	1.71	2.76	0.99	1.60
+wasm-unit	blend.fillet_solver_p3	det-cr-010-wasm	0.12	0.88	7.35	0.15	1.28
+wasm-unit	blend.fillet_solver_p4	det-cr-010-wasm	0.22	1.13	5.14	0.27	1.24
+wasm-unit	blend.fillet_solver_p5	det-cr-010-wasm	0.06	0.87	14.50	0.07	1.21
+wasm-unit	blend.fillet_standard_solver_p1	det-cr-010-wasm	2.11	3.39	1.61	2.95	1.40
+wasm-unit	blend.fillet_standard_solver_p2	det-cr-010-wasm	0.64	1.82	2.85	0.94	1.46
+wasm-unit	blend.hcr	det-cr-010-wasm	4.82	7.18	1.49	7.47	1.55
+wasm-unit	blend.identify_fillet	det-cr-010-wasm	31.32	40.26	1.29	51.27	1.64
+wasm-unit	boolean.api_brep	det-cr-010-wasm	25.16	32.99	1.31	40.18	1.60
+wasm-unit	boolean.merge_p1	det-cr-010-wasm	0.22	1.20	5.43	0.34	1.54
+wasm-unit	boolean.merge_p2	det-cr-010-wasm	0.16	1.14	7.12	0.26	1.65
+wasm-unit	boolean.merge_p3	det-cr-010-wasm	0.20	1.24	6.17	0.27	1.33
+wasm-unit	boolean.merge_p4	det-cr-010-wasm	0.18	1.14	6.36	0.22	1.20
+wasm-unit	boolean.merge_p5	det-cr-010-wasm	0.10	0.98	9.76	0.14	1.41
+wasm-unit	boolean.topology_intersector_p1	det-cr-010-wasm	20.51	26.49	1.29	33.30	1.62
+wasm-unit	boolean.topology_intersector_p2	det-cr-010-wasm	22.88	30.95	1.35	37.34	1.63
+wasm-unit	boolean.topology_intersector_p3	det-cr-010-wasm	7.62	10.79	1.42	12.58	1.65
+wasm-unit	curve.composite_curve_p1	det-cr-010-wasm	0.38	1.23	3.22	0.37	0.98
+wasm-unit	curve.composite_curve_p2	det-cr-010-wasm	1.45	2.84	1.97	2.37	1.64
+wasm-unit	curve.conic	det-cr-010-wasm	0.16	0.91	5.69	0.17	1.06
+wasm-unit	curve.crv_in_volume	det-cr-010-wasm	0.26	1.11	4.28	0.25	0.95
+wasm-unit	curve.crv_on_surf	det-cr-010-wasm	1.30	2.52	1.93	1.86	1.43
+wasm-unit	curve.curve_cache	det-cr-010-wasm	0.16	0.96	6.01	0.19	1.18
+wasm-unit	curve.curve_p1	det-cr-010-wasm	0.78	1.58	2.02	0.78	0.99
+wasm-unit	curve.curve_p2	det-cr-010-wasm	0.22	1.06	4.81	0.20	0.92
+wasm-unit	curve.curve_p3	det-cr-010-wasm	0.34	1.27	3.72	0.36	1.05
+wasm-unit	curve.curve_p4	det-cr-010-wasm	0.28	1.22	4.36	0.26	0.94
+wasm-unit	curve.curve_p5	det-cr-010-wasm	0.36	1.27	3.52	0.30	0.83
+wasm-unit	curve.curve_p6	det-cr-010-wasm	0.34	1.27	3.73	0.40	1.16
+wasm-unit	curve.curve_p7	det-cr-010-wasm	1.77	2.76	1.56	2.00	1.13
+wasm-unit	curve.curve_p8	det-cr-010-wasm	1.91	3.09	1.62	2.44	1.28
+wasm-unit	curve.curve_p9	det-cr-010-wasm	3.01	4.19	1.39	3.94	1.31
+wasm-unit	curve.ellipse_p1	det-cr-010-wasm	0.32	1.22	3.80	0.33	1.04
+wasm-unit	curve.ellipse_p2	det-cr-010-wasm	0.24	1.07	4.43	0.22	0.91
+wasm-unit	curve.hermite_curve	det-cr-010-wasm	0.16	0.97	6.09	0.18	1.11
+wasm-unit	curve.hyperbola	det-cr-010-wasm	0.14	0.99	7.11	0.15	1.06
+wasm-unit	curve.iso_curve	det-cr-010-wasm	0.34	1.18	3.46	0.35	1.04
+wasm-unit	curve.line	det-cr-010-wasm	0.18	1.02	5.66	0.18	0.98
+wasm-unit	curve.offset_curve	det-cr-010-wasm	0.28	1.09	3.89	0.28	0.99
+wasm-unit	curve.parabola	det-cr-010-wasm	0.20	1.05	5.26	0.21	1.05
+wasm-unit	curve.projected_curve	det-cr-010-wasm	0.36	1.27	3.52	0.42	1.16
+wasm-unit	curve.tangent_field	det-cr-010-wasm	0.36	1.30	3.61	0.49	1.36
+wasm-unit	geom.a_object	det-cr-010-wasm	0.34	1.18	3.45	0.32	0.94
+wasm-unit	geom.assert_array	det-cr-010-wasm	0.44	1.19	2.71	0.42	0.96
+wasm-unit	geom.attribute	det-cr-010-wasm	0.54	1.32	2.44	0.54	0.99
+wasm-unit	geom.axis2_placement	det-cr-010-wasm	0.24	1.00	4.15	0.24	0.98
+wasm-unit	geom.context	det-cr-010-wasm	0.46	1.23	2.66	0.46	1.01
+wasm-unit	geom.extent1d	det-cr-010-wasm	0.14	0.92	6.57	0.14	1.01
+wasm-unit	geom.extent2d	det-cr-010-wasm	0.16	0.94	5.89	0.15	0.94
+wasm-unit	geom.extent3d	det-cr-010-wasm	0.14	0.97	6.96	0.15	1.04
+wasm-unit	geom.geom_utility_p1	det-cr-010-wasm	0.16	1.06	6.63	0.17	1.03
+wasm-unit	geom.geom_utility_p2	det-cr-010-wasm	0.12	0.97	8.06	0.14	1.18
+wasm-unit	geom.global_solver	det-cr-010-wasm	0.24	1.03	4.26	0.24	1.00
+wasm-unit	geom.grid	det-cr-010-wasm	0.22	1.04	4.74	0.21	0.98
+wasm-unit	geom.hash_table	det-cr-010-wasm	0.24	1.00	4.15	0.22	0.90
+wasm-unit	geom.local_solve1d	det-cr-010-wasm	0.28	1.09	3.88	0.27	0.97
+wasm-unit	geom.local_solve_nd	det-cr-010-wasm	0.48	1.22	2.52	0.52	1.08
+wasm-unit	geom.matrix	det-cr-010-wasm	0.24	1.05	4.37	0.25	1.02
+wasm-unit	geom.object	det-cr-010-wasm	0.10	1.02	10.20	0.13	1.27
+wasm-unit	geom.periodic_extent1d	det-cr-010-wasm	0.14	0.95	6.76	0.15	1.10
+wasm-unit	geom.point_set	det-cr-010-wasm	0.20	1.12	5.62	0.21	1.05
+wasm-unit	geom.polar_box	det-cr-010-wasm	0.88	1.52	1.72	0.74	0.84
+wasm-unit	geom.polynomial	det-cr-010-wasm	0.20	1.02	5.11	0.20	1.00
+wasm-unit	geom.pseudo_box	det-cr-010-wasm	0.80	1.54	1.92	0.71	0.88
+wasm-unit	geom.solution_array	det-cr-010-wasm	0.26	1.09	4.19	0.26	0.99
+wasm-unit	geom.tol	det-cr-010-wasm	0.30	1.31	4.36	0.32	1.08
+wasm-unit	geom.tools	det-cr-010-wasm	2.37	3.89	1.64	3.56	1.50
+wasm-unit	geom.transform	det-cr-010-wasm	0.18	1.01	5.63	0.20	1.09
+wasm-unit	geom.tree	det-cr-010-wasm	0.38	1.21	3.18	0.39	1.04
+wasm-unit	geom.vector2d	det-cr-010-wasm	0.12	0.94	7.83	0.13	1.12
+wasm-unit	geom.vector3d	det-cr-010-wasm	0.20	0.98	4.87	0.21	1.06
+wasm-unit	heal.face_props	det-cr-010-wasm	11.22	13.37	1.19	15.17	1.35
+wasm-unit	heal.gap	det-cr-010-wasm	2.01	3.55	1.77	3.25	1.62
+wasm-unit	heal.heal_data_p1	det-cr-010-wasm	6.44	9.53	1.48	10.31	1.60
+wasm-unit	heal.heal_data_p2	det-cr-010-wasm	5.94	8.60	1.45	9.27	1.56
+wasm-unit	heal.heal_data_p3	det-cr-010-wasm	5.76	8.60	1.49	9.16	1.59
+wasm-unit	heal.stitch_p1	det-cr-010-wasm	3.15	5.23	1.66	4.91	1.56
+wasm-unit	heal.stitch_p2	det-cr-010-wasm	4.46	6.88	1.55	6.98	1.57
+wasm-unit	intersect.adv_surface_intersector	det-cr-010-wasm	0.58	1.45	2.49	0.55	0.94
+wasm-unit	intersect.api_intersectors	det-cr-010-wasm	2.25	4.07	1.81	3.68	1.64
+wasm-unit	intersect.curve_class_p1	det-cr-010-wasm	2.71	4.02	1.49	3.65	1.35
+wasm-unit	intersect.curve_class_p2	det-cr-010-wasm	1.02	1.83	1.79	0.94	0.92
+wasm-unit	intersect.curve_class_p3	det-cr-010-wasm	3.63	3.67	1.01	3.55	0.98
+wasm-unit	intersect.curve_class_p4	det-cr-010-wasm	32.44	39.84	1.23	48.35	1.49
+wasm-unit	intersect.curve_class_p5	det-cr-010-wasm	0.60	1.89	3.15	0.77	1.27
+wasm-unit	intersect.curve_class_p6	det-cr-010-wasm	0.48	1.38	2.87	0.46	0.95
+wasm-unit	intersect.curve_class_p7	det-cr-010-wasm	4.81	6.96	1.45	7.10	1.47
+wasm-unit	intersect.curve_class_p8	det-cr-010-wasm	0.32	1.19	3.70	0.39	1.20
+wasm-unit	intersect.curve_class_p9	det-cr-010-wasm	0.14	1.03	7.35	0.19	1.38
+wasm-unit	intersect.point_class	det-cr-010-wasm	0.72	1.60	2.21	0.70	0.97
+wasm-unit	intersect.ray_tracer	det-cr-010-wasm	0.32	1.22	3.81	0.36	1.11
+wasm-unit	intersect.surface_drop_curve	det-cr-010-wasm	0.12	1.06	8.86	0.14	1.16
+wasm-unit	intersect.surface_drop_lib_p1	det-cr-010-wasm	2.57	4.16	1.62	3.76	1.46
+wasm-unit	intersect.surface_drop_lib_p2	det-cr-010-wasm	0.42	1.31	3.12	0.45	1.06
+wasm-unit	intersect.surface_drop_lib_p3	det-cr-010-wasm	0.90	2.06	2.28	1.33	1.48
+wasm-unit	intersect.surface_intersector_p1	det-cr-010-wasm	0.64	1.51	2.35	0.61	0.95
+wasm-unit	intersect.surface_intersector_p2	det-cr-010-wasm	0.76	1.56	2.05	0.76	0.99
+wasm-unit	intersect.surface_intersector_p3	det-cr-010-wasm	2.61	3.27	1.25	2.73	1.05
+wasm-unit	intersect.surface_intersector_p4	det-cr-010-wasm	0.80	1.76	2.20	0.98	1.22
+wasm-unit	intersect.surface_intersector_p5	det-cr-010-wasm	1.26	2.31	1.83	1.46	1.15
+wasm-unit	intersect.surface_silhouette	det-cr-010-wasm	0.12	0.96	8.02	0.15	1.24
+wasm-unit	intersect.surface_tracer	det-cr-010-wasm	0.28	1.13	4.05	0.33	1.18
+wasm-unit	intersect.topology_solver_p1	det-cr-010-wasm	0.94	1.91	2.02	1.02	1.08
+wasm-unit	intersect.topology_solver_p2	det-cr-010-wasm	2.79	4.58	1.64	3.96	1.42
+wasm-unit	mass.integrator	det-cr-010-wasm	4.38	6.72	1.54	7.26	1.66
+wasm-unit	nlib.basis_adv	det-cr-010-wasm	0.12	0.92	7.63	0.14	1.18
+wasm-unit	nlib.basis_basic	det-cr-010-wasm	0.18	0.95	5.28	0.21	1.15
+wasm-unit	nlib.bezier	det-cr-010-wasm	0.16	1.02	6.33	0.18	1.13
+wasm-unit	nlib.crv_adv_p1	det-cr-010-wasm	0.50	1.39	2.77	0.60	1.19
+wasm-unit	nlib.crv_adv_p2	det-cr-010-wasm	0.58	1.52	2.62	0.71	1.21
+wasm-unit	nlib.crv_approx	det-cr-010-wasm	1.58	2.73	1.72	2.74	1.73
+wasm-unit	nlib.crv_basic	det-cr-010-wasm	0.44	1.22	2.76	0.48	1.08
+wasm-unit	nlib.crv_common	det-cr-010-wasm	0.14	0.96	6.88	0.16	1.15
+wasm-unit	nlib.crv_fit_p1	det-cr-010-wasm	0.16	0.97	6.05	0.17	1.07
+wasm-unit	nlib.crv_fit_p2	det-cr-010-wasm	0.18	1.05	5.84	0.19	1.06
+wasm-unit	nlib.crv_fit_p3	det-cr-010-wasm	0.20	1.09	5.45	0.22	1.12
+wasm-unit	nlib.crv_fit_p4	det-cr-010-wasm	0.06	0.83	13.77	0.08	1.42
+wasm-unit	nlib.crv_geom	det-cr-010-wasm	1.78	3.01	1.69	2.68	1.50
+wasm-unit	nlib.crv_nurb	det-cr-010-wasm	0.64	1.41	2.20	0.76	1.19
+wasm-unit	nlib.crv_offset	det-cr-010-wasm	1.69	3.05	1.81	2.92	1.73
+wasm-unit	nlib.crv_tool_p1	det-cr-010-wasm	0.34	1.10	3.23	0.39	1.13
+wasm-unit	nlib.crv_tool_p2	det-cr-010-wasm	0.40	1.22	3.03	0.48	1.19
+wasm-unit	nlib.funcs_adv	det-cr-010-wasm	0.28	1.09	3.90	0.31	1.10
+wasm-unit	nlib.funcs_basic	det-cr-010-wasm	0.34	1.17	3.44	0.35	1.02
+wasm-unit	nlib.geom	det-cr-010-wasm	0.20	1.01	5.01	0.21	1.04
+wasm-unit	nlib.iges	det-cr-010-wasm	0.18	1.09	6.06	0.19	1.06
+wasm-unit	nlib.knots	det-cr-010-wasm	0.14	0.94	6.69	0.16	1.16
+wasm-unit	nlib.math	det-cr-010-wasm	0.28	1.12	3.99	0.31	1.11
+wasm-unit	nlib.spiral	det-cr-010-wasm	0.28	1.11	3.94	0.34	1.21
+wasm-unit	nlib.srf_adv_p1	det-cr-010-wasm	0.78	1.70	2.17	0.93	1.19
+wasm-unit	nlib.srf_adv_p2	det-cr-010-wasm	0.18	1.02	5.66	0.19	1.06
+wasm-unit	nlib.srf_adv_p3	det-cr-010-wasm	0.56	1.41	2.51	0.54	0.97
+wasm-unit	nlib.srf_adv_p4	det-cr-010-wasm	0.52	1.45	2.78	0.54	1.04
+wasm-unit	nlib.srf_adv_p5	det-cr-010-wasm	1.02	1.69	1.65	1.02	0.99
+wasm-unit	nlib.srf_adv_p6	det-cr-010-wasm	0.58	1.59	2.73	0.73	1.26
+wasm-unit	nlib.srf_basic	det-cr-010-wasm	0.36	1.20	3.31	0.37	1.01
+wasm-unit	nlib.srf_common	det-cr-010-wasm	0.22	1.08	4.89	0.24	1.07
+wasm-unit	nlib.srf_fit	det-cr-010-wasm	0.26	1.12	4.30	0.30	1.16
+wasm-unit	nlib.srf_nurb	det-cr-010-wasm	0.40	1.25	3.11	0.34	0.86
+wasm-unit	nlib.srf_offset	det-cr-010-wasm	1.08	2.25	2.08	1.97	1.82
+wasm-unit	nlib.srf_tool_p1	det-cr-010-wasm	0.60	1.39	2.31	0.61	1.01
+wasm-unit	nlib.srf_tool_p2	det-cr-010-wasm	0.50	1.28	2.56	0.50	1.00
+wasm-unit	nlib.srf_tool_p3	det-cr-010-wasm	0.78	1.57	2.01	0.85	1.09
+wasm-unit	nlib.srf_tool_p4	det-cr-010-wasm	0.84	1.64	1.94	0.91	1.08
+wasm-unit	nurbs.b_spline_curve_n_lib	det-cr-010-wasm	0.76	1.93	2.53	1.04	1.37
+wasm-unit	nurbs.b_spline_curve_p1	det-cr-010-wasm	0.36	1.26	3.50	0.39	1.08
+wasm-unit	nurbs.b_spline_curve_p2	det-cr-010-wasm	0.50	1.31	2.61	0.54	1.08
+wasm-unit	nurbs.b_spline_curve_p3	det-cr-010-wasm	0.52	1.39	2.67	0.60	1.16
+wasm-unit	nurbs.b_spline_surface_n_lib_p1	det-cr-010-wasm	0.44	1.77	4.01	0.75	1.69
+wasm-unit	nurbs.b_spline_surface_n_lib_p2	det-cr-010-wasm	0.30	1.22	4.04	0.33	1.09
+wasm-unit	nurbs.b_spline_surface_p1	det-cr-010-wasm	0.34	1.24	3.64	0.34	1.00
+wasm-unit	nurbs.b_spline_surface_p2	det-cr-010-wasm	0.12	1.03	8.56	0.14	1.18
+wasm-unit	nurbs.nurbs_crv	det-cr-010-wasm	1.24	2.02	1.62	1.54	1.24
+wasm-unit	nurbs.nurbs_srf	det-cr-010-wasm	0.56	1.42	2.52	0.57	1.01
+wasm-unit	offset.offset_executive_p1	det-cr-010-wasm	0.96	2.38	2.48	1.39	1.45
+wasm-unit	offset.offset_executive_p2	det-cr-010-wasm	78.71	102.72	1.31	124.63	1.58
+wasm-unit	offset.offset_geometry_creation	det-cr-010-wasm	87.79	105.15	1.20	135.02	1.54
+wasm-unit	primitive.api_curve_ops	det-cr-010-wasm	0.38	1.46	3.83	0.77	2.03
+wasm-unit	primitive.api_curves	det-cr-010-wasm	0.16	0.97	6.05	0.18	1.15
+wasm-unit	primitive.api_primitives	det-cr-010-wasm	6.62	10.17	1.54	10.71	1.62
+wasm-unit	primitive.api_surface_ops	det-cr-010-wasm	0.52	1.53	2.93	0.67	1.29
+wasm-unit	primitive.api_trim_ops	det-cr-010-wasm	3.37	5.85	1.73	5.18	1.54
+wasm-unit	primitive.primitive_creation_p1	det-cr-010-wasm	0.16	1.15	7.20	0.23	1.46
+wasm-unit	primitive.primitive_creation_p2	det-cr-010-wasm	9.82	13.85	1.41	16.46	1.68
+wasm-unit	primitive.primitive_creation_p3	det-cr-010-wasm	0.18	1.15	6.41	0.27	1.48
+wasm-unit	query.api_queries	det-cr-010-wasm	1.27	2.62	2.07	1.49	1.18
+wasm-unit	query.brep	det-cr-010-wasm	6.80	9.79	1.44	10.96	1.61
+wasm-unit	query.edge	det-cr-010-wasm	14.09	18.98	1.35	23.22	1.65
+wasm-unit	query.face_p1	det-cr-010-wasm	11.38	15.72	1.38	18.89	1.66
+wasm-unit	query.face_p2	det-cr-010-wasm	21.41	29.72	1.39	35.93	1.68
+wasm-unit	query.face_p3	det-cr-010-wasm	6.68	9.69	1.45	10.91	1.63
+wasm-unit	query.face_p4	det-cr-010-wasm	11.84	15.77	1.33	18.99	1.60
+wasm-unit	query.loop	det-cr-010-wasm	1.70	2.81	1.65	2.22	1.30
+wasm-unit	query.poly	det-cr-010-wasm	0.34	1.16	3.40	0.34	0.99
+wasm-unit	query.poly_copy	det-cr-010-wasm	0.12	0.95	7.95	0.16	1.31
+wasm-unit	query.poly_properties	det-cr-010-wasm	0.10	0.90	8.99	0.14	1.41
+wasm-unit	query.tess	det-cr-010-wasm	0.52	1.47	2.81	0.68	1.31
+wasm-unit	surface.b_spline_volume	det-cr-010-wasm	0.26	1.05	4.06	0.27	1.05
+wasm-unit	surface.b_spline_volume_n_lib	det-cr-010-wasm	0.80	1.70	2.12	1.07	1.33
+wasm-unit	surface.bend_volume	det-cr-010-wasm	0.16	0.95	5.96	0.17	1.04
+wasm-unit	surface.cone_p1	det-cr-010-wasm	4.13	4.43	1.07	4.61	1.11
+wasm-unit	surface.cone_p2	det-cr-010-wasm	0.26	1.11	4.24	0.36	1.36
+wasm-unit	surface.cone_p3	det-cr-010-wasm	1.16	2.14	1.84	1.49	1.28
+wasm-unit	surface.curve_bounded_surface	det-cr-010-wasm	0.14	0.94	6.75	0.15	1.08
+wasm-unit	surface.offset_surface	det-cr-010-wasm	61.92	76.60	1.24	104.07	1.68
+wasm-unit	surface.plane_p1	det-cr-010-wasm	0.30	1.20	3.99	0.28	0.94
+wasm-unit	surface.plane_p2	det-cr-010-wasm	0.24	1.11	4.61	0.23	0.94
+wasm-unit	surface.sphere	det-cr-010-wasm	0.16	1.01	6.34	0.21	1.30
+wasm-unit	surface.srf_in_volume	det-cr-010-wasm	0.76	1.58	2.07	0.70	0.91
+wasm-unit	surface.surf_of_extrusion_p1	det-cr-010-wasm	0.28	1.16	4.15	0.29	1.04
+wasm-unit	surface.surf_of_extrusion_p2	det-cr-010-wasm	3.69	5.75	1.56	6.14	1.66
+wasm-unit	surface.surf_of_revolution_p1	det-cr-010-wasm	0.16	1.02	6.40	0.21	1.30
+wasm-unit	surface.surf_of_revolution_p2	det-cr-010-wasm	0.68	1.85	2.71	0.99	1.45
+wasm-unit	surface.surf_of_revolution_p3	det-cr-010-wasm	7.23	6.80	0.94	7.66	1.06
+wasm-unit	surface.surface_approximate	det-cr-010-wasm	133.50	77.41	0.58	119.61	0.90
+wasm-unit	surface.surface_assert_valid	det-cr-010-wasm	0.38	1.32	3.46	0.50	1.32
+wasm-unit	surface.surface_cache_p1	det-cr-010-wasm	0.16	0.98	6.10	0.17	1.07
+wasm-unit	surface.surface_cache_p2	det-cr-010-wasm	0.18	0.99	5.50	0.19	1.05
+wasm-unit	surface.surface_cache_p3	det-cr-010-wasm	2.05	2.99	1.46	2.65	1.29
+wasm-unit	surface.surface_p1	det-cr-010-wasm	1.02	2.21	2.16	1.51	1.48
+wasm-unit	surface.surface_p10	det-cr-010-wasm	0.28	1.17	4.15	0.29	1.04
+wasm-unit	surface.surface_p11	det-cr-010-wasm	0.18	1.07	5.93	0.25	1.38
+wasm-unit	surface.surface_p2	det-cr-010-wasm	8.44	10.43	1.23	12.38	1.47
+wasm-unit	surface.surface_p3	det-cr-010-wasm	0.60	1.66	2.76	0.76	1.27
+wasm-unit	surface.surface_p4	det-cr-010-wasm	0.56	1.50	2.67	0.60	1.07
+wasm-unit	surface.surface_p5	det-cr-010-wasm	0.50	1.53	3.04	0.57	1.13
+wasm-unit	surface.surface_p6	det-cr-010-wasm	0.34	1.25	3.67	0.36	1.06
+wasm-unit	surface.surface_p7	det-cr-010-wasm	7.50	10.37	1.38	11.76	1.57
+wasm-unit	surface.surface_p8	det-cr-010-wasm	1.86	3.33	1.79	2.65	1.42
+wasm-unit	surface.surface_p9	det-cr-010-wasm	0.12	0.95	7.91	0.18	1.49
+wasm-unit	surface.surface_point_solve_p1	det-cr-010-wasm	0.22	1.03	4.70	0.27	1.21
+wasm-unit	surface.surface_point_solve_p2	det-cr-010-wasm	0.50	1.45	2.88	0.65	1.30
+wasm-unit	surface.surface_point_solve_p3	det-cr-010-wasm	0.62	1.73	2.78	0.92	1.48
+wasm-unit	surface.torus	det-cr-010-wasm	0.14	1.00	7.13	0.19	1.39
+wasm-unit	surface.trim_srf_cache	det-cr-010-wasm	0.58	1.61	2.76	0.69	1.18
+wasm-unit	surface.twist_volume	det-cr-010-wasm	0.10	0.89	8.91	0.12	1.17
+wasm-unit	surface.unbend_volume	det-cr-010-wasm	0.46	1.35	2.92	0.64	1.38
+wasm-unit	surface.volume_p1	det-cr-010-wasm	0.24	1.02	4.24	0.23	0.96
+wasm-unit	surface.volume_p2	det-cr-010-wasm	2.09	2.87	1.38	2.20	1.05
+wasm-unit	sweep.api_brep	det-cr-010-wasm	5.08	7.44	1.46	7.60	1.50
+wasm-unit	sweep.api_surfaces	det-cr-010-wasm	3.27	4.84	1.48	5.21	1.59
+wasm-unit	sweep.rotational_sweep_geometry	det-cr-010-wasm	0.10	1.00	10.02	0.13	1.28
+wasm-unit	sweep.topology_sweep	det-cr-010-wasm	1.04	2.44	2.34	1.34	1.29
+wasm-unit	sweep.trans_sweep_geometry	det-cr-010-wasm	0.10	1.02	10.19	0.14	1.37
+wasm-unit	topology.api_files	det-cr-010-wasm	5.10	8.18	1.60	8.24	1.62
+wasm-unit	topology.api_projection	det-cr-010-wasm	4.43	6.98	1.57	6.48	1.46
+wasm-unit	topology.assert_valid	det-cr-010-wasm	13.71	19.23	1.40	21.94	1.60
+wasm-unit	topology.brep_cache	det-cr-010-wasm	0.22	1.06	4.82	0.25	1.15
+wasm-unit	topology.brep_constructor	det-cr-010-wasm	0.14	1.03	7.39	0.18	1.31
+wasm-unit	topology.brep_cutting	det-cr-010-wasm	5.38	8.35	1.55	8.49	1.58
+wasm-unit	topology.brep_data	det-cr-010-wasm	0.90	1.76	1.95	1.09	1.21
+wasm-unit	topology.brep_local_operation	det-cr-010-wasm	48.53	71.33	1.47	94.63	1.95
+wasm-unit	topology.brep_mirror	det-cr-010-wasm	18.00	24.48	1.36	29.64	1.65
+wasm-unit	topology.brep_p1	det-cr-010-wasm	62.04	77.58	1.25	95.74	1.54
+wasm-unit	topology.brep_p10	det-cr-010-wasm	12.66	16.68	1.32	20.29	1.60
+wasm-unit	topology.brep_p2	det-cr-010-wasm	34.20	44.31	1.30	56.05	1.64
+wasm-unit	topology.brep_p3	det-cr-010-wasm	31.65	40.30	1.27	50.88	1.61
+wasm-unit	topology.brep_p4	det-cr-010-wasm	5.60	8.09	1.44	9.03	1.61
+wasm-unit	topology.brep_p5	det-cr-010-wasm	0.16	0.99	6.16	0.16	0.98
+wasm-unit	topology.brep_p6	det-cr-010-wasm	8.47	11.82	1.40	13.71	1.62
+wasm-unit	topology.brep_p7	det-cr-010-wasm	14.56	16.23	1.11	23.43	1.61
+wasm-unit	topology.brep_p8	det-cr-010-wasm	0.14	1.01	7.19	0.18	1.28
+wasm-unit	topology.brep_p9	det-cr-010-wasm	2.79	4.70	1.68	4.69	1.68
+wasm-unit	topology.brep_planar_section	det-cr-010-wasm	9.76	14.09	1.44	15.45	1.58
+wasm-unit	topology.brep_validation	det-cr-010-wasm	0.14	1.18	8.43	0.18	1.31
+wasm-unit	topology.database_io	det-cr-010-wasm	0.24	1.07	4.45	0.24	0.99
+wasm-unit	topology.edge	det-cr-010-wasm	43.90	56.63	1.29	72.50	1.65
+wasm-unit	topology.edgeuse_p1	det-cr-010-wasm	77.40	99.98	1.29	126.94	1.64
+wasm-unit	topology.edgeuse_p2	det-cr-010-wasm	61.65	80.68	1.31	102.08	1.66
+wasm-unit	topology.edgeuse_p3	det-cr-010-wasm	78.49	101.23	1.29	127.91	1.63
+wasm-unit	topology.face_p1	det-cr-010-wasm	34.28	43.05	1.26	54.40	1.59
+wasm-unit	topology.face_p2	det-cr-010-wasm	50.72	65.35	1.29	83.50	1.65
+wasm-unit	topology.face_p3	det-cr-010-wasm	6.34	9.38	1.48	10.04	1.58
+wasm-unit	topology.face_p4	det-cr-010-wasm	9.49	11.85	1.25	12.95	1.37
+wasm-unit	topology.loopuse	det-cr-010-wasm	206.28	257.98	1.25	338.42	1.64
+wasm-unit	topology.part_file	det-cr-010-wasm	3.05	5.02	1.64	5.05	1.66
+wasm-unit	topology.proto_topology_p1	det-cr-010-wasm	0.74	1.90	2.56	0.80	1.08
+wasm-unit	topology.proto_topology_p2	det-cr-010-wasm	0.80	1.80	2.25	0.87	1.09
+wasm-unit	topology.proto_topology_p3	det-cr-010-wasm	1.73	2.55	1.48	1.71	0.99
+wasm-unit	topology.shell	det-cr-010-wasm	1.04	2.52	2.42	1.50	1.43
+wasm-unit	topology.topology	det-cr-010-wasm	0.08	0.87	10.91	0.10	1.26
+wasm-unit	topology.topology_traverser	det-cr-010-wasm	1.75	3.34	1.91	2.83	1.62
+wasm-unit	topology.trimming_tools	det-cr-010-wasm	61.04	77.64	1.27	100.02	1.64
+wasm-unit	topology.vertex	det-cr-010-wasm	58.07	73.97	1.27	95.03	1.64
+wasm-unit	topology.vertexuse	det-cr-010-wasm	22.42	29.23	1.30	36.67	1.64
+wasm-unit	blend.feature_executive	det-libm-wasm	20.68	28.01	1.35	34.22	1.66
+wasm-unit	blend.fillet_corner_p1	det-libm-wasm	2.13	4.26	2.00	3.73	1.76
+wasm-unit	blend.fillet_corner_p2	det-libm-wasm	5.27	7.77	1.47	7.60	1.44
+wasm-unit	blend.fillet_corner_p3	det-libm-wasm	8.02	12.41	1.55	13.26	1.65
+wasm-unit	blend.fillet_custom_solver	det-libm-wasm	0.12	0.98	8.16	0.14	1.19
+wasm-unit	blend.fillet_executive_p1	det-libm-wasm	1.89	3.67	1.95	3.25	1.72
+wasm-unit	blend.fillet_executive_p2	det-libm-wasm	0.08	0.99	12.35	0.13	1.62
+wasm-unit	blend.fillet_executive_p3	det-libm-wasm	59.39	77.84	1.31	96.12	1.62
+wasm-unit	blend.fillet_geom_p1	det-libm-wasm	2.43	3.29	1.36	2.46	1.01
+wasm-unit	blend.fillet_geom_p2	det-libm-wasm	8.03	11.77	1.47	13.17	1.64
+wasm-unit	blend.fillet_geom_p3	det-libm-wasm	5.58	8.82	1.58	9.79	1.75
+wasm-unit	blend.fillet_geom_p4	det-libm-wasm	0.27	1.18	4.36	0.34	1.27
+wasm-unit	blend.fillet_geom_p5	det-libm-wasm	0.59	1.63	2.76	0.87	1.48
+wasm-unit	blend.fillet_geom_p6	det-libm-wasm	8.37	12.43	1.49	14.84	1.77
+wasm-unit	blend.fillet_intersector	det-libm-wasm	0.41	1.27	3.10	0.42	1.03
+wasm-unit	blend.fillet_removal	det-libm-wasm	9.94	14.31	1.44	17.28	1.74
+wasm-unit	blend.fillet_solver_p1	det-libm-wasm	1.21	2.56	2.11	2.05	1.69
+wasm-unit	blend.fillet_solver_p2	det-libm-wasm	0.65	1.72	2.64	0.98	1.50
+wasm-unit	blend.fillet_solver_p3	det-libm-wasm	0.12	0.91	7.59	0.16	1.32
+wasm-unit	blend.fillet_solver_p4	det-libm-wasm	0.22	1.08	4.91	0.26	1.17
+wasm-unit	blend.fillet_solver_p5	det-libm-wasm	0.05	0.85	16.92	0.07	1.50
+wasm-unit	blend.fillet_standard_solver_p1	det-libm-wasm	2.14	3.25	1.52	2.97	1.39
+wasm-unit	blend.fillet_standard_solver_p2	det-libm-wasm	0.62	1.85	2.97	1.02	1.64
+wasm-unit	blend.hcr	det-libm-wasm	4.58	7.12	1.56	7.64	1.67
+wasm-unit	blend.identify_fillet	det-libm-wasm	28.99	40.14	1.38	50.77	1.75
+wasm-unit	boolean.api_brep	det-libm-wasm	25.82	32.69	1.27	39.54	1.53
+wasm-unit	boolean.merge_p1	det-libm-wasm	0.22	1.18	5.35	0.34	1.55
+wasm-unit	boolean.merge_p2	det-libm-wasm	0.16	1.15	7.17	0.26	1.62
+wasm-unit	boolean.merge_p3	det-libm-wasm	0.21	1.20	5.68	0.28	1.33
+wasm-unit	boolean.merge_p4	det-libm-wasm	0.18	1.08	6.00	0.23	1.26
+wasm-unit	boolean.merge_p5	det-libm-wasm	0.10	0.96	9.63	0.15	1.53
+wasm-unit	boolean.topology_intersector_p1	det-libm-wasm	19.54	26.93	1.38	33.09	1.69
+wasm-unit	boolean.topology_intersector_p2	det-libm-wasm	22.02	30.56	1.39	37.08	1.68
+wasm-unit	boolean.topology_intersector_p3	det-libm-wasm	7.07	10.77	1.52	12.35	1.75
+wasm-unit	curve.composite_curve_p1	det-libm-wasm	0.38	1.26	3.30	0.39	1.04
+wasm-unit	curve.composite_curve_p2	det-libm-wasm	1.48	2.87	1.95	2.38	1.61
+wasm-unit	curve.conic	det-libm-wasm	0.16	0.94	5.90	0.17	1.07
+wasm-unit	curve.crv_in_volume	det-libm-wasm	0.26	1.15	4.42	0.25	0.95
+wasm-unit	curve.crv_on_surf	det-libm-wasm	1.28	2.53	1.97	1.86	1.45
+wasm-unit	curve.curve_cache	det-libm-wasm	0.19	0.92	4.86	0.19	1.02
+wasm-unit	curve.curve_p1	det-libm-wasm	0.76	1.61	2.11	0.79	1.04
+wasm-unit	curve.curve_p2	det-libm-wasm	0.24	1.11	4.61	0.23	0.94
+wasm-unit	curve.curve_p3	det-libm-wasm	0.35	1.28	3.66	0.35	0.99
+wasm-unit	curve.curve_p4	det-libm-wasm	0.28	1.17	4.17	0.27	0.96
+wasm-unit	curve.curve_p5	det-libm-wasm	0.30	1.16	3.85	0.30	0.99
+wasm-unit	curve.curve_p6	det-libm-wasm	0.36	1.30	3.60	0.40	1.12
+wasm-unit	curve.curve_p7	det-libm-wasm	2.03	2.69	1.32	2.01	0.99
+wasm-unit	curve.curve_p8	det-libm-wasm	2.23	3.33	1.49	2.46	1.11
+wasm-unit	curve.curve_p9	det-libm-wasm	3.84	4.36	1.13	3.99	1.04
+wasm-unit	curve.ellipse_p1	det-libm-wasm	0.30	1.18	3.92	0.31	1.02
+wasm-unit	curve.ellipse_p2	det-libm-wasm	0.20	1.04	5.19	0.20	1.01
+wasm-unit	curve.hermite_curve	det-libm-wasm	0.16	0.95	5.93	0.18	1.11
+wasm-unit	curve.hyperbola	det-libm-wasm	0.14	1.01	7.24	0.15	1.07
+wasm-unit	curve.iso_curve	det-libm-wasm	0.34	1.19	3.48	0.36	1.06
+wasm-unit	curve.line	det-libm-wasm	0.18	1.03	5.75	0.18	0.99
+wasm-unit	curve.offset_curve	det-libm-wasm	0.29	1.15	3.96	0.28	0.98
+wasm-unit	curve.parabola	det-libm-wasm	0.22	1.05	4.76	0.21	0.97
+wasm-unit	curve.projected_curve	det-libm-wasm	0.36	1.32	3.66	0.42	1.17
+wasm-unit	curve.tangent_field	det-libm-wasm	0.36	1.32	3.67	0.47	1.31
+wasm-unit	geom.a_object	det-libm-wasm	0.35	1.11	3.17	0.33	0.94
+wasm-unit	geom.assert_array	det-libm-wasm	0.49	1.17	2.37	0.43	0.88
+wasm-unit	geom.attribute	det-libm-wasm	0.56	1.36	2.42	0.53	0.94
+wasm-unit	geom.axis2_placement	det-libm-wasm	0.24	1.02	4.25	0.24	1.01
+wasm-unit	geom.context	det-libm-wasm	0.51	1.22	2.40	0.46	0.91
+wasm-unit	geom.extent1d	det-libm-wasm	0.14	0.95	6.81	0.14	1.02
+wasm-unit	geom.extent2d	det-libm-wasm	0.14	0.96	6.89	0.16	1.13
+wasm-unit	geom.extent3d	det-libm-wasm	0.15	0.94	6.27	0.15	1.00
+wasm-unit	geom.geom_utility_p1	det-libm-wasm	0.16	0.99	6.18	0.17	1.07
+wasm-unit	geom.geom_utility_p2	det-libm-wasm	0.14	0.94	6.72	0.14	1.03
+wasm-unit	geom.global_solver	det-libm-wasm	0.25	1.06	4.22	0.24	0.95
+wasm-unit	geom.grid	det-libm-wasm	0.22	1.04	4.73	0.22	1.01
+wasm-unit	geom.hash_table	det-libm-wasm	0.24	1.10	4.59	0.23	0.94
+wasm-unit	geom.local_solve1d	det-libm-wasm	0.28	1.08	3.87	0.28	1.00
+wasm-unit	geom.local_solve_nd	det-libm-wasm	0.49	1.28	2.60	0.56	1.14
+wasm-unit	geom.matrix	det-libm-wasm	0.24	1.05	4.40	0.25	1.03
+wasm-unit	geom.object	det-libm-wasm	0.10	1.01	10.06	0.13	1.33
+wasm-unit	geom.periodic_extent1d	det-libm-wasm	0.15	0.93	6.23	0.16	1.05
+wasm-unit	geom.point_set	det-libm-wasm	0.20	1.04	5.20	0.21	1.05
+wasm-unit	geom.polar_box	det-libm-wasm	0.77	1.46	1.90	0.73	0.94
+wasm-unit	geom.polynomial	det-libm-wasm	0.21	1.01	4.80	0.21	0.98
+wasm-unit	geom.pseudo_box	det-libm-wasm	0.77	1.49	1.94	0.78	1.00
+wasm-unit	geom.solution_array	det-libm-wasm	0.27	1.05	3.88	0.26	0.96
+wasm-unit	geom.tol	det-libm-wasm	0.30	1.29	4.29	0.35	1.15
+wasm-unit	geom.tools	det-libm-wasm	2.03	3.87	1.91	3.54	1.75
+wasm-unit	geom.transform	det-libm-wasm	0.20	1.03	5.13	0.21	1.05
+wasm-unit	geom.tree	det-libm-wasm	0.45	1.16	2.56	0.39	0.87
+wasm-unit	geom.vector2d	det-libm-wasm	0.13	0.92	7.07	0.14	1.04
+wasm-unit	geom.vector3d	det-libm-wasm	0.21	0.98	4.65	0.22	1.07
+wasm-unit	heal.face_props	det-libm-wasm	12.44	13.13	1.06	15.05	1.21
+wasm-unit	heal.gap	det-libm-wasm	1.89	3.60	1.91	3.21	1.70
+wasm-unit	heal.heal_data_p1	det-libm-wasm	6.24	9.40	1.51	10.33	1.66
+wasm-unit	heal.heal_data_p2	det-libm-wasm	5.51	8.39	1.52	9.21	1.67
+wasm-unit	heal.heal_data_p3	det-libm-wasm	5.53	8.83	1.60	9.14	1.65
+wasm-unit	heal.stitch_p1	det-libm-wasm	3.07	5.15	1.68	4.84	1.58
+wasm-unit	heal.stitch_p2	det-libm-wasm	4.30	6.83	1.59	6.83	1.59
+wasm-unit	intersect.adv_surface_intersector	det-libm-wasm	0.60	1.45	2.41	0.55	0.92
+wasm-unit	intersect.api_intersectors	det-libm-wasm	2.16	3.99	1.85	3.52	1.63
+wasm-unit	intersect.curve_class_p1	det-libm-wasm	2.69	4.25	1.58	3.69	1.37
+wasm-unit	intersect.curve_class_p2	det-libm-wasm	1.02	1.80	1.76	0.95	0.93
+wasm-unit	intersect.curve_class_p3	det-libm-wasm	3.78	3.65	0.97	3.62	0.96
+wasm-unit	intersect.curve_class_p4	det-libm-wasm	31.83	38.95	1.22	48.12	1.51
+wasm-unit	intersect.curve_class_p5	det-libm-wasm	0.61	1.75	2.86	0.76	1.24
+wasm-unit	intersect.curve_class_p6	det-libm-wasm	0.52	1.49	2.86	0.48	0.91
+wasm-unit	intersect.curve_class_p7	det-libm-wasm	4.96	6.79	1.37	7.01	1.42
+wasm-unit	intersect.curve_class_p8	det-libm-wasm	0.28	1.20	4.24	0.38	1.34
+wasm-unit	intersect.curve_class_p9	det-libm-wasm	0.18	1.12	6.22	0.20	1.08
+wasm-unit	intersect.point_class	det-libm-wasm	0.72	1.59	2.21	0.71	0.99
+wasm-unit	intersect.ray_tracer	det-libm-wasm	0.32	1.19	3.71	0.36	1.12
+wasm-unit	intersect.surface_drop_curve	det-libm-wasm	0.13	1.01	7.74	0.15	1.16
+wasm-unit	intersect.surface_drop_lib_p1	det-libm-wasm	2.64	4.32	1.64	3.71	1.41
+wasm-unit	intersect.surface_drop_lib_p2	det-libm-wasm	0.42	1.23	2.93	0.43	1.02
+wasm-unit	intersect.surface_drop_lib_p3	det-libm-wasm	0.94	2.09	2.22	1.30	1.38
+wasm-unit	intersect.surface_intersector_p1	det-libm-wasm	0.65	1.45	2.23	0.62	0.95
+wasm-unit	intersect.surface_intersector_p2	det-libm-wasm	0.78	1.65	2.12	0.77	0.98
+wasm-unit	intersect.surface_intersector_p3	det-libm-wasm	3.06	3.40	1.11	2.78	0.91
+wasm-unit	intersect.surface_intersector_p4	det-libm-wasm	0.81	1.74	2.15	0.98	1.20
+wasm-unit	intersect.surface_intersector_p5	det-libm-wasm	1.41	2.32	1.64	1.47	1.04
+wasm-unit	intersect.surface_silhouette	det-libm-wasm	0.14	0.97	6.92	0.15	1.08
+wasm-unit	intersect.surface_tracer	det-libm-wasm	0.30	1.12	3.72	0.34	1.13
+wasm-unit	intersect.topology_solver_p1	det-libm-wasm	1.07	1.85	1.72	1.05	0.98
+wasm-unit	intersect.topology_solver_p2	det-libm-wasm	3.25	4.26	1.31	3.83	1.18
+wasm-unit	mass.integrator	det-libm-wasm	4.67	6.70	1.44	7.31	1.57
+wasm-unit	nlib.basis_adv	det-libm-wasm	0.13	0.90	6.89	0.15	1.13
+wasm-unit	nlib.basis_basic	det-libm-wasm	0.18	0.96	5.35	0.21	1.18
+wasm-unit	nlib.bezier	det-libm-wasm	0.14	0.91	6.50	0.15	1.09
+wasm-unit	nlib.crv_adv_p1	det-libm-wasm	0.50	1.29	2.57	0.60	1.19
+wasm-unit	nlib.crv_adv_p2	det-libm-wasm	0.62	1.43	2.30	0.71	1.15
+wasm-unit	nlib.crv_approx	det-libm-wasm	1.58	2.75	1.74	2.80	1.77
+wasm-unit	nlib.crv_basic	det-libm-wasm	0.44	1.27	2.88	0.48	1.09
+wasm-unit	nlib.crv_common	det-libm-wasm	0.14	0.93	6.65	0.16	1.12
+wasm-unit	nlib.crv_fit_p1	det-libm-wasm	0.18	0.94	5.23	0.18	0.97
+wasm-unit	nlib.crv_fit_p2	det-libm-wasm	0.19	0.97	5.09	0.19	1.02
+wasm-unit	nlib.crv_fit_p3	det-libm-wasm	0.20	1.05	5.21	0.23	1.14
+wasm-unit	nlib.crv_fit_p4	det-libm-wasm	0.06	0.85	14.20	0.09	1.42
+wasm-unit	nlib.crv_geom	det-libm-wasm	2.24	3.02	1.35	2.73	1.22
+wasm-unit	nlib.crv_nurb	det-libm-wasm	0.65	1.42	2.18	0.78	1.19
+wasm-unit	nlib.crv_offset	det-libm-wasm	1.79	3.02	1.69	2.99	1.67
+wasm-unit	nlib.crv_tool_p1	det-libm-wasm	0.34	1.12	3.28	0.39	1.15
+wasm-unit	nlib.crv_tool_p2	det-libm-wasm	0.40	1.27	3.16	0.48	1.20
+wasm-unit	nlib.funcs_adv	det-libm-wasm	0.28	1.11	3.98	0.31	1.10
+wasm-unit	nlib.funcs_basic	det-libm-wasm	0.35	1.16	3.32	0.36	1.02
+wasm-unit	nlib.geom	det-libm-wasm	0.20	0.97	4.87	0.21	1.06
+wasm-unit	nlib.iges	det-libm-wasm	0.20	0.99	4.94	0.19	0.97
+wasm-unit	nlib.knots	det-libm-wasm	0.14	0.88	6.29	0.16	1.14
+wasm-unit	nlib.math	det-libm-wasm	0.29	1.08	3.71	0.30	1.04
+wasm-unit	nlib.spiral	det-libm-wasm	0.29	1.12	3.84	0.33	1.15
+wasm-unit	nlib.srf_adv_p1	det-libm-wasm	0.77	1.72	2.22	0.93	1.21
+wasm-unit	nlib.srf_adv_p2	det-libm-wasm	0.18	1.05	5.86	0.20	1.11
+wasm-unit	nlib.srf_adv_p3	det-libm-wasm	0.52	1.45	2.79	0.54	1.04
+wasm-unit	nlib.srf_adv_p4	det-libm-wasm	0.51	1.36	2.66	0.56	1.09
+wasm-unit	nlib.srf_adv_p5	det-libm-wasm	1.03	1.73	1.68	1.02	0.99
+wasm-unit	nlib.srf_adv_p6	det-libm-wasm	0.61	1.58	2.59	0.74	1.21
+wasm-unit	nlib.srf_basic	det-libm-wasm	0.39	1.17	3.00	0.38	0.96
+wasm-unit	nlib.srf_common	det-libm-wasm	0.22	1.09	4.94	0.24	1.10
+wasm-unit	nlib.srf_fit	det-libm-wasm	0.28	1.09	3.90	0.29	1.03
+wasm-unit	nlib.srf_nurb	det-libm-wasm	0.33	1.17	3.53	0.35	1.06
+wasm-unit	nlib.srf_offset	det-libm-wasm	1.01	2.18	2.15	1.94	1.91
+wasm-unit	nlib.srf_tool_p1	det-libm-wasm	0.62	1.36	2.19	0.61	0.98
+wasm-unit	nlib.srf_tool_p2	det-libm-wasm	0.55	1.28	2.31	0.51	0.92
+wasm-unit	nlib.srf_tool_p3	det-libm-wasm	0.78	1.57	2.00	0.83	1.07
+wasm-unit	nlib.srf_tool_p4	det-libm-wasm	0.86	1.66	1.92	0.93	1.08
+wasm-unit	nurbs.b_spline_curve_n_lib	det-libm-wasm	0.75	1.98	2.63	1.05	1.40
+wasm-unit	nurbs.b_spline_curve_p1	det-libm-wasm	0.36	1.16	3.21	0.41	1.13
+wasm-unit	nurbs.b_spline_curve_p2	det-libm-wasm	0.50	1.32	2.63	0.55	1.09
+wasm-unit	nurbs.b_spline_curve_p3	det-libm-wasm	0.53	1.44	2.71	0.61	1.15
+wasm-unit	nurbs.b_spline_surface_n_lib_p1	det-libm-wasm	0.44	1.65	3.73	0.75	1.70
+wasm-unit	nurbs.b_spline_surface_n_lib_p2	det-libm-wasm	0.26	1.13	4.34	0.30	1.15
+wasm-unit	nurbs.b_spline_surface_p1	det-libm-wasm	0.34	1.25	3.65	0.35	1.03
+wasm-unit	nurbs.b_spline_surface_p2	det-libm-wasm	0.13	0.97	7.44	0.14	1.10
+wasm-unit	nurbs.nurbs_crv	det-libm-wasm	1.25	1.95	1.56	1.53	1.22
+wasm-unit	nurbs.nurbs_srf	det-libm-wasm	0.56	1.40	2.50	0.56	0.99
+wasm-unit	offset.offset_executive_p1	det-libm-wasm	0.95	2.30	2.41	1.41	1.48
+wasm-unit	offset.offset_executive_p2	det-libm-wasm	77.23	101.09	1.31	123.65	1.60
+wasm-unit	offset.offset_geometry_creation	det-libm-wasm	92.72	105.06	1.13	135.19	1.46
+wasm-unit	primitive.api_curve_ops	det-libm-wasm	0.40	1.41	3.52	0.70	1.74
+wasm-unit	primitive.api_curves	det-libm-wasm	0.15	1.01	6.73	0.18	1.21
+wasm-unit	primitive.api_primitives	det-libm-wasm	6.48	9.59	1.48	10.24	1.58
+wasm-unit	primitive.api_surface_ops	det-libm-wasm	0.42	1.53	3.65	0.66	1.57
+wasm-unit	primitive.api_trim_ops	det-libm-wasm	3.65	5.50	1.51	5.11	1.40
+wasm-unit	primitive.primitive_creation_p1	det-libm-wasm	0.16	1.15	7.20	0.23	1.47
+wasm-unit	primitive.primitive_creation_p2	det-libm-wasm	9.63	13.81	1.43	16.39	1.70
+wasm-unit	primitive.primitive_creation_p3	det-libm-wasm	0.18	1.12	6.21	0.25	1.37
+wasm-unit	query.api_queries	det-libm-wasm	1.36	2.55	1.88	1.50	1.10
+wasm-unit	query.brep	det-libm-wasm	6.48	9.68	1.49	10.90	1.68
+wasm-unit	query.edge	det-libm-wasm	13.24	18.90	1.43	22.93	1.73
+wasm-unit	query.face_p1	det-libm-wasm	10.89	15.82	1.45	18.65	1.71
+wasm-unit	query.face_p2	det-libm-wasm	20.71	28.43	1.37	35.86	1.73
+wasm-unit	query.face_p3	det-libm-wasm	6.40	9.80	1.53	10.65	1.66
+wasm-unit	query.face_p4	det-libm-wasm	11.06	14.87	1.34	17.96	1.62
+wasm-unit	query.loop	det-libm-wasm	1.75	2.75	1.58	2.15	1.23
+wasm-unit	query.poly	det-libm-wasm	0.34	1.15	3.36	0.34	0.99
+wasm-unit	query.poly_copy	det-libm-wasm	0.12	0.92	7.63	0.16	1.33
+wasm-unit	query.poly_properties	det-libm-wasm	0.10	0.89	8.90	0.14	1.36
+wasm-unit	query.tess	det-libm-wasm	0.53	1.45	2.74	0.67	1.27
+wasm-unit	surface.b_spline_volume	det-libm-wasm	0.26	1.03	3.96	0.26	0.99
+wasm-unit	surface.b_spline_volume_n_lib	det-libm-wasm	0.80	1.68	2.09	1.04	1.30
+wasm-unit	surface.bend_volume	det-libm-wasm	0.17	0.97	5.68	0.17	1.01
+wasm-unit	surface.cone_p1	det-libm-wasm	3.68	3.84	1.04	4.08	1.11
+wasm-unit	surface.cone_p2	det-libm-wasm	0.23	1.04	4.54	0.26	1.13
+wasm-unit	surface.cone_p3	det-libm-wasm	1.13	2.08	1.83	1.34	1.18
+wasm-unit	surface.curve_bounded_surface	det-libm-wasm	0.12	0.92	7.67	0.15	1.27
+wasm-unit	surface.offset_surface	det-libm-wasm	60.36	76.45	1.27	103.28	1.71
+wasm-unit	surface.plane_p1	det-libm-wasm	0.31	1.17	3.77	0.29	0.95
+wasm-unit	surface.plane_p2	det-libm-wasm	0.21	1.07	5.10	0.23	1.08
+wasm-unit	surface.sphere	det-libm-wasm	0.12	0.94	7.79	0.15	1.27
+wasm-unit	surface.srf_in_volume	det-libm-wasm	0.75	1.60	2.13	0.71	0.94
+wasm-unit	surface.surf_of_extrusion_p1	det-libm-wasm	0.29	1.22	4.20	0.29	1.01
+wasm-unit	surface.surf_of_extrusion_p2	det-libm-wasm	3.81	5.78	1.52	6.29	1.65
+wasm-unit	surface.surf_of_revolution_p1	det-libm-wasm	0.14	0.95	6.78	0.17	1.23
+wasm-unit	surface.surf_of_revolution_p2	det-libm-wasm	0.62	1.67	2.69	0.87	1.40
+wasm-unit	surface.surf_of_revolution_p3	det-libm-wasm	6.87	5.93	0.86	6.93	1.01
+wasm-unit	surface.surface_approximate	det-libm-wasm	133.89	75.93	0.57	119.43	0.89
+wasm-unit	surface.surface_assert_valid	det-libm-wasm	0.36	1.28	3.54	0.46	1.28
+wasm-unit	surface.surface_cache_p1	det-libm-wasm	0.16	0.97	6.08	0.17	1.09
+wasm-unit	surface.surface_cache_p2	det-libm-wasm	0.18	0.99	5.48	0.19	1.06
+wasm-unit	surface.surface_cache_p3	det-libm-wasm	2.23	3.03	1.36	2.68	1.20
+wasm-unit	surface.surface_p1	det-libm-wasm	1.00	2.19	2.18	1.53	1.53
+wasm-unit	surface.surface_p10	det-libm-wasm	0.29	1.18	4.06	0.30	1.04
+wasm-unit	surface.surface_p11	det-libm-wasm	0.18	1.10	6.08	0.25	1.38
+wasm-unit	surface.surface_p2	det-libm-wasm	8.01	9.98	1.25	11.95	1.49
+wasm-unit	surface.surface_p3	det-libm-wasm	0.58	1.54	2.64	0.73	1.26
+wasm-unit	surface.surface_p4	det-libm-wasm	0.58	1.50	2.59	0.61	1.05
+wasm-unit	surface.surface_p5	det-libm-wasm	0.51	1.44	2.81	0.58	1.14
+wasm-unit	surface.surface_p6	det-libm-wasm	0.34	1.24	3.65	0.36	1.06
+wasm-unit	surface.surface_p7	det-libm-wasm	7.33	10.09	1.38	11.51	1.57
+wasm-unit	surface.surface_p8	det-libm-wasm	2.03	3.17	1.56	2.63	1.30
+wasm-unit	surface.surface_p9	det-libm-wasm	0.12	0.93	7.72	0.17	1.46
+wasm-unit	surface.surface_point_solve_p1	det-libm-wasm	0.20	1.09	5.43	0.26	1.30
+wasm-unit	surface.surface_point_solve_p2	det-libm-wasm	0.38	1.30	3.40	0.48	1.25
+wasm-unit	surface.surface_point_solve_p3	det-libm-wasm	0.52	1.49	2.85	0.73	1.41
+wasm-unit	surface.torus	det-libm-wasm	0.12	0.92	7.66	0.15	1.23
+wasm-unit	surface.trim_srf_cache	det-libm-wasm	0.59	1.66	2.80	0.69	1.17
+wasm-unit	surface.twist_volume	det-libm-wasm	0.10	0.87	8.71	0.12	1.21
+wasm-unit	surface.unbend_volume	det-libm-wasm	0.50	1.30	2.59	0.64	1.27
+wasm-unit	surface.volume_p1	det-libm-wasm	0.24	1.03	4.29	0.23	0.98
+wasm-unit	surface.volume_p2	det-libm-wasm	2.29	2.64	1.15	2.25	0.98
+wasm-unit	sweep.api_brep	det-libm-wasm	5.02	7.17	1.43	7.54	1.50
+wasm-unit	sweep.api_surfaces	det-libm-wasm	3.25	4.80	1.48	5.16	1.59
+wasm-unit	sweep.rotational_sweep_geometry	det-libm-wasm	0.11	0.92	8.38	0.12	1.11
+wasm-unit	sweep.topology_sweep	det-libm-wasm	0.98	2.54	2.59	1.32	1.34
+wasm-unit	sweep.trans_sweep_geometry	det-libm-wasm	0.10	0.97	9.75	0.14	1.43
+wasm-unit	topology.api_files	det-libm-wasm	4.79	7.57	1.58	8.08	1.69
+wasm-unit	topology.api_projection	det-libm-wasm	4.21	6.75	1.61	6.41	1.52
+wasm-unit	topology.assert_valid	det-libm-wasm	13.12	18.28	1.39	21.20	1.62
+wasm-unit	topology.brep_cache	det-libm-wasm	0.30	1.03	3.44	0.25	0.84
+wasm-unit	topology.brep_constructor	det-libm-wasm	0.14	1.08	7.73	0.18	1.29
+wasm-unit	topology.brep_cutting	det-libm-wasm	5.31	8.10	1.53	8.37	1.58
+wasm-unit	topology.brep_data	det-libm-wasm	0.80	1.69	2.10	1.13	1.40
+wasm-unit	topology.brep_local_operation	det-libm-wasm	46.55	71.62	1.54	96.81	2.08
+wasm-unit	topology.brep_mirror	det-libm-wasm	17.01	23.56	1.38	29.10	1.71
+wasm-unit	topology.brep_p1	det-libm-wasm	60.21	76.89	1.28	95.59	1.59
+wasm-unit	topology.brep_p10	det-libm-wasm	12.20	16.50	1.35	20.09	1.65
+wasm-unit	topology.brep_p2	det-libm-wasm	32.08	43.56	1.36	56.01	1.75
+wasm-unit	topology.brep_p3	det-libm-wasm	29.57	40.37	1.37	51.01	1.73
+wasm-unit	topology.brep_p4	det-libm-wasm	5.50	8.00	1.45	9.03	1.64
+wasm-unit	topology.brep_p5	det-libm-wasm	0.14	0.97	6.90	0.16	1.13
+wasm-unit	topology.brep_p6	det-libm-wasm	7.92	11.70	1.48	13.64	1.72
+wasm-unit	topology.brep_p7	det-libm-wasm	14.12	16.19	1.15	23.52	1.67
+wasm-unit	topology.brep_p8	det-libm-wasm	0.15	1.01	6.75	0.18	1.22
+wasm-unit	topology.brep_p9	det-libm-wasm	2.73	4.78	1.75	4.68	1.71
+wasm-unit	topology.brep_planar_section	det-libm-wasm	9.49	13.76	1.45	15.19	1.60
+wasm-unit	topology.brep_validation	det-libm-wasm	0.13	1.09	8.35	0.19	1.44
+wasm-unit	topology.database_io	det-libm-wasm	0.24	1.07	4.44	0.24	1.01
+wasm-unit	topology.edge	det-libm-wasm	41.38	55.68	1.35	71.63	1.73
+wasm-unit	topology.edgeuse_p1	det-libm-wasm	72.86	98.18	1.35	126.13	1.73
+wasm-unit	topology.edgeuse_p2	det-libm-wasm	58.40	79.29	1.36	101.50	1.74
+wasm-unit	topology.edgeuse_p3	det-libm-wasm	74.09	98.45	1.33	127.11	1.72
+wasm-unit	topology.face_p1	det-libm-wasm	33.51	42.97	1.28	54.48	1.63
+wasm-unit	topology.face_p2	det-libm-wasm	47.84	64.47	1.35	82.61	1.73
+wasm-unit	topology.face_p3	det-libm-wasm	6.18	9.12	1.48	9.93	1.61
+wasm-unit	topology.face_p4	det-libm-wasm	9.30	12.01	1.29	12.94	1.39
+wasm-unit	topology.loopuse	det-libm-wasm	194.40	256.98	1.32	337.36	1.74
+wasm-unit	topology.part_file	det-libm-wasm	2.83	4.85	1.71	4.94	1.75
+wasm-unit	topology.proto_topology_p1	det-libm-wasm	0.75	1.78	2.36	0.80	1.07
+wasm-unit	topology.proto_topology_p2	det-libm-wasm	0.82	1.80	2.19	0.89	1.08
+wasm-unit	topology.proto_topology_p3	det-libm-wasm	1.77	2.47	1.39	1.72	0.97
+wasm-unit	topology.shell	det-libm-wasm	1.04	2.60	2.49	1.50	1.43
+wasm-unit	topology.topology	det-libm-wasm	0.08	0.85	10.61	0.10	1.24
+wasm-unit	topology.topology_traverser	det-libm-wasm	1.72	3.29	1.92	2.83	1.65
+wasm-unit	topology.trimming_tools	det-libm-wasm	57.63	77.44	1.34	99.32	1.72
+wasm-unit	topology.vertex	det-libm-wasm	54.78	74.35	1.36	94.76	1.73
+wasm-unit	topology.vertexuse	det-libm-wasm	21.15	29.57	1.40	36.44	1.72
+
+wasm-heavy	unit	engine	variant	round_1_s	round_2_s	change_of_mean	native_mean_s	ratio_to_native
+wasm-heavy	offset.offset_executive_p2	wasmtime	det-libm-wasm	122.15	121.99	+0.0%	75.43	1.62
+wasm-heavy	offset.offset_executive_p2	wasmtime	det-cr-010-wasm	123.18	123.12	+0.9%	77.16	1.60
+wasm-heavy	blend.fillet_executive_p3	wasmtime	det-libm-wasm	94.69	94.61	+0.0%	58.27	1.62
+wasm-heavy	blend.fillet_executive_p3	wasmtime	det-cr-010-wasm	96.01	96.09	+1.5%	59.28	1.62
+wasm-heavy	blend.feature_executive	wasmtime	det-libm-wasm	33.73	33.54	+0.0%	20.18	1.67
+wasm-heavy	blend.feature_executive	wasmtime	det-cr-010-wasm	33.56	33.66	-0.1%	20.65	1.63
+wasm-heavy	surface.surface_p7	wasmtime	det-libm-wasm	11.37	11.41	+0.0%	7.21	1.58
+wasm-heavy	surface.surface_p7	wasmtime	det-cr-010-wasm	11.61	11.65	+2.1%	7.40	1.57
+wasm-heavy	offset.offset_executive_p2	node	det-libm-wasm	102.76	102.96	+0.0%	75.43	1.36
+wasm-heavy	offset.offset_executive_p2	node	det-cr-010-wasm	103.62	104.19	+1.0%	77.16	1.35
+wasm-heavy	blend.fillet_executive_p3	node	det-libm-wasm	80.61	80.28	+0.0%	58.27	1.38
+wasm-heavy	blend.fillet_executive_p3	node	det-cr-010-wasm	81.54	80.89	+1.0%	59.28	1.37
+wasm-heavy	blend.feature_executive	node	det-libm-wasm	30.04	29.83	+0.0%	20.18	1.48
+wasm-heavy	blend.feature_executive	node	det-cr-010-wasm	30.25	30.46	+1.4%	20.65	1.47
+wasm-heavy	surface.surface_p7	node	det-libm-wasm	10.96	11.10	+0.0%	7.21	1.53
+wasm-heavy	surface.surface_p7	node	det-cr-010-wasm	11.25	11.29	+2.2%	7.40	1.52
+
+wasm-micro	run	function	range	std_ns	libm_ns	cr_ns	ratio	cr_vs_libm
+wasm-micro	native	acos	[-1, 1]	16.0	10.8	22.9	1.43	2.11
+wasm-micro	native	asin	[-1, 1]	15.8	11.0	19.1	1.21	1.73
+wasm-micro	native	atan	[-10, 10]	11.6	10.5	23.1	1.99	2.19
+wasm-micro	native	atan2	[-1, 1]²	23.5	25.2	37.5	1.60	1.49
+wasm-micro	native	sin	[-7, 7]	17.7	16.4	16.2	0.91	0.99
+wasm-micro	native	cos	[-7, 7]	16.3	16.3	16.8	1.03	1.03
+wasm-micro	native	tan	[-1.5, 1.5]	15.4	15.7	16.9	1.10	1.08
+wasm-micro	native	exp	[-10, 10]	5.0	9.7	8.6	1.74	0.89
+wasm-micro	native	ln	[1e-3, 1e3]	4.6	7.8	18.1	3.91	2.33
+wasm-micro	native	pow	[0.01, 100] × [-10, 10]	14.0	45.6	37.1	2.65	0.81
+wasm-micro	wasip1-wasmtime	acos	[-1, 1]	11.6	22.2	32.8	2.83	1.48
+wasm-micro	wasip1-wasmtime	asin	[-1, 1]	11.5	22.9	36.5	3.18	1.60
+wasm-micro	wasip1-wasmtime	atan	[-10, 10]	11.1	10.4	37.5	3.38	3.60
+wasm-micro	wasip1-wasmtime	atan2	[-1, 1]²	26.3	26.3	63.2	2.40	2.41
+wasm-micro	wasip1-wasmtime	sin	[-7, 7]	19.5	18.2	22.2	1.13	1.22
+wasm-micro	wasip1-wasmtime	cos	[-7, 7]	18.9	18.1	20.4	1.08	1.12
+wasm-micro	wasip1-wasmtime	tan	[-1.5, 1.5]	18.3	16.7	34.1	1.86	2.04
+wasm-micro	wasip1-wasmtime	exp	[-10, 10]	6.0	9.6	15.1	2.52	1.58
+wasm-micro	wasip1-wasmtime	ln	[1e-3, 1e3]	6.0	7.9	27.3	4.52	3.46
+wasm-micro	wasip1-wasmtime	pow	[0.01, 100] × [-10, 10]	18.4	51.6	57.4	3.11	1.11
+wasm-micro	wasip1-simd-wasmtime	acos	[-1, 1]	11.5	22.1	32.7	2.84	1.48
+wasm-micro	wasip1-simd-wasmtime	asin	[-1, 1]	11.5	22.9	36.3	3.16	1.58
+wasm-micro	wasip1-simd-wasmtime	atan	[-10, 10]	11.1	10.5	37.2	3.35	3.54
+wasm-micro	wasip1-simd-wasmtime	atan2	[-1, 1]²	26.2	26.5	63.2	2.41	2.38
+wasm-micro	wasip1-simd-wasmtime	sin	[-7, 7]	18.5	18.2	22.3	1.21	1.23
+wasm-micro	wasip1-simd-wasmtime	cos	[-7, 7]	18.8	18.1	20.5	1.09	1.13
+wasm-micro	wasip1-simd-wasmtime	tan	[-1.5, 1.5]	18.3	16.7	33.9	1.85	2.03
+wasm-micro	wasip1-simd-wasmtime	exp	[-10, 10]	5.8	9.6	15.1	2.59	1.58
+wasm-micro	wasip1-simd-wasmtime	ln	[1e-3, 1e3]	6.0	7.9	27.3	4.53	3.46
+wasm-micro	wasip1-simd-wasmtime	pow	[0.01, 100] × [-10, 10]	18.3	51.5	57.5	3.13	1.12
+wasm-micro	wasip1-node	acos	[-1, 1]	18.4	28.3	38.3	2.08	1.36
+wasm-micro	wasip1-node	asin	[-1, 1]	18.0	29.3	38.6	2.15	1.32
+wasm-micro	wasip1-node	atan	[-10, 10]	16.6	15.6	41.4	2.49	2.65
+wasm-micro	wasip1-node	atan2	[-1, 1]²	31.2	31.1	66.1	2.12	2.13
+wasm-micro	wasip1-node	sin	[-7, 7]	23.9	21.8	23.1	0.97	1.06
+wasm-micro	wasip1-node	cos	[-7, 7]	26.9	24.4	24.4	0.91	1.00
+wasm-micro	wasip1-node	tan	[-1.5, 1.5]	29.1	22.8	37.7	1.29	1.65
+wasm-micro	wasip1-node	exp	[-10, 10]	9.1	15.1	16.6	1.83	1.10
+wasm-micro	wasip1-node	ln	[1e-3, 1e3]	9.8	12.8	29.6	3.03	2.32
+wasm-micro	wasip1-node	pow	[0.01, 100] × [-10, 10]	21.3	62.2	60.6	2.85	0.97
+wasm-micro	wasip1-simd-node	acos	[-1, 1]	21.6	28.1	38.3	1.77	1.37
+wasm-micro	wasip1-simd-node	asin	[-1, 1]	18.0	27.4	38.6	2.15	1.41
+wasm-micro	wasip1-simd-node	atan	[-10, 10]	20.4	15.5	41.3	2.03	2.67
+wasm-micro	wasip1-simd-node	atan2	[-1, 1]²	31.2	34.9	64.9	2.08	1.86
+wasm-micro	wasip1-simd-node	sin	[-7, 7]	23.8	24.3	23.1	0.97	0.95
+wasm-micro	wasip1-simd-node	cos	[-7, 7]	26.3	21.4	24.7	0.94	1.15
+wasm-micro	wasip1-simd-node	tan	[-1.5, 1.5]	27.8	22.7	37.7	1.36	1.66
+wasm-micro	wasip1-simd-node	exp	[-10, 10]	9.2	15.1	16.7	1.83	1.11
+wasm-micro	wasip1-simd-node	ln	[1e-3, 1e3]	9.9	12.9	29.5	2.99	2.28
+wasm-micro	wasip1-simd-node	pow	[0.01, 100] × [-10, 10]	21.5	62.1	60.3	2.80	0.97
+wasm-micro	unknown-node	acos	[-1, 1]	18.7	28.4	39.2	2.09	1.38
+wasm-micro	unknown-node	asin	[-1, 1]	18.6	27.8	38.6	2.08	1.39
+wasm-micro	unknown-node	atan	[-10, 10]	16.8	15.6	44.0	2.63	2.82
+wasm-micro	unknown-node	atan2	[-1, 1]²	32.4	31.3	65.0	2.01	2.08
+wasm-micro	unknown-node	sin	[-7, 7]	24.4	23.5	24.7	1.01	1.05
+wasm-micro	unknown-node	cos	[-7, 7]	26.2	23.5	26.3	1.00	1.12
+wasm-micro	unknown-node	tan	[-1.5, 1.5]	24.3	23.1	37.8	1.55	1.63
+wasm-micro	unknown-node	exp	[-10, 10]	15.9	15.1	16.9	1.06	1.11
+wasm-micro	unknown-node	ln	[1e-3, 1e3]	13.8	12.9	28.9	2.10	2.25
+wasm-micro	unknown-node	pow	[0.01, 100] × [-10, 10]	65.7	62.2	63.1	0.96	1.01
+wasm-micro	unknown-simd-node	acos	[-1, 1]	17.9	28.5	38.9	2.17	1.37
+wasm-micro	unknown-simd-node	asin	[-1, 1]	18.6	27.8	38.6	2.08	1.39
+wasm-micro	unknown-simd-node	atan	[-10, 10]	16.6	15.6	44.7	2.69	2.86
+wasm-micro	unknown-simd-node	atan2	[-1, 1]²	32.1	31.5	65.0	2.02	2.07
+wasm-micro	unknown-simd-node	sin	[-7, 7]	22.9	22.1	23.2	1.02	1.05
+wasm-micro	unknown-simd-node	cos	[-7, 7]	23.3	23.3	25.3	1.08	1.08
+wasm-micro	unknown-simd-node	tan	[-1.5, 1.5]	24.3	23.2	37.6	1.55	1.62
+wasm-micro	unknown-simd-node	exp	[-10, 10]	15.8	15.2	17.0	1.07	1.12
+wasm-micro	unknown-simd-node	ln	[1e-3, 1e3]	13.7	12.8	28.7	2.09	2.25
+wasm-micro	unknown-simd-node	pow	[0.01, 100] × [-10, 10]	65.4	62.1	63.0	0.96	1.01
+
+wasm-acos	run	args	std_ns	libm_ns	cr_ns	ratio	cr_vs_libm
+wasm-acos	native	args=42020	9.3	6.3	15.9	1.70	2.54
+wasm-acos	wasip1-wasmtime	args=42020	5.6	27.6	24.1	4.33	0.87
+wasm-acos	wasip1-simd-wasmtime	args=42020	5.6	27.8	24.0	4.32	0.87
+wasm-acos	wasip1-node	args=42020	21.2	28.4	24.6	1.16	0.87
+wasm-acos	wasip1-simd-node	args=42020	21.2	28.4	24.7	1.17	0.87
+wasm-acos	unknown-node	args=42020	14.4	28.3	24.8	1.72	0.87
+wasm-acos	unknown-simd-node	args=42020	14.4	28.5	24.8	1.73	0.87
+
+perf	unit_variant	cycles:u	instructions:u	branches:u	branch-misses:u	L1-icache-load-misses:u	stalled-cycles-frontend:u	ipc	seconds
+perf	surface.surface_p7-baseline	30080510613	74256258806	12511367010	31650411	71283818	3068832573	2.469	7.082288934
+perf	surface.surface_p7-cr-010-gen	32576002097	77542037760	12849167832	29438378	73858771	2951820280	2.380	7.619493298
+perf	surface.surface_p7-cr-010	31711812545	75287103117	12772586854	28273063	83788220	3219072160	2.374	7.416149473
+perf	surface.surface_p7-det-cr-010	31724390382	74507643746	12622006386	29275363	90391374	3048471330	2.349	7.414293517
+perf	surface.surface_p7-det-libm	31073632849	73286039952	12761101053	32377558	95789655	3532088681	2.358	7.271382399

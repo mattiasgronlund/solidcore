@@ -1,0 +1,6 @@
+(node:811865) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL surface.surface_p8 cases=2108 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=2.574s
+  changed gen0134 (1 differences)
+    values.out[2]: 4.577566798522237e-16 -> 5.661048867003676e-16
+goldens: 1 unit(s), 0 passed, 1 failed

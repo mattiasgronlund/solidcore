@@ -1,0 +1,6 @@
+(node:804775) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL nlib.crv_adv_p1 cases=2670 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=0.635s
+  changed gen0938 (1 differences)
+    values.knots.block[0]: [-187.3890416685499,195.3890416685499,-7167.539289128951] -> [-187.39128673577432,195.39128673577432,-7167.612813761155]
+goldens: 1 unit(s), 0 passed, 1 failed

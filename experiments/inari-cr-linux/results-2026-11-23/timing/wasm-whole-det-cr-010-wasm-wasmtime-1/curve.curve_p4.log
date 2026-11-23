@@ -1,0 +1,10 @@
+FAIL curve.curve_p4 cases=3260 changed=4 added=0 removed=0 broken=0 known_failing=0 rust=0.205s
+  changed gen0213 (1 differences)
+    values.out[1]: -1.1233677760401533e-15 -> -1.8669149286627143e-16
+  changed gen0883 (1 differences)
+    values.out[4]: 4.4708368140479196e-17 -> -1.374782320319735e-16
+  changed gen1793 (1 differences)
+    values.out[4]: 3.8527615422856203e-17 -> 2.889571156714216e-17
+  changed gen2348 (1 differences)
+    values.out[4]: 1.7654708454122555e-16 -> 4.119431972628595e-16
+goldens: 1 unit(s), 0 passed, 1 failed

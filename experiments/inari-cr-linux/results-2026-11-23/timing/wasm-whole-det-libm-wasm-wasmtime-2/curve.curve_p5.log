@@ -1,0 +1,2 @@
+PASS curve.curve_p5 cases=3140 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.236s
+goldens: 1 unit(s), 1 passed, 0 failed

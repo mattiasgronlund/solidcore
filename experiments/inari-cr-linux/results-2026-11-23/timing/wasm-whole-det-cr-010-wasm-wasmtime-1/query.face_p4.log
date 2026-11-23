@@ -1,0 +1,5 @@
+FAIL query.face_p4 cases=503 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=18.932s
+  changed gen0309 (2 differences)
+    ints: {"classifiable":[0],"classify_loop_ios":{"blocks":[[48039,384396]],"n":18},"loops":[0,1,2],"looptree":{"blocks":[[4,-26]],"n":17},"not_yet":[0],"ordered_no_area":[1,2,0],"scratch_size":[0],"start_stop":[7,1]} -> {"classifiable":[0],"classify_loop_ios":{"blocks":[[32011,256099]],"n":18},"loops":[0,1,2],"looptree":[0],"not_yet":[0],"ordered_no_area":[2,0],"scratch_size":[3],"start_stop":[9,9]}
+    values.status[0]: 0.0 -> 1001.0
+goldens: 1 unit(s), 0 passed, 1 failed

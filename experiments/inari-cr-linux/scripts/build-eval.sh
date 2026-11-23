@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 # Builds the eval programs (accuracy, speed, interval) for each cr commit into
-# $S/bins/<commit>-<config>/. Commits: main (inari 6a9fa7a), ca6 (inari ca6faf9) and
-# new (fushimi $NEW_COMMIT); give a subset as arguments. Configurations:
+# $S/bins/<commit>-<config>/. Commits: main (inari 6a9fa7a), ca6 (inari ca6faf9),
+# new (fushimi $NEW_COMMIT) and v010 (fushimi $V010, in cr-eval-010/, configured as new);
+# give a subset as arguments (default: main ca6 new). Configurations:
 #   gen-default: the default x86-64 target with force-generic, what solidcore's CI would build
 #                (on this target, the portable backend has no FMA)
 #   native:      -Ctarget-cpu=native, the crate's default backend (fma)
 #   gen-native:  -Ctarget-cpu=native with force-generic (the portable backend, with FMA)
-#   default:     new only: the default x86-64 target, no force-generic. main and ca6 do not
-#                build so; at new, the kernel picks its FMA copy at run time. This is the
-#                build solidcore would ship.
+#   default:     new and v010 only: the default x86-64 target, no force-generic. main and ca6
+#                do not build so; at new and v010, the kernel picks its FMA copy at run time.
+#                This is the build solidcore would ship.
 set -eu
 . "$(dirname "$0")/env.sh"
 [ $# -eq 0 ] && set -- main ca6 new
@@ -17,6 +18,7 @@ for commit in "$@"; do
     main) crate=$E/cr-eval; cfgs="gen-default native gen-native" ;;
     ca6) crate=$E/cr-eval-ca6; cfgs="gen-default native gen-native" ;;
     new) crate=$E/cr-eval-new; cfgs="gen-default native gen-native default" ;;
+    v010) crate=$E/cr-eval-010; cfgs="gen-default native gen-native default" ;;
     *) echo "unknown commit $commit"; exit 1 ;;
   esac
   for cfg in $cfgs; do

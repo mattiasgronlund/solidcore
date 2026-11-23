@@ -1,0 +1,19 @@
+FAIL nlib.crv_nurb cases=2886 changed=7 added=0 removed=0 broken=0 known_failing=0 rust=0.706s
+  changed gen0001 (1 differences)
+    values.kpp[0]: -1.824378762920384e-15 -> -2.1253072186598286e-15
+  changed gen0272 (4 differences)
+    values.b[0]: -1.2360195237244735e-17 -> 2.374855891592716e-17
+    values.b[1]: 4.04117639300705e-16 -> -3.977524505906587e-17
+    values.n[2]: 3.5331228722846086e-16 -> -4.632563189090902e-17
+    values.t[2]: 1.965560187673506e-16 -> 0.0
+  changed gen0360 (1 differences)
+    values.kpp[0]: -2.8329942509666803e-15 -> 3.305159959461123e-15
+  changed gen0637 (1 differences)
+    values.kpp[0]: 7.728475168589918e-16 -> 1.1335096913931887e-15
+  changed gen0756 (1 differences)
+    values.kpp[0]: -9.894641414170296e-16 -> 4.7322198067770846e-15
+  changed gen1211 (1 differences)
+    values.kpp[0]: 2.007145266187973e-15 -> 4.2436785627974505e-15
+  changed gen1900 (1 differences)
+    values.kpp[0]: -2.437949080527266e-15 -> -2.4794376791423973e-15
+goldens: 1 unit(s), 0 passed, 1 failed

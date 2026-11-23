@@ -1,0 +1,2 @@
+PASS topology.topology_traverser cases=909 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.774s
+goldens: 1 unit(s), 1 passed, 0 failed

@@ -9,6 +9,9 @@
 #                 target, its kernel picks its FMA copy at run time
 #   cr-new-gen    fushimi $NEW_COMMIT with force-generic, as cr-main
 #   cr-new-count  fushimi $NEW_COMMIT, counting (force-generic, as cr-count)
+#   cr-010, cr-010-gen, cr-010-count
+#                 the three cr-new variants at fushimi $V010 from crates.io
+# (Not in the default list: the rerun of 2026-11-23 builds only the cr-010 ones.)
 # All use the default x86-64 target. inari's main and ca6faf9 only build there with
 # force-generic, so cr-main, cr-ca6 and the count variants use it.
 # For cr-ca6 and the cr-new variants the shim's inari dependency line is replaced: its rev for
@@ -37,6 +40,7 @@ use_dep() {
 }
 inari_at() { echo "inari = { git = \"https://github.com/mattiasgronlund/inari\", rev = \"$1\", default-features = false }"; }
 fushimi_new="inari = { package = \"fushimi\", git = \"https://github.com/mattiasgronlund/fushimi\", rev = \"$NEW_COMMIT\", default-features = false }"
+fushimi_010="inari = { package = \"fushimi\", version = \"=$V010\", default-features = false }"
 mkdir -p "$S/bins"
 b() { # variant, features (empty for none)
   echo "=== goldens-$1"
@@ -54,6 +58,9 @@ for v in "$@"; do
     cr-new) use_dep "$fushimi_new"; b cr-new cr-libm; restore ;;
     cr-new-gen) use_dep "$fushimi_new"; b cr-new-gen cr-libm-generic; restore ;;
     cr-new-count) use_dep "$fushimi_new"; b cr-new-count cr-libm-count; restore ;;
+    cr-010) use_dep "$fushimi_010"; b cr-010 cr-libm; restore ;;
+    cr-010-gen) use_dep "$fushimi_010"; b cr-010-gen cr-libm-generic; restore ;;
+    cr-010-count) use_dep "$fushimi_010"; b cr-010-count cr-libm-count; restore ;;
     *) echo "unknown variant $v"; exit 1 ;;
   esac
 done

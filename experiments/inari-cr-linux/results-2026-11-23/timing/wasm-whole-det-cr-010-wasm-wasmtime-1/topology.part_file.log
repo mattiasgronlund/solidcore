@@ -1,0 +1,2 @@
+PASS topology.part_file cases=76 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=5.005s
+goldens: 1 unit(s), 1 passed, 0 failed

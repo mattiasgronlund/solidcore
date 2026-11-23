@@ -1,0 +1,4 @@
+FAIL topology.brep_mirror cases=341 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=29.594s
+  changed mat0076 (1 differences)
+    values.record.block[3]: [155890.3421658606,156127.8658079571,19204672.544671047] -> [155937.22050401074,156174.74420180934,19215314.127630573]
+goldens: 1 unit(s), 0 passed, 1 failed

@@ -6,6 +6,9 @@
 #   PIN   the CPU single-threaded timed runs are pinned to.
 #   D     the solidcore of tangency-labs/solidcraft#15405 at ebd45f35d5 (`math::det` on the
 #         `libm` crate), with patches/det-cr-ebd45f3.patch applied: the det-* variants.
+#         For det-cr-010, with patches/det-cr-ebd45f3-fushimi-0.1.0.patch applied instead
+#         (the same change, on fushimi 0.1.0 from crates.io), and for the -wasm variants
+#         patches/goldens-wasm32-ebd45f3.patch on top.
 E=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 W=$(cd "$E/../.." && pwd)
 S=${S:?set S to a work directory outside the tree}
@@ -17,6 +20,12 @@ INARI_CA6=ca6faf9c109ad62a7e53afc598d59f74af92adeb
 # fushimi (inari renamed) e9e5ae57aff3a6cfe8ca6b8934d63eee2fee0715, written as every
 # dependency line on it gives it.
 NEW_COMMIT=e9e5ae5
+# fushimi's first release, built from e241d34b, as every dependency line on it gives it.
+V010=0.1.0
+# The wasm engines: wasmtime (Cranelift) for wasm32-wasip1, node (V8, as in Chrome) for both
+# wasm targets.
+WASMTIME=${WASMTIME:-wasmtime}
+NODE=${NODE:-node}
 export CARGO_BUILD_JOBS=${CARGO_BUILD_JOBS:-2}
 mkdir -p "$S"
 

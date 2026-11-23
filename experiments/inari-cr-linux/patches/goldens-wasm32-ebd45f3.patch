@@ -1,0 +1,18 @@
+diff --git a/solidcore/crates/goldens/src/units/topology_trimming_tools.rs b/solidcore/crates/goldens/src/units/topology_trimming_tools.rs
+index 2372b06..078d6d5 100644
+--- a/solidcore/crates/goldens/src/units/topology_trimming_tools.rs
++++ b/solidcore/crates/goldens/src/units/topology_trimming_tools.rs
+@@ -3027,7 +3027,12 @@ const MAX_CURVES: usize = 64;
+ /// Largest number of script ops.
+ const MAX_OPS: usize = 64;
+ /// Largest loop index argument of a script op.
+-const MAX_LOOP_INDEX: usize = 1 << 40;
++/// wasm-experiment patch: `1 << 40` overflows a 32-bit usize; there every usize is in range.
++const MAX_LOOP_INDEX: usize = if (1u64 << 40) > usize::MAX as u64 {
++    usize::MAX
++} else {
++    (1u64 << 40) as usize
++};
+ 
+ /// `k` control points sharing their rational marker, `z = NOZ` exactly when `planar`,
+ /// weights in `[1e-3, 1e3]` and finite coordinates within [`MAX_COORD`].

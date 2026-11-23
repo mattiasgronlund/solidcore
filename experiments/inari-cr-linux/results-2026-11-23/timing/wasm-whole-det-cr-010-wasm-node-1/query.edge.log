@@ -1,0 +1,12 @@
+(node:807822) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL query.edge cases=1368 changed=4 added=0 removed=0 broken=0 known_failing=0 rust=18.256s
+  changed vase_rev_closest_on2 (1 differences)
+    values.closest[1]: 0.0 -> 2.9205407954182373e-15
+  changed gen0027 (1 differences)
+    values.closest[1]: 9.512305094064413e-13 -> 9.513071717439337e-13
+  changed gen0120 (1 differences)
+    values.closest[1]: 1.2959208739370123e-15 -> 8.968100940422724e-16
+  changed gen0169 (1 differences)
+    values.closest[1]: 5.1728291973635394e-14 -> 2.7270404334551994e-13
+goldens: 1 unit(s), 0 passed, 1 failed

@@ -1,0 +1,4 @@
+(node:757442) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS curve.composite_curve_p2 cases=676 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=2.090s
+goldens: 1 unit(s), 1 passed, 0 failed

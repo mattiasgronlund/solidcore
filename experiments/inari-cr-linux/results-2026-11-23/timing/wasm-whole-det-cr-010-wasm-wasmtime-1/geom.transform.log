@@ -1,0 +1,4 @@
+FAIL geom.transform cases=3042 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=0.143s
+  changed gen0382 (1 differences)
+    values.r.block[0]: [-1654823.3820958314,4093656.9314072765,-18116700.350209948] -> [-584393424228709.6,1388786605188279.0,-9743096242980024.0]
+goldens: 1 unit(s), 0 passed, 1 failed

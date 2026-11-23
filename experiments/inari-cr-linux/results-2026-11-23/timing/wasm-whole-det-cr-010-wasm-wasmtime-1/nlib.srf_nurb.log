@@ -1,0 +1,10 @@
+FAIL nlib.srf_nurb cases=2711 changed=4 added=0 removed=0 broken=0 known_failing=0 rust=0.287s
+  changed gen0247 (1 differences)
+    values.vals[0]: 1.0175362097255202e-15 -> 9.155133597044475e-16
+  changed gen0680 (1 differences)
+    values.vals[0]: 1.7342238036525468e-15 -> 1.6616296724220897e-15
+  changed gen1196 (1 differences)
+    values.vals[0]: 4.440892098500626e-16 -> 3.8459253727671276e-16
+  changed gen1511 (1 differences)
+    values.vals[1]: 1.7554167342883506e-16 -> 2.2887833992611187e-16
+goldens: 1 unit(s), 0 passed, 1 failed

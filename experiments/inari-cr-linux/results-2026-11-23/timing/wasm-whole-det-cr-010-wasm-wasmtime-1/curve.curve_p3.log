@@ -1,0 +1,6 @@
+FAIL curve.curve_p3 cases=3085 changed=2 added=0 removed=0 broken=0 known_failing=0 rust=0.295s
+  changed gen0780 (1 differences)
+    values.out[0]: 3.641284104274948e-17 -> 7.541238664044837e-17
+  changed gen2062 (1 differences)
+    values.out[0]: 9.931769106904591e-18 -> -1.1587063958055358e-17
+goldens: 1 unit(s), 0 passed, 1 failed

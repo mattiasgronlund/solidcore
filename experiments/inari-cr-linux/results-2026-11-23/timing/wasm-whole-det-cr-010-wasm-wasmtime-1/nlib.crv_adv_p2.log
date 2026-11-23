@@ -1,0 +1,5 @@
+FAIL nlib.crv_adv_p2 cases=2820 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=0.646s
+  changed gen0743 (2 differences)
+    values.d0[5]: 3.2636547684669495 -> 3.263654761016369
+    values.d0[8]: 1033460.7265625 -> 1033460.734375
+goldens: 1 unit(s), 0 passed, 1 failed

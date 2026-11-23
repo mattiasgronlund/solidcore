@@ -1,0 +1,2 @@
+PASS sweep.rotational_sweep_geometry cases=823 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.073s
+goldens: 1 unit(s), 1 passed, 0 failed

@@ -1,0 +1,2 @@
+PASS nurbs.b_spline_surface_p2 cases=815 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.090s
+goldens: 1 unit(s), 1 passed, 0 failed

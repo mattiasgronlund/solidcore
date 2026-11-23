@@ -1,0 +1,2 @@
+PASS curve.ellipse_p2 cases=2107 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.148s
+goldens: 1 unit(s), 1 passed, 0 failed

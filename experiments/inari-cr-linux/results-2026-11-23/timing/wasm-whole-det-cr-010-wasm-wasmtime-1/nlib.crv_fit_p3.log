@@ -1,0 +1,2 @@
+PASS nlib.crv_fit_p3 cases=2304 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.162s
+goldens: 1 unit(s), 1 passed, 0 failed

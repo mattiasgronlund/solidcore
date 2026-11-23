@@ -1,0 +1,2 @@
+PASS query.face_p4 cases=503 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=17.903s
+goldens: 1 unit(s), 1 passed, 0 failed

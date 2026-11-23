@@ -1,0 +1,16 @@
+(node:810869) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL surface.surface_approximate cases=437 changed=6 added=0 removed=0 broken=0 known_failing=0 rust=76.645s
+  changed gen0050 (1 differences)
+    values.out[1]: 3.717895257456939 -> 3.7148080689915854
+  changed gen0080 (1 differences)
+    values.out[1]: 1315.9272768602025 -> 799.3748293739277
+  changed gen0177 (1 differences)
+    values.out[1]: 1339358.266921138 -> 1339358.2452376506
+  changed gen0188 (1 differences)
+    values.out[1]: 2.4990039758257643e-9 -> 2.499003145832146e-9
+  changed gen0379 (1 differences)
+    values.out[1]: 2.2422468744279862e-11 -> 2.2422659769184384e-11
+  changed gen0399 (1 differences)
+    values.out: {"blocks":[[15264.30054958831,15314.192222703054,76378.02785848734]],"n":134} -> {"blocks":[[15230.268021042455,15277.579209497842,72599.43532193538]],"n":118}
+goldens: 1 unit(s), 0 passed, 1 failed

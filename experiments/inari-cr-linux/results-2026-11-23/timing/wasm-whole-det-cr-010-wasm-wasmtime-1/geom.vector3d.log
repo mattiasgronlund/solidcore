@@ -1,0 +1,5 @@
+FAIL geom.vector3d cases=6114 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=0.152s
+  changed gen5151 (2 differences)
+    values.r[0]: 2.0223661418300618e-11 -> 2.022365708250516e-11
+    values.r[2]: -3.8471099072143774e-10 -> -3.847109971142863e-10
+goldens: 1 unit(s), 0 passed, 1 failed

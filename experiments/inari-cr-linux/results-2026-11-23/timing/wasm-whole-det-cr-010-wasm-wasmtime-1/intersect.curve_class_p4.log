@@ -1,0 +1,2 @@
+PASS intersect.curve_class_p4 cases=5410 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=48.228s
+goldens: 1 unit(s), 1 passed, 0 failed

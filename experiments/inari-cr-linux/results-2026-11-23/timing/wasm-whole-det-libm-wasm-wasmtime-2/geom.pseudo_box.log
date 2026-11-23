@@ -1,0 +1,2 @@
+PASS geom.pseudo_box cases=3012 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.638s
+goldens: 1 unit(s), 1 passed, 0 failed

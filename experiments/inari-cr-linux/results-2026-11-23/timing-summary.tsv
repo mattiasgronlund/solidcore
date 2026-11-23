@@ -1,0 +1,42 @@
+whole	variant	wall_s	unit_times_s	wall_change	unit_times_change	against	units_failed
+whole	baseline	527.4	2004.5	+0.1%	+0.1%	baseline	0
+whole	cr-new	531.9	2017.8	+0.9%	+0.7%	baseline	12
+whole	cr-010	527.8	2004.8	+0.2%	+0.1%	baseline	12
+whole	cr-010-gen	530.6	2014.4	+0.7%	+0.6%	baseline	12
+whole	baseline	526.4	2001.6	-0.1%	-0.1%	baseline	0
+whole	det-libm	535.4	1988.5	-0.2%	-0.1%	det-libm	0
+whole	det-cr	544.8	2009.7	+1.6%	+1.0%	det-libm	71
+whole	det-cr-010	551.6	2046.7	+2.8%	+2.9%	det-libm	71
+whole	det-libm	537.4	1990.7	+0.2%	+0.1%	det-libm	0
+
+heavy	unit	variant	round_1_s	round_2_s	change_of_mean	against
+heavy	corpus.parity	baseline	94.64	94.79	+0.0%	baseline
+heavy	corpus.parity	cr-new	95.33	95.35	+0.7%	baseline
+heavy	corpus.parity	cr-010	94.88	95.24	+0.4%	baseline
+heavy	corpus.parity	det-libm	112.76	112.96	+0.0%	det-libm
+heavy	corpus.parity	det-cr	118.86	118.21	+5.0%	det-libm
+heavy	corpus.parity	det-cr-010	111.99	112.35	-0.6%	det-libm
+heavy	offset.offset_executive_p2	baseline	76.15	76.29	+0.0%	baseline
+heavy	offset.offset_executive_p2	cr-new	77.12	77.16	+1.2%	baseline
+heavy	offset.offset_executive_p2	cr-010	76.67	76.54	+0.5%	baseline
+heavy	offset.offset_executive_p2	det-libm	75.40	75.46	+0.0%	det-libm
+heavy	offset.offset_executive_p2	det-cr	76.92	76.63	+1.8%	det-libm
+heavy	offset.offset_executive_p2	det-cr-010	77.35	76.97	+2.3%	det-libm
+heavy	blend.fillet_executive_p3	baseline	56.44	56.42	+0.0%	baseline
+heavy	blend.fillet_executive_p3	cr-new	57.41	57.39	+1.7%	baseline
+heavy	blend.fillet_executive_p3	cr-010	56.94	57.40	+1.3%	baseline
+heavy	blend.fillet_executive_p3	det-libm	58.39	58.15	+0.0%	det-libm
+heavy	blend.fillet_executive_p3	det-cr	59.90	59.95	+2.8%	det-libm
+heavy	blend.fillet_executive_p3	det-cr-010	59.26	59.30	+1.7%	det-libm
+heavy	blend.feature_executive	baseline	19.71	19.66	+0.0%	baseline
+heavy	blend.feature_executive	cr-new	20.20	20.25	+2.7%	baseline
+heavy	blend.feature_executive	cr-010	19.99	19.95	+1.4%	baseline
+heavy	blend.feature_executive	det-libm	20.17	20.19	+0.0%	det-libm
+heavy	blend.feature_executive	det-cr	20.03	19.95	-0.9%	det-libm
+heavy	blend.feature_executive	det-cr-010	20.71	20.59	+2.3%	det-libm
+heavy	surface.surface_p7	baseline	6.97	6.96	+0.0%	baseline
+heavy	surface.surface_p7	cr-new	7.36	7.36	+5.7%	baseline
+heavy	surface.surface_p7	cr-010	7.34	7.34	+5.4%	baseline
+heavy	surface.surface_p7	det-libm	7.21	7.21	+0.0%	det-libm
+heavy	surface.surface_p7	det-cr	7.69	7.70	+6.8%	det-libm
+heavy	surface.surface_p7	det-cr-010	7.42	7.38	+2.7%	det-libm

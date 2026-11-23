@@ -1,0 +1,6 @@
+(node:804388) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL intersect.surface_intersector_p5 cases=1731 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=1.564s
+  changed gen1203 (1 differences)
+    values.rec: {"blocks":[["-inf","inf","-inf"]],"n":229} -> {"blocks":[["-inf","inf","-inf"]],"n":123}
+goldens: 1 unit(s), 0 passed, 1 failed

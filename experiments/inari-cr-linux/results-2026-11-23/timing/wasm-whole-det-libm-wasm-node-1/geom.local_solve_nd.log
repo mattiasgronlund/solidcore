@@ -1,0 +1,4 @@
+(node:759175) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS geom.local_solve_nd cases=3043 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.485s
+goldens: 1 unit(s), 1 passed, 0 failed

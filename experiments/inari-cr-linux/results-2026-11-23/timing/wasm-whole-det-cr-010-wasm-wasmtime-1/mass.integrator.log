@@ -1,0 +1,17 @@
+FAIL mass.integrator cases=1628 changed=7 added=0 removed=0 broken=0 known_failing=0 rust=7.214s
+  changed disk_face_centroid_eps1e-06 (2 differences)
+    values.out[1]: 9.371859934232707e-10 -> 9.371859448314628e-10
+    values.out[2]: -4.3124109289507967e-10 -> -4.312410973125166e-10
+  changed annulus_face_centroid_eps1e-06 (1 differences)
+    values.out[1]: 1.1689582604164407e-9 -> 1.168958205198477e-9
+  changed review_edge_constant_1e-06_[0.1, 0.9]_0 (1 differences)
+    values.out.block[0]: [1.1414523356746803e-16,1.20196636795654e-16,6.33831976767225e-16] -> [1.0573764685892108e-16,1.113433223439571e-16,5.871458634993387e-16]
+  changed review_edge_constant_1e-09_[0, 1]_0 (1 differences)
+    values.out.block[0]: [1.566241999120951e-16,1.649276231855679e-16,8.697115344828704e-16] -> [1.6670681559948615e-16,1.7554476818454137e-16,9.2569884146355e-16]
+  changed review_edge_constant_1e-09_[0.1, 0.9]_0 (1 differences)
+    values.out.block[0]: [9.837399124769822e-17,1.0358928293882258e-16,5.4625654866399055e-16] -> [1.000686197101175e-16,1.0537375203520926e-16,5.55666575475022e-16]
+  changed gen0488 (1 differences)
+    values.out[7]: -0.059918860809099916 -> -0.05991885980145401
+  changed gen1016 (1 differences)
+    values.out[3]: 0.11120331305742828 -> 0.11120331331117017
+goldens: 1 unit(s), 0 passed, 1 failed

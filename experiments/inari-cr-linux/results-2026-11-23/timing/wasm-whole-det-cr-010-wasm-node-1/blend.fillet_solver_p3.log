@@ -1,0 +1,7 @@
+(node:798079) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL blend.fillet_solver_p3 cases=400 changed=1 added=0 removed=0 broken=0 known_failing=0 rust=0.167s
+  changed gen0051 (2 differences)
+    values.flat[6]: 1.5961829348060149e-19 -> 7.201192877770516e-20
+    values.flat[7]: 1.596182934806015e-19 -> 7.201192877770517e-20
+goldens: 1 unit(s), 0 passed, 1 failed

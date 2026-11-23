@@ -1,0 +1,28 @@
+[package]
+name = "cr-wasm"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+# The speed program of cr-eval without MPFR, so it also builds for wasm32: the same rows,
+# arguments and loop. For wasm32-unknown-unknown (what SolidCraft's web app ships) the library
+# is a cdylib driven from JavaScript (scripts/wasm-drive.mjs); natively and for wasm32-wasip1
+# the binary `wspeed` runs it.
+[workspace]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "wspeed"
+path = "src/main.rs"
+
+[dependencies]
+# fushimi 0.1.0 from crates.io, under inari's old name, as in cr-eval-010.
+inari = { package = "fushimi", version = "=0.1.0", default-features = false }
+# The libm solidcore's `math::det` calls (tangency-labs/solidcraft#15405), pinned as there.
+libm = "=0.2.16"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1

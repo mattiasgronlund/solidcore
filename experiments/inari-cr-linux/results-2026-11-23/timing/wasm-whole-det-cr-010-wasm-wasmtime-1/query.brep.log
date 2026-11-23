@@ -1,0 +1,22 @@
+FAIL query.brep cases=1172 changed=10 added=0 removed=0 broken=0 known_failing=0 rust=10.915s
+  changed gen0058 (1 differences)
+    values.p_du_dv[1]: -1.4592466634446366e-16 -> 6.485540726420607e-17
+  changed gen0092 (1 differences)
+    values.p_du_dv[8]: 0.0 -> -1.7763568394002505e-15
+  changed gen0102 (1 differences)
+    values.p_du_dv[1]: -1.393619667903492e-16 -> -1.3422626184517437e-16
+  changed gen0126 (1 differences)
+    values.p_du_dv[1]: 1.6848211155609145e-17 -> 2.1469897468781773e-17
+  changed gen0325 (1 differences)
+    values.classify[4]: 6.59771766406808e-10 -> 6.597725181101234e-10
+  changed gen0363 (1 differences)
+    values.p_du_dv[1]: 3.154325115534456e-16 -> 1.577162557767228e-16
+  changed gen0424 (1 differences)
+    values.p_du_dv[1]: 3.272875242378295e-17 -> 0.0
+  changed gen0458 (1 differences)
+    values.p_du_dv[8]: 0.0 -> 4.440892098500626e-16
+  changed gen0556 (1 differences)
+    values.p_du_dv[1]: -3.3703743042440895e-17 -> -1.9219478651492186e-17
+  changed gen0576 (1 differences)
+    values.p_du_dv[8]: 0.0 -> 1.0842021724855044e-19
+goldens: 1 unit(s), 0 passed, 1 failed

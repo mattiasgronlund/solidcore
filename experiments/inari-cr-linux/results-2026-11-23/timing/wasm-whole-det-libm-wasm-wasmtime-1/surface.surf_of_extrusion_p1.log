@@ -1,0 +1,2 @@
+PASS surface.surf_of_extrusion_p1 cases=2071 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.235s
+goldens: 1 unit(s), 1 passed, 0 failed

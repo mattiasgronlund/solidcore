@@ -1,0 +1,2 @@
+PASS intersect.curve_class_p2 cases=1671 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.871s
+goldens: 1 unit(s), 1 passed, 0 failed

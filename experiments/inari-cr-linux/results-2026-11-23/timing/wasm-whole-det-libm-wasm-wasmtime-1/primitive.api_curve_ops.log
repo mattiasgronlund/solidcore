@@ -1,0 +1,2 @@
+PASS primitive.api_curve_ops cases=638 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.645s
+goldens: 1 unit(s), 1 passed, 0 failed

@@ -1,0 +1,35 @@
+(node:809398) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL query.poly cases=966 changed=14 added=0 removed=0 broken=0 known_failing=0 rust=0.400s
+  changed gen0073 (1 differences)
+    values.face_geom[4]: 9.308579352208107e-12 -> 9.308579758783922e-12
+  changed gen0109 (1 differences)
+    values.face_geom[4]: 4.336808689942018e-19 -> 5.421010862427522e-19
+  changed gen0127 (1 differences)
+    values.bbox[6]: -1.6653345369377347e-17 -> -2.7755575615628914e-17
+  changed gen0149 (2 differences)
+    values.spheres[0]: -3.3306690738754695e-17 -> -5.551115123125783e-17
+    values.spheres[4]: -3.3306690738754695e-17 -> -5.551115123125783e-17
+  changed gen0150 (1 differences)
+    values.spheres[1]: 1.9402553637822468e-11 -> 3.8805107275644936e-11
+  changed gen0271 (1 differences)
+    values.bbox[6]: -2.117582368135751e-23 -> -4.235164736271502e-23
+  changed gen0272 (1 differences)
+    ints: {"aux_topo":[-3],"brep_edges":[0,1,2,3,4,5,6,7,8],"brep_topo":[0,9],"cpoly":[],"edge_topo":{"blocks":[[207,16218]],"n":126},"face_topo":{"blocks":[[45,650]],"n":18},"faces":[0],"faces_common":[0,0,0],"first_face":[0],"loop_topo":[0,0,1,1,0,9,0,1,2,3,4,5,6,7,8],"regions":[0,1,0],"results":[0,1,0,2,0,0,0,2,0,3,0,1],"shells":[0,0,1,0],"vertex_topo":{"blocks":[[180,9009]],"n":81}} -> {"aux_topo":[-3],"brep_edges":[0,1,2,3,4,5,6,7,8],"brep_topo":[0,9],"cpoly":[],"edge_topo":{"blocks":[[207,16218]],"n":126},"face_topo":{"blocks":[[45,650]],"n":18},"faces":[0],"faces_common":[0,0,0],"first_face":[0],"loop_topo":[0,0,1,1,0,9,0,1,2,3,4,5,6,7,8],"regions":[0,1,0],"results":[0,1,0,2,0,0,0,2,0,3,0,2],"shells":[0,0,1,0],"vertex_topo":{"blocks":[[180,9009]],"n":81}}
+  changed gen0274 (1 differences)
+    values.face_geom[4]: 2.7755575615628914e-16 -> 1.3877787807814457e-16
+  changed gen0351 (2 differences)
+    values.face_geom[6]: -1.5139404881252134e-17 -> -1.2616170734376778e-17
+    values.spheres[1]: -1.5139404881252134e-17 -> -1.2616170734376778e-17
+  changed gen0407 (1 differences)
+    values.face_geom[4]: 1.5617169965001163e-21 -> 1.581569331201389e-21
+  changed gen0439 (1 differences)
+    values.face_geom[4]: 9.022187441587448e-10 -> 9.604264050722122e-10
+  changed gen0461 (1 differences)
+    values.face_geom[4]: 3.469446951953614e-16 -> 3.469446951953614e-17
+  changed gen0555 (1 differences)
+    values.face_geom[4]: 5.421010862427522e-19 -> 4.87890977618477e-19
+  changed gen0569 (2 differences)
+    values.spheres[1]: 2.0185873175002847e-17 -> 3.027880976250427e-17
+    values.spheres[5]: 2.0185873175002847e-17 -> 3.027880976250427e-17
+goldens: 1 unit(s), 0 passed, 1 failed

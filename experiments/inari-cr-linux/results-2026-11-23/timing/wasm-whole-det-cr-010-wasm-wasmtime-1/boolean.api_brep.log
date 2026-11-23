@@ -1,0 +1,7 @@
+  known failing gen0150: tangency-labs/solidcraft#14799: a sphere of radius -3.06e-4 united with a 7.5e-4 x 3.9e-4 x 1.4e-3 box returns the sphere alone (volume 1.20e-10, Level 2 check fails) where the union holds the box (4.28e-10); upstream refused it (1001) because its capture distance spanned both parts
+  known failing ub175_after_editing_imprint_failure: tangency-labs/solidcraft#14799: a sphere of radius 6.8e-4 united with a 7.8e-4 x 5.4e-4 x 7.2e-4 box reaching outside it returns the sphere alone (volume 1.33e-9, Level 2 check fails); upstream refused it (1001) because its capture distance spanned both parts
+FAIL boolean.api_brep cases=1134 changed=1 added=0 removed=0 broken=0 known_failing=2 rust=40.128s
+  changed issue1519_bench_tubes_union_measured (2 differences)
+    values.measures[3]: 3.0516040804356376e-13 -> 3.051612577532675e-13
+    values.measures[4]: 3.056245449383973e-13 -> 3.058751840620588e-13
+goldens: 1 unit(s), 0 passed, 1 failed

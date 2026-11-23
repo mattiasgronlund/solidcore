@@ -1,0 +1,59 @@
+  known failing issue-2349-teardrop-full-r0.5: tangency-labs/solidcore#2349: the closed round's first span is off the true round by 7.9e-4 against a 4e-5 edge tolerance; the curved-spine mitre and both exact pcurves remain unimplemented
+  known failing issue-2349-teardrop-full-r3: tangency-labs/solidcore#2349: the closed-angle mitre is not certified; tangency-labs/solidcore#2404 tracks the refusal size whose fresh build fails validity
+  known failing private-upstream-rollover-404-cyl-on-box1-edge12-r2: tangency-labs/solidcraft#13694: fails in the rollover (1001) once the WR-682 surface-plane trace is taken; main's default built it, and the trace's curves agree with the two-points intersector's to the tolerance, so the cause is not found yet
+  known failing radius-supported-at-limit-accepted: tangency-labs/solidcore#3245: at the minimum radius the result depends on rounding: the round and its end arcs lie r(sqrt(2) - 1) = 3.3e-5 from the corner they replace, inside the 5e-5 of the corner vertex's and the fillet's tolerances, so whether the end arcs are imprinted (and the trim closes) flips with ulp-level changes
+  known failing stubs4-delete-edge-sphere_diff_3cylinders-e2-r0.5: tangency-labs/solidcore#3053: with every fix off the round builds a body that is not closed (29 vertices, 44 edges, 9 faces, mass status 1007), where it was refused with status 1001
+FAIL blend.fillet_executive_p3 cases=798 changed=51 added=0 removed=0 broken=0 known_failing=5 rust=59.278s
+  changed curve-sih-box_diff_cyl-all-edges-r0.1 (5 differences)
+    values.mass_properties[3]: -5.2068102990978096e-8 -> -5.206810267191894e-8
+    values.mass_properties[5]: -5.126150882599166e-8 -> -5.1261508542322514e-8
+    values.mass_properties[9]: -0.00017871782780165156 -> -0.00017871782645208353
+    values.mass_properties[10]: 0.00012839611137108612 -> 0.00012839611070022922
+    values.mass_properties[11]: -3.7057729244379185e-7 -> -3.7057576832962364e-7
+  changed curve-sih-box_diff_cyl-all-edges-r0.25 (7 differences)
+    values.mass_properties[3]: -9.72267127059099e-8 -> -9.732172533225836e-8
+    values.mass_properties[4]: -0.20426005547481307 -> -0.2042600546827584
+    values.mass_properties[5]: -6.115999342850191e-8 -> -6.126176008544246e-8
+    values.mass_properties[9]: -0.0001337281705399568 -> -0.00013421293402997823
+    values.mass_properties[10]: 0.0002715576708177228 -> 0.00027248296743641125
+    values.mass_properties[11]: 3.1624258270960357e-7 -> -1.3614677407910105e-7
+    values.result_geometry.block[7]: [131.38671863042484,539.3585190857525,17036.224045824998] -> [131.38670020738383,539.358518946108,17036.222571649003]
+  changed curve-sih-box_diff_cyl-all-edges-r0.5 (12 differences)
+    ints: {"api_status_vertex_edge_face_counts":[0,40,76,39],"mass_status":[0],"result_topology":{"blocks":[[283043,35523389],[283150,36644593],[268165,34077020],[286590,36027553],[363778,46571057],[182395,11247389]],"n":1412}} -> {"api_status_vertex_edge_face_counts":[0,40,76,39],"mass_status":[0],"result_topology":{"blocks":[[283013,35527309],[283079,36628448],[268215,34085511],[286629,36030577],[363762,46564113],[182423,11253661]],"n":1412}}
+    values.mass_properties[3]: -1.2535809660891537e-7 -> -1.2528493389186462e-7
+    values.mass_properties[5]: -1.369659728441281e-7 -> -1.3688747554873563e-7
+    values.mass_properties[9]: -0.00009901440429351934 -> -0.00009864460381804962
+    values.mass_properties[10]: 0.000394083835798644 -> 0.000394264705155772
+    values.mass_properties[11]: 3.655228486586981e-7 -> 7.09862335366252e-7
+    values.result_geometry.block[0]: [98.56428342212979,724.4035148741867,9257.094234346265] -> [109.29665576534804,746.1133742305765,12721.57129816011]
+    values.result_geometry.block[1]: [145.0162936464368,719.8866899567438,-1252.1484468685817] -> [144.60708289742135,720.4208516151514,1976.8538028782577]
+  changed curve-sih-box_diff_cyl-all-edges-r1.0 (9 differences)
+    ints: {"api_status_vertex_edge_face_counts":[0,40,76,39],"mass_status":[0],"result_topology":{"blocks":[[282972,35521398],[283080,36629380],[268182,34081615],[286696,36039094],[363762,46564113],[182423,11253661]],"n":1412}} -> {"api_status_vertex_edge_face_counts":[0,40,76,39],"mass_status":[0],"result_topology":{"blocks":[[282972,35521398],[283080,36628132],[268182,34081615],[286696,36038702],[363762,46564113],[182423,11253661]],"n":1412}}
+    values.mass_properties[3]: -2.517698613394819e-7 -> -2.5033114856806866e-7
+    values.mass_properties[4]: -0.2158598932844506 -> -0.21585989009111128
+    values.mass_properties[5]: -2.1602542245378554e-8 -> -2.0070417128943823e-8
+    values.mass_properties[6]: 14891.341698456668 -> 14891.341713635453
+    values.mass_properties[9]: -0.00001638034763243395 -> -0.000010064552205773789
+    values.mass_properties[10]: 0.00027838621673895874 -> 0.000281408401821828
+    values.mass_properties[11]: -0.000010303768717373486 -> -4.769056905390829e-6
+  changed curve-sih-box_diff_cyl-all-edges-step2 (5 differences)
+    values.mass_properties[3]: -5.2068102990978096e-8 -> -5.206810267191894e-8
+    values.mass_properties[5]: -5.126150882599166e-8 -> -5.1261508542322514e-8
+    values.mass_properties[9]: -0.00017871782780165156 -> -0.00017871782645208353
+    values.mass_properties[10]: 0.00012839611137108612 -> 0.00012839611070022922
+    values.mass_properties[11]: -3.7057729244379185e-7 -> -3.7057576832962364e-7
+  changed issue_2176_tabbed_plate_tab_top_r0_5 (2 differences)
+    values.mass_properties[3]: -5.519696964417916e-7 -> -5.519696980706947e-7
+    values.mass_properties[10]: -0.0014270210121369027 -> -0.0014270210173547454
+  changed issue_2176_tabbed_plate_disc_wall_r0_5 (2 differences)
+    values.mass_properties[3]: -5.722796475820734e-7 -> -5.722796489689114e-7
+    values.mass_properties[10]: -0.0015438808122257646 -> -0.001543880814352094
+  changed real-box-fillet12-r3-shell-closed-issue-460 (1 differences)
+    values.shell_geometry.block[10]: [1339.4173227134165,1339.4174427134164,188053.2549114196] -> [1339.4173247826952,1339.417424782695,188053.25508747937]
+  changed real-box-fillet12-r3-shell-open-top-issue-460 (1 differences)
+    values.shell_geometry.block[10]: [1062.0648515239031,1062.064931523903,125058.72874290745] -> [1062.0648535931816,1062.0649135931817,125058.72914244927]
+  changed issue-880-half-arc-rim-0-setbacks-1-2 (2 differences)
+    ints: {"api_status_vertex_edge_face_counts":[0,9,14,7],"mass_status":[0],"result_topology":{"blocks":[[302250,39913499],[24,76]],"n":261},"rim_edge":[4],"setup":[0]} -> {"api_status_vertex_edge_face_counts":[0,9,14,7],"mass_status":[0],"result_topology":{"blocks":[[302247,39913679],[24,76]],"n":261},"rim_edge":[4],"setup":[0]}
+    values.result_geometry.block[0]: [975.4334886240414,1299.0378651209226,152578.76367176312] -> [975.4334886240416,1299.0378651209226,152604.22677027778]
+  ... 41 more changed
+goldens: 1 unit(s), 0 passed, 1 failed

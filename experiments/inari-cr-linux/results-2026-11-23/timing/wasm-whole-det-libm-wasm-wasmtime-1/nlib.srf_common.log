@@ -1,0 +1,2 @@
+PASS nlib.srf_common cases=1550 changed=0 added=0 removed=0 broken=0 known_failing=0 rust=0.184s
+goldens: 1 unit(s), 1 passed, 0 failed

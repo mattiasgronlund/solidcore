@@ -1,0 +1,14 @@
+# started on Mon Nov 23 19:50:44 2026
+
+
+ Performance counter stats for '/tmp/claude-1000/-home-mattias-git-tangency-labs-solidcore/d6e623d7-4700-4d3e-9d95-9d5b2daa7069/scratchpad/work/bins/goldens-baseline --unit surface.surface_p7 --goldens' (3 runs):
+
+    30,080,510,613      cycles:u                                                                ( +-  0.11% )  (83.32%)
+    74,256,258,806      instructions:u                                                          ( +-  0.05% )  (83.33%)
+    12,511,367,010      branches:u                                                              ( +-  0.01% )  (83.34%)
+        31,650,411      branch-misses:u                                                         ( +-  3.91% )  (83.34%)
+        71,283,818      L1-icache-load-misses:u                                                 ( +-  0.99% )  (83.34%)
+     3,068,832,573      stalled-cycles-frontend:u                                               ( +-  1.24% )  (83.34%)
+
+       7.082288934 +- 0.015721614 seconds time elapsed  ( +-  0.22% )
+
